@@ -132,6 +132,9 @@ gradlePlugin {
 java {
   sourceCompatibility = javaVersionEnum
   targetCompatibility = javaVersionEnum
+
+  withSourcesJar()
+  withJavadocJar()
 }
 
 kotlin {
@@ -377,6 +380,22 @@ tasks.withType<DokkaTask>().configureEach {
       localDirectory.set(projectDir.resolve("src"))
       remoteUrl.set(URL("https://github.com/buildless/plugin-gradle/tree/main/src"))
       remoteLineSuffix.set("#L")
+    }
+  }
+}
+
+// --- Publishing
+//
+
+// This task is added by Gradle when we use java.withJavadocJar()
+val javadocJar = tasks.named<Jar>("javadocJar") {
+  from(tasks.dokkaJavadoc)
+}
+
+publishing {
+  publications {
+    create<MavenPublication>("gradle") {
+      from(components["java"])
     }
   }
 }
