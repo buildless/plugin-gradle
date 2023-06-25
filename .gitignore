@@ -1,0 +1,7 @@
+/build
+/.gradle
+!src/main/kotlin/build/
+!src/test/kotlin/build/
+.DS_Store
+.gradle/
+/buildSrc/build

@@ -1,0 +1,12 @@
+version: v1
+managed:
+  enabled: true
+plugins:
+  - plugin: buf.build/bufbuild/connect-kotlin
+    out: kotlin
+  - plugin: buf.build/protocolbuffers/java
+    out: java
+  - plugin: buf.build/grpc/java
+    out: java
+  - plugin: buf.build/bufbuild/validate-java
+    out: pgv

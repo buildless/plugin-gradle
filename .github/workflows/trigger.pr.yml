@@ -1,0 +1,50 @@
+name: PR
+
+on:
+  ## Event: Merge group checks
+  merge_group:
+    types: [checks_requested]
+
+  ## Event: PR
+  pull_request:
+    types:
+      - opened
+      - closed
+      - reopened
+      - synchronize
+    paths:
+      ## Trigger: Global changes/release
+      - ".version"
+      - ".release"
+
+      ## Trigger: Server Changes
+      - "gradle.properties"
+      - "*.kts"
+      - "**/*.kts"
+      - "**/*.kt"
+      - "**/*.java"
+      - "**/*.properties"
+      - "app/server/**"
+      - "gradle/**"
+
+env:
+  CI: true
+  SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+jobs:
+  ## Build: Gradle Plugin
+  build-plugin:
+    name: "Gradle Plugin"
+    uses: elide-dev/build-infra/.github/workflows/jvm.gradle.yml@main
+    secrets: inherit
+    permissions:
+      checks: write
+      pull-requests: read
+      id-token: write
+      contents: read
+    with:
+      jvm: '11'
+      runner: ubuntu-latest
+      action: 'build test docs check'
+      flags: '--scan --stacktrace'

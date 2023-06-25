@@ -1,0 +1,19 @@
+version: v1
+
+name: buf.build/buildless/gradle
+
+build:
+  excludes:
+    - build
+    - dist
+breaking:
+  use:
+    - FILE
+deps:
+  - buf.build/googleapis/googleapis
+  - buf.build/buildless/buildless
+lint:
+  allow_comment_ignores: true
+  except:
+    - PACKAGE_DIRECTORY_MATCH
+    - PACKAGE_VERSION_SUFFIX

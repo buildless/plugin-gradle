@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  ## Event: Merge group checks
+  merge_group:
+    types: [checks_requested]
+
+  ## Event: Push on `main` or `stable`
+  push:
+    branches:
+      - main
+      - stable
+    tags:
+      - "v*"
+
+env:
+  CI: true
+  SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+jobs:
+  ## Build: Gradle Plugin
+  build-plugin:
+    name: "Gradle Plugin"
+    uses: elide-dev/build-infra/.github/workflows/jvm.gradle.yml@main
+    secrets: inherit
+    permissions:
+      checks: write
+      pull-requests: read
+      id-token: write
+      contents: read
+    with:
+      jvm: '11'
+      runner: ubuntu-latest
+      action: 'build test docs check'
+      flags: '--scan --stacktrace'

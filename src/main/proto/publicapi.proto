@@ -1,0 +1,27 @@
+// Copyright 2023 Elide Ventures LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+// the License. You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+// an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+// specific language governing permissions and limitations under the License.
+
+syntax = "proto3";
+
+/**
+ * Provides third-party imports which are omitted from generated Buildless code.
+ */
+package publicapi;
+
+// The Buildless gateway trans-codes errors to JSON, where applicable; `error_details` is used in this process.
+// buf:lint:ignore IMPORT_USED
+import "buildless/service/v1/buildless-v1.proto";
+// The Buildless gateway trans-codes errors to JSON, where applicable; `error_details` is used in this process.
+// buf:lint:ignore IMPORT_USED
+import "google/rpc/error_details.proto";
+// The Buildless service supports standard gRPC health checks.
+// buf:lint:ignore IMPORT_USED
+import "grpc/health/v1/health.proto";

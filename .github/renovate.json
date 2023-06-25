@@ -1,0 +1,20 @@
+{
+  "enabled": true,
+  "extends": ["config:base"],
+  "enabledManagers": [
+    "github-actions",
+    "git-submodules",
+    "gradle",
+    "gradle-wrapper"
+  ],
+  "baseBranches": ["main"],
+  "compatibility": { "pnpm": "^8.0.0" },
+  "pinDigests": true,
+  "rangeStrategy": "pin",
+  "updateLockFiles": true,
+  "dependencyDashboard": true,
+  "dependencyDashboardApproval": true,
+  "lockFileMaintenance": { "enabled": true },
+  "labels": ["dependencies"],
+  "packageRules": []
+}

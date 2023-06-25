@@ -1,0 +1,24 @@
+{
+  "allow": [
+    {
+      "owner": "githubnext",
+      "repo": "blocks-examples",
+      "id": "*"
+    },
+    {
+      "owner": "elide-dev",
+      "repo": "blocks-private",
+      "id": "*"
+    },
+    {
+      "owner": "elide-dev",
+      "repo": "blocks",
+      "id": "*"
+    },
+    {
+      "owner": "buildless",
+      "repo": "blocks",
+      "id": "*"
+    }
+  ]
+}
