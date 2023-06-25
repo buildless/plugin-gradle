@@ -23,7 +23,10 @@ jobs:
   build-plugin:
     name: "Gradle Plugin"
     uses: elide-dev/build-infra/.github/workflows/jvm.gradle.yml@main
-    secrets: inherit
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     permissions:
       checks: write
       pull-requests: read
