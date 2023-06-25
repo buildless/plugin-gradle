@@ -1,3 +1,8 @@
+*.lock          linguist-generated
+*.lockfile      linguist-generated
+docs/*          linguist-generated
+dokka/*         -linguist-detectable
+
 *.java          text diff=java
 *.kt            text diff=kotlin
 *.kts           text diff=kotlin
@@ -5,9 +10,10 @@
 *.scala         text diff=java
 *.gradle        text diff=java
 *.gradle.kts    text diff=kotlin
-*.css           text diff=css
-*.scss          text diff=css
-*.sass          text
+*.css           text diff=css -linguist-detectable
+*.scss          text diff=css -linguist-detectable
+*.sass          text -linguist-detectable
+*.ftl           text -linguist-detectable
 *.properties    text
 *.class         binary
 *.dll           binary
@@ -27,7 +33,3 @@ gradlew         text eol=lf
 
 *.gitattributes linguist-language=gitattributes
 
-*.lock          linguist-generated
-*.lockfile      linguist-generated
-docs/*          linguist-generated
-dokka/*         -linguist-detectable
