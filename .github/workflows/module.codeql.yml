@@ -2,10 +2,33 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
+  workflow_dispatch:
+    ## Input: Runner to use
+    inputs:
+      runner:
+        description: "Runner"
+        type: string
+        default: 'ubuntu-latest'
+        required: false
+
+    ## Secrets: API Key
+    secrets:
+      BUILDLESS_APIKEY:
+        description: "Buildless API Key"
+        required: true
+
+  workflow_call:
+    inputs:
+      runner:
+        description: "Runner"
+        type: string
+        default: 'ubuntu-latest'
+        required: false
+    secrets:
+      BUILDLESS_APIKEY:
+        description: "Buildless API Key"
+        required: true
+
   schedule:
     - cron: '33 9 * * 0'
 
@@ -13,7 +36,7 @@ jobs:
   analyze:
     name: Analyze
     continue-on-error: true
-    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || inputs.runner }}
     timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
     permissions:
       actions: read

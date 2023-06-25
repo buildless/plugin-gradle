@@ -52,3 +52,16 @@ jobs:
       runner: ubuntu-latest
       action: 'build test check'
       flags: '--scan --stacktrace'
+      coverage: true
+
+  ## Checks: CodeQL
+  check-codeql:
+    name: "CodeQL"
+    uses: .github/workflows/module.codeql.yml
+    secrets:
+      BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
+    permissions:
+      checks: write
+      pull-requests: read
+      id-token: write
+      contents: read
