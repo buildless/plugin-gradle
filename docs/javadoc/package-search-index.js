@@ -1,0 +1,1 @@
+var packageSearchIndex = [{"l":"build.less.plugin.gradle","url":"build/less/plugin/gradle/package-summary.html"}, {"l":"build.less.plugin.gradle.err","url":"build/less/plugin/gradle/err/package-summary.html"}, {"l":"build.less.plugin.settings","url":"build/less/plugin/settings/package-summary.html"}, {"l":"All packages","url":"index.html"}]

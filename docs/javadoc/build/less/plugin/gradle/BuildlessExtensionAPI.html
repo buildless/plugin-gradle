@@ -1,0 +1,454 @@
+<!DOCTYPE HTML>
+<!-- NewPage -->
+<html lang="en"><head>
+    <title>BuildlessExtensionAPI </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="dc.created" content="2020-03-25">
+    <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="../../../../dokka-javadoc-stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="../../../../jquery/jquery-ui.css" title="Style">
+    <script type="text/javascript" src="../../../../jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../../../jquery/jquery-migrate-3.4.0.min.js"></script>
+    <script type="text/javascript" src="../../../../jquery/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="../../../../search.js"></script>
+    <script async type="text/javascript" src="../../../../module-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../package-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../type-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../member-search-index.js"></script>
+    <script async type="text/javascript" src="../../../../tag-search-index.js"></script>
+</head><body>
+<script type="text/javascript">
+var pathtoroot = "../../../../";
+</script>
+<noscript>
+    <div>JavaScript is disabled on your browser.</div>
+</noscript><header role="banner">
+    <nav role="navigation">
+        <div class="fixedNav">
+            <!-- ========= START OF TOP NAVBAR ======= -->
+            <div class="topNav"><a id="navbar.top">
+                <!--   -->
+            </a>
+                <div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a>
+                </div>
+                <a id="navbar.top.firstrow">
+                    <!--   -->
+                </a>
+                <ul class="navList" title="Navigation">
+    <li><a href="../../../../index.html">Overview</a></li>
+    
+    <li><a href="package-summary.html">Package</a></li>
+    
+    <li>Class</li>
+    
+    <li><a href="package-tree.html">Tree</a></li>
+    
+    <li><a href="../../../../deprecated.html">Deprecated</a></li>
+    <li><a href="../../../../index-files/index-1.html">Index</a></li>
+    <li>Help</li>
+</ul></div>
+            <div class="subNav">
+<ul class="navList" id="allclasses_navbar_top" style="display: block;">
+    <li><a href="../../../../allclasses.html">All&nbsp;Classes</a></li>
+</ul>
+
+<ul class="navListSearch">
+<li><label for="search">SEARCH:</label>
+<input type="text" id="search" value="search" class="ui-autocomplete-input" autocomplete="off" placeholder="Search">
+<input type="reset" id="reset" value="reset">
+</li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+</div>
+<a id="skip.navbar.top">
+<!--   -->
+</a></div><!-- ========= END OF TOP NAVBAR ========= -->
+        </div>
+        <div class="navPadding">&nbsp;</div>
+        <script type="text/javascript"><!--
+        $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
+        //-->
+        </script>
+    </nav>
+</header>
+
+<main role="main">
+    <div class="header">
+        <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">build.less.plugin.gradle</a></div>
+        <h2 title="Interface BuildlessExtensionAPI" class="title">Interface BuildlessExtensionAPI</h2>
+    </div>
+    <div class="contentContainer">
+        <!-- <ul class="inheritance">
+            <li>java.lang.Object</li>
+            <li>
+                <ul class="inheritance">
+                    <li>adaptation.Adaptation</li>
+                </ul>
+            </li>
+        </ul> TODO inheritance tree -->
+        <div class="description">
+            <ul class="blockList">
+                <li class="blockList">
+                    
+                    <dl>
+                        <dt>All Implemented Interfaces:</dt>
+                        <dd>
+                            
+                        </dd>
+                    </dl>
+                    
+                    <hr>
+                    <pre class="wrap-overflow">
+
+public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.html>BuildlessExtensionAPI</a>&lt;Target extends <a href=https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html>Object</a>, Settings extends <a href=BuildlessExtensionAPI.ConfigAPI.html>BuildlessExtensionAPI.ConfigAPI</a>&lt;<a href=BuildlessExtensionAPI.html>Target</a>&gt;&gt;</span>
+
+                    </pre>
+                    <div class="block"><p>This interface, along with nested types, defines the public API surface for the Buildless plugin for Gradle. Developers may customize their remote cache use via methods and fields defined herein.</p><p>While Buildless may be used directly as a drop-in Gradle remote cache, the plugin surfaces additional configuration and optimizations which are out-of-reach without custom code.</p><p>To use Buildless from a Gradle build, the plugin must be applied at settings time, from <code>settings.gradle.kts</code> (or the Groovy equivalent):</p><pre><code>import build.less.plugin.settings.buildless
+
+plugins {
+  id(&quot;build.less&quot;)
+}
+
+buildless {
+  // settings go here
+}</code></pre><p>The above is all that is needed in many cases to install and use Buildless as a remote cache. This loads the user's API key from any of the following sources:</p><ul><li><p>Environment variables (<code>BUILDLESS_API_KEY</code>, <code>GRADLE_CACHE_PASSWORD</code>)</p></li><li><p>System properties (<code>buildless.apiKey</code>, <code>cachePassword</code>)</p></li><li><p>Local file (<code>.buildless.toml</code>, <code>.github/buildless.toml</code>, <code>.buildless/config.toml</code>, <code>package.json:buildcache</code>)</p></li><li><p>User-level configuration file (<code>~/.config/buildless.toml</code>, <code>~/.buildless/config.toml</code>)</p></li></ul><p>So long as an API key is present, the above <code>settings.gradle.kts</code> code sample is sufficient to configure remote build caching within a Gradle build.</p><p>If the <code>settings.gradle.kts</code> file where this plug-in is applied also performs its own configuration of Gradle's build cache, it will prevail over this plug-in and no action is taken.</p><p>If the developer wishes to configure Gradle's build caching features all in one go, they may do so via the local and remote cache settings provided by this plugin (i.e, no further configuration is required).</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="summary">
+            <ul class="blockList">
+                <li class="blockList">
+                <!-- ======== NESTED CLASS SUMMARY ======== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="nested.class.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Nested Class Summary</h3>
+                                <div class="memberSummary">
+                                    <table>
+                                        <caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+                                        <tr>
+                                            <th class="colFirst" scope="col">Modifier and Type</th>
+                                            <th class="colSecond" scope="col">Class</th>
+                                            <th class="colLast" scope="col">Description</th>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>public interface</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="BuildlessExtensionAPI.CacheSettings.html">BuildlessExtensionAPI.CacheSettings</a></span></code>
+                                            </th>
+                                            <td class="colLast"><p>Describes generic cache settings which apply to all types of caches; see <a href=build/less/plugin/gradle/BuildlessExtensionAPI.LocalCacheSettings.html>LocalCacheSettings</a> and <a href=build/less/plugin/gradle/BuildlessExtensionAPI.RemoteCacheSettings.html>RemoteCacheSettings</a> for further information.</p></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>public interface</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="BuildlessExtensionAPI.LocalCacheSettings.html">BuildlessExtensionAPI.LocalCacheSettings</a></span></code>
+                                            </th>
+                                            <td class="colLast"><p>Specifies settings which configure Gradle's local build cache; these may be provided in lieu of settings specified directly with Gradle. Local build cache settings specified directly to Gradle take precedence over these. By default, the local build cache is enabled.</p></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>public interface</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="BuildlessExtensionAPI.RemoteCacheSettings.html">BuildlessExtensionAPI.RemoteCacheSettings</a></span></code>
+                                            </th>
+                                            <td class="colLast"><p>Specifies settings which configure Gradle's remote build cache; these may be provided in lieu of settings specified directly with Gradle, and are preferred over directly specifying settings. By default, the remote build cache is enabled in all circumstances.</p><p>Push of objects is enabled by default. Object push (uploading to the cache) can be disabled by setting push to <code>false</code>, or by using any of the condition builders specified by the <a href=build/less/plugin/gradle/BuildlessExtensionAPI.MutableCacheSettings.html>MutableCacheSettings</a> or <a href=build/less/plugin/gradle/BuildlessExtensionAPI.MutableRemoteCacheSettings.html>MutableRemoteCacheSettings</a> types.</p></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>public interface</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="BuildlessExtensionAPI.MutableCacheSettings.html">BuildlessExtensionAPI.MutableCacheSettings</a></span></code>
+                                            </th>
+                                            <td class="colLast"><p>Top-level abstract cache settings for the Buildless Gradle plugin, in mutable form for use in Gradle's <code>settings.gradle.kts</code> file. This is the base type for <a href=build/less/plugin/gradle/BuildlessExtensionAPI.MutableLocalCacheSettings.html>MutableLocalCacheSettings</a> and <a href=build/less/plugin/gradle/BuildlessExtensionAPI.MutableRemoteCacheSettings.html>MutableRemoteCacheSettings</a>.</p></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>public interface</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="BuildlessExtensionAPI.MutableLocalCacheSettings.html">BuildlessExtensionAPI.MutableLocalCacheSettings</a></span></code>
+                                            </th>
+                                            <td class="colLast"><p>Local cache settings for the Buildless Gradle plugin, in mutable form for use in Gradle's <code>settings.gradle.kts</code> file. The plugin configures sensible defaults if not otherwise specified.</p></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>public interface</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="BuildlessExtensionAPI.MutableRemoteCacheSettings.html">BuildlessExtensionAPI.MutableRemoteCacheSettings</a></span></code>
+                                            </th>
+                                            <td class="colLast"><p>Remote cache settings for the Buildless Gradle plugin, in mutable form for use in Gradle's <code>settings.gradle.kts</code> file. The plugin configures sensible defaults if not otherwise specified. Remote caching is typically not possible unless an API key is resolvable.</p></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>public interface</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="BuildlessExtensionAPI.ConfigAPI.html">BuildlessExtensionAPI.ConfigAPI</a></span></code>
+                                            </th>
+                                            <td class="colLast"><p>Describes the base interface from which all plugin settings interfaces inherit. Since the Buildless plugin can be configured in both the context of a Gradle <a href=build/less/plugin/gradle/BuildlessExtensionAPI.html>Settings</a> (initialization) file, and also a Project, the API needs to be extended into both circumstances; this interface bears the common fields between both.</p></td>
+                                        </tr>
+                                        
+                                        <tr class="rowColor">
+                                            <td class="colFirst"><code>public interface</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="BuildlessExtensionAPI.BuildlessSettings.html">BuildlessExtensionAPI.BuildlessSettings</a></span></code>
+                                            </th>
+                                            <td class="colLast"><p>Describes top-level settings which are available within <code>settings.gradle.kts</code> for a Buildless-enabled Gradle project. These settings apply within the scope of file in question (usually, all projects within a multi-project Gradle build, or a single Gradle project).</p><p>These settings implement the <a href=build/less/plugin/gradle/BuildlessExtensionAPI.ConfigAPI.html>ConfigAPI</a> interface for a target of <a href=build/less/plugin/gradle/BuildlessExtensionAPI.html>Settings</a>, but with mutable fields so that they may be set from a builder context.</p></td>
+                                        </tr>
+                                        
+                                        <tr class="altColor">
+                                            <td class="colFirst"><code>public interface</code></td>
+                                            <th class="colSecond" scope="row"><code><a href="BuildlessExtensionAPI.BuildlessProjectSettings.html">BuildlessExtensionAPI.BuildlessProjectSettings</a></span></code>
+                                            </th>
+                                            <td class="colLast"><p>Defines the interface made available when configuring project-level settings w.r.t. the Buildless plugin. Project level settings mostly deal with logging and ignoring tasks for the cache.</p></td>
+                                        </tr>
+                                        
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <!-- =========== FIELD SUMMARY =========== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="field.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Field Summary</h3>
+                                <div class="memberSummary">
+                                    <table>
+                                        <caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+                                        <tr>
+                                            <th class="colFirst" scope="col">Modifier and Type</th>
+                                            <th class="colSecond" scope="col">Field</th>
+                                            <th class="colLast" scope="col">Description</th>
+                                        </tr>
+                                        
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <!-- ======== CONSTRUCTOR SUMMARY ======== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="constructor.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Constructor Summary</h3>
+                                <div class="memberSummary">
+                                    <table>
+                                        <caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+                                        <tbody>
+                                        <tr>
+                                            <th class="colFirst" scope="col">Constructor</th>
+                                            <th class="colLast" scope="col">Description</th>
+                                        </tr>
+
+                                        
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <!-- =========== ENUM CONSTANT SUMMARY =========== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="enum.constant.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Enum Constant Summary</h3>
+                                <table class="memberSummary">
+                                    <caption><span>Enum Constants</span><span class="tabEnd">&nbsp;</span></caption>
+                                    <tr>
+                                        <th class="colFirst" scope="col">Enum Constant</th>
+                                        <th class="colLast" scope="col">Description</th>
+                                    </tr>
+                                    
+                                </table>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <!-- ========== METHOD SUMMARY =========== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="method.summary">
+                                <!--   -->
+                            </a>
+                                <h3>Method Summary</h3>
+                                <div class="memberSummary">
+                                    <div role="tablist" aria-orientation="horizontal">
+                                        <button role="tab" aria-selected="true" aria-controls="memberSummary_tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="activeTableTab">All Methods</button>
+                                        <!-- TODO: Instance and Concrete Methods #1118 -->
+                                    </div>
+                                    <div id="memberSummary_tabpanel" role="tabpanel">
+                                    <table aria-labelledby="t0">
+                                        <tr>
+                                            <th class="colFirst" scope="col">Modifier and Type</th>
+                                            <th class="colSecond" scope="col">Method</th>
+                                            <th class="colLast" scope="col">Description</th>
+                                        </tr>
+                                        
+                                        <tr id="i0" class="altColor">
+                                            <td class="colFirst"><code>abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a></code>
+                                            </td>
+                                            <th class="colSecond" scope="row"><code><a href=BuildlessExtensionAPI.html#config(Target,kotlin.jvm.functions.Function1)>config</a>(<a href=BuildlessExtensionAPI.html>Target</a> context, Function1&lt;<a href=BuildlessExtensionAPI.html>Settings</a>, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a>&gt; configure) </code>
+                                            </th>
+                                            <td class="colLast">Main configuration entrypoint for the extension implementing this interface; not meant to be used by end-user code.</td>
+                                        </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <ul class="blockList">
+                                
+                                    <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
+                                        <!--   -->
+                                    </a>
+                                        <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
+                                        <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString,
+                                            wait, wait, wait</code></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                </li>
+            </ul>
+        </div>
+        <div class="details">
+            <ul class="blockList">
+                <li class="blockList">
+                    <!-- ========= CONSTRUCTOR DETAIL ======== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="constructor.detail">
+                                <!--   -->
+                            </a>
+                                <h3>Constructor Detail</h3>
+                                
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <!-- ============ METHOD DETAIL ========== -->
+                    
+                    <section role="region">
+                        <ul class="blockList">
+                            <li class="blockList"><a id="method.detail">
+                                <!--   -->
+                            </a>
+                                <h3>Method Detail</h3>
+                                
+                                <a id="config(Target,kotlin.jvm.functions.Function1)">
+                                    <!--   -->
+                                </a>
+                                <ul class=
+                                              "blockListLast"
+                                          >
+                                    <li class="blockList">
+                                        <h4>config</h4>
+                                        <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=BuildlessExtensionAPI.html#config(Target,kotlin.jvm.functions.Function1)>config</a>(<a href=BuildlessExtensionAPI.html>Target</a> context, Function1&lt;<a href=BuildlessExtensionAPI.html>Settings</a>, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a>&gt; configure)</pre>
+                                        <div class="block"><p>Main configuration entrypoint for the extension implementing this interface; not meant to be used by end-user code.</p></div>
+                                        
+                                        <dl>
+                                            <dt><span class="paramLabel">Parameters:</span></dt>
+                                            
+                                            
+                                            <dd><code>context</code> - Context instance for the target of this configuration.</dd>
+                                            
+                                            
+                                            
+                                            <dd><code>configure</code> - Lambda to execute which configures the <a href=BuildlessExtensionAPI.html#config(Target,kotlin.jvm.functions.Function1)>context</a> within the receivership of <a href=BuildlessExtensionAPI.html>Settings</a>.</dd>
+                                            
+                                            
+                                        </dl>
+                                        
+                                        <!-- TODO missing return annotation -->
+                                    </li>
+                                </ul>
+                                
+                            </li>
+                        </ul>
+                    </section>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer role="contentinfo">
+    <nav role="navigation">
+        <!-- ======= START OF BOTTOM NAVBAR ====== -->
+        <div class="bottomNav"><a id="navbar.bottom">
+            <!--   -->
+        </a>
+            <div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a>
+            </div>
+            <a id="navbar.bottom.firstrow">
+                <!--   -->
+            </a>
+            <ul class="navList" title="Navigation">
+    <li><a href="../../../../index.html">Overview</a></li>
+    
+    <li><a href="package-summary.html">Package</a></li>
+    
+    <li>Class</li>
+    
+    <li><a href="package-tree.html">Tree</a></li>
+    
+    <li><a href="../../../../deprecated.html">Deprecated</a></li>
+    <li><a href="../../../../index-files/index-1.html">Index</a></li>
+    <li>Help</li>
+</ul></div>
+        <a id="skip.navbar.bottom">
+            <!--   -->
+        </a>
+        <div class="subNav">
+<ul class="navList" id="allclasses_navbar_top" style="display: block;">
+    <li><a href="../../../../allclasses.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+</div>
+<a id="skip.navbar.top">
+<!--   -->
+</a></div><!-- ======== END OF BOTTOM NAVBAR ======= -->
+    </nav>
+</footer><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0"
+    style="display: none;"></ul>
+<span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span>
+</body>
+</html>

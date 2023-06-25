@@ -1,0 +1,70 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:build.less.plugin.gradle.err////PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle.err/index.html
+$dokka.location:build.less.plugin.gradle.err/BuildlessPluginException///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle.err/-buildless-plugin-exception/index.html
+$dokka.location:build.less.plugin.gradle.err/InvalidConfiguration///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle.err/-invalid-configuration/index.html
+$dokka.location:build.less.plugin.gradle.err/InvalidConfiguration/InvalidConfiguration/#kotlin.String?#kotlin.Throwable?/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle.err/-invalid-configuration/-invalid-configuration.html
+$dokka.location:build.less.plugin.gradle////PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/index.html
+$dokka.location:build.less.plugin.gradle/ApiKey.Companion///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-companion/index.html
+$dokka.location:build.less.plugin.gradle/ApiKey.Companion/forOrg/#kotlin.String/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-companion/for-org.html
+$dokka.location:build.less.plugin.gradle/ApiKey.Companion/forUser/#kotlin.String/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-companion/for-user.html
+$dokka.location:build.less.plugin.gradle/ApiKey.Companion/of/#kotlin.String#build.less.plugin.gradle.ApiKey.SubjectType?/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-companion/of.html
+$dokka.location:build.less.plugin.gradle/ApiKey.InvalidKey///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-invalid-key/index.html
+$dokka.location:build.less.plugin.gradle/ApiKey.InvalidKey/InvalidKey/#kotlin.Throwable/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-invalid-key/-invalid-key.html
+$dokka.location:build.less.plugin.gradle/ApiKey.SubjectType.ORG///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-subject-type/-o-r-g/index.html
+$dokka.location:build.less.plugin.gradle/ApiKey.SubjectType.USER///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-subject-type/-u-s-e-r/index.html
+$dokka.location:build.less.plugin.gradle/ApiKey.SubjectType///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-subject-type/index.html
+$dokka.location:build.less.plugin.gradle/ApiKey.SubjectType/valueOf/#kotlin.String/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-subject-type/value-of.html
+$dokka.location:build.less.plugin.gradle/ApiKey.SubjectType/values/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-subject-type/values.html
+$dokka.location:build.less.plugin.gradle/ApiKey///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/index.html
+$dokka.location:build.less.plugin.gradle/ApiKey/compareTo/#build.less.plugin.gradle.ApiKey/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/compare-to.html
+$dokka.location:build.less.plugin.gradle/ApiKey/key/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/key.html
+$dokka.location:build.less.plugin.gradle/ApiKey/toString/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/to-string.html
+$dokka.location:build.less.plugin.gradle/ApiKey/type/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/type.html
+$dokka.location:build.less.plugin.gradle/ApiKey/version/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/version.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessProjectSettings///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-buildless-project-settings/index.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessSettings///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-buildless-settings/index.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessSettings/apiKey/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-buildless-settings/api-key.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessSettings/apiKey/#build.less.plugin.gradle.ApiKey/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-buildless-settings/api-key.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessSettings/apiKey/#kotlin.String/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-buildless-settings/api-key.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessSettings/debug/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-buildless-settings/debug.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessSettings/localCache/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-buildless-settings/local-cache.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessSettings/localCache/#kotlin.Function1[build.less.plugin.gradle.BuildlessExtensionAPI.MutableLocalCacheSettings,kotlin.Unit]/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-buildless-settings/local-cache.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessSettings/remoteCache/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-buildless-settings/remote-cache.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessSettings/remoteCache/#kotlin.Function1[build.less.plugin.gradle.BuildlessExtensionAPI.MutableRemoteCacheSettings,kotlin.Unit]/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-buildless-settings/remote-cache.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessSettings/reportErrors/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-buildless-settings/report-errors.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessSettings/telemetry/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-buildless-settings/telemetry.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessSettings/transport/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-buildless-settings/transport.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.CacheSettings///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-cache-settings/index.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.CacheSettings/enabled/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-cache-settings/enabled.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.ConfigAPI///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-config-a-p-i/index.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.ConfigAPI/debug/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-config-a-p-i/debug.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.ConfigAPI/localCache/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-config-a-p-i/local-cache.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.ConfigAPI/remoteCache/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-config-a-p-i/remote-cache.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.LocalCacheSettings///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-local-cache-settings/index.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.LocalCacheSettings/directory/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-local-cache-settings/directory.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.MutableCacheSettings///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-mutable-cache-settings/index.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.MutableCacheSettings/enabled/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-mutable-cache-settings/enabled.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.MutableLocalCacheSettings///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-mutable-local-cache-settings/index.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.MutableLocalCacheSettings/directory/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-mutable-local-cache-settings/directory.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.MutableRemoteCacheSettings///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-mutable-remote-cache-settings/index.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.MutableRemoteCacheSettings/push/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-mutable-remote-cache-settings/push.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.RemoteCacheSettings///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-remote-cache-settings/index.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.RemoteCacheSettings/push/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/-remote-cache-settings/push.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/index.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI/config/#TypeParam(bounds=[kotlin.Any?])#kotlin.Function1[TypeParam(bounds=[build.less.plugin.gradle.BuildlessExtensionAPI.ConfigAPI[TypeParam(bounds=[kotlin.Any?])]]),kotlin.Unit]/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-extension-a-p-i/config.html
+$dokka.location:build.less.plugin.gradle/BuildlessService.Params///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-service/-params/index.html
+$dokka.location:build.less.plugin.gradle/BuildlessService///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-service/index.html
+$dokka.location:build.less.plugin.gradle/BuildlessService/BuildlessService/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-service/-buildless-service.html
+$dokka.location:build.less.plugin.gradle/BuildlessService/close/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-service/close.html
+$dokka.location:build.less.plugin.gradle/BuildlessService/getParameters/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-service/get-parameters.html
+$dokka.location:build.less.plugin.gradle/CacheTransport.STANDARD///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}buildless-plugin-gradle/build.less.plugin.gradle/-cache-transport/-s-t-a-n-d-a-r-d/index.html
+$dokka.location:build.less.plugin.gradle/CacheTransport///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-cache-transport/index.html
+$dokka.location:build.less.plugin.gradle/CacheTransport/valueOf/#kotlin.String/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-cache-transport/value-of.html
+$dokka.location:build.less.plugin.gradle/CacheTransport/values/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-cache-transport/values.html
+$dokka.location:build.less.plugin.settings////PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.settings/index.html
+$dokka.location:build.less.plugin.settings//buildless/org.gradle.api.initialization.Settings#kotlin.Function1[build.less.plugin.gradle.BuildlessExtensionAPI.BuildlessSettings,kotlin.Unit]/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.settings/buildless.html
+build.less.plugin.gradle
+build.less.plugin.gradle.err
+build.less.plugin.settings
+

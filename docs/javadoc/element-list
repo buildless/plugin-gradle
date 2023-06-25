@@ -1,0 +1,18 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:build.less.plugin.gradle/ApiKey.InvalidKey///PointingToDeclaration/build/less/plugin/gradle/ApiKey.InvalidKey.html
+$dokka.location:build.less.plugin.gradle/ApiKey.SubjectType///PointingToDeclaration/build/less/plugin/gradle/ApiKey.SubjectType.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessProjectSettings///PointingToDeclaration/build/less/plugin/gradle/BuildlessExtensionAPI.BuildlessProjectSettings.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.BuildlessSettings///PointingToDeclaration/build/less/plugin/gradle/BuildlessExtensionAPI.BuildlessSettings.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.CacheSettings///PointingToDeclaration/build/less/plugin/gradle/BuildlessExtensionAPI.CacheSettings.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.ConfigAPI///PointingToDeclaration/build/less/plugin/gradle/BuildlessExtensionAPI.ConfigAPI.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.LocalCacheSettings///PointingToDeclaration/build/less/plugin/gradle/BuildlessExtensionAPI.LocalCacheSettings.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.MutableCacheSettings///PointingToDeclaration/build/less/plugin/gradle/BuildlessExtensionAPI.MutableCacheSettings.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.MutableLocalCacheSettings///PointingToDeclaration/build/less/plugin/gradle/BuildlessExtensionAPI.MutableLocalCacheSettings.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.MutableRemoteCacheSettings///PointingToDeclaration/build/less/plugin/gradle/BuildlessExtensionAPI.MutableRemoteCacheSettings.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.RemoteCacheSettings///PointingToDeclaration/build/less/plugin/gradle/BuildlessExtensionAPI.RemoteCacheSettings.html
+$dokka.location:build.less.plugin.gradle/BuildlessService.Params///PointingToDeclaration/build/less/plugin/gradle/BuildlessService.Params.html
+build.less.plugin.gradle
+build.less.plugin.gradle.err
+build.less.plugin.settings
+

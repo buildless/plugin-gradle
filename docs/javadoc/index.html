@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<!-- NewPage -->
+<html lang="en"><head>
+    <title>buildless-plugin-gradle </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="dc.created" content="2020-03-25">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="dokka-javadoc-stylesheet.css" title="Style">
+    <link rel="stylesheet" type="text/css" href="jquery/jquery-ui.css" title="Style">
+    <script type="text/javascript" src="jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery-migrate-3.4.0.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="search.js"></script>
+    <script async type="text/javascript" src="module-search-index.js"></script>
+    <script async type="text/javascript" src="package-search-index.js"></script>
+    <script async type="text/javascript" src="type-search-index.js"></script>
+    <script async type="text/javascript" src="member-search-index.js"></script>
+    <script async type="text/javascript" src="tag-search-index.js"></script>
+</head><body>
+<script type="text/javascript">
+var pathtoroot = "";
+</script>
+<noscript>
+    <div>JavaScript is disabled on your browser.</div>
+</noscript><header role="banner">
+    <nav role="navigation">
+        <div class="fixedNav">
+            <!-- ========= START OF TOP NAVBAR ======= -->
+            <div class="topNav"><a id="navbar.top">
+                <!--   -->
+            </a>
+                <div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a>
+                </div>
+                <a id="navbar.top.firstrow">
+                    <!--   -->
+                </a>
+                <ul class="navList" title="Navigation">
+    <li class="navBarCell1Rev">Overview</li>
+    
+    <li>Package</li>
+    
+    <li>Class</li>
+    
+    <li><a href="overview-tree.html">Tree</a></li>
+    
+    <li><a href="deprecated.html">Deprecated</a></li>
+    <li><a href="index-files/index-1.html">Index</a></li>
+    <li>Help</li>
+</ul></div>
+            <div class="subNav">
+<ul class="navList" id="allclasses_navbar_top" style="display: block;">
+    <li><a href="allclasses.html">All&nbsp;Classes</a></li>
+</ul>
+
+<ul class="navListSearch">
+<li><label for="search">SEARCH:</label>
+<input type="text" id="search" value="search" class="ui-autocomplete-input" autocomplete="off" placeholder="Search">
+<input type="reset" id="reset" value="reset">
+</li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+</div>
+<a id="skip.navbar.top">
+<!--   -->
+</a></div><!-- ========= END OF TOP NAVBAR ========= -->
+        </div>
+        <div class="navPadding">&nbsp;</div>
+        <script type="text/javascript"><!--
+        $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
+        //-->
+        </script>
+    </nav>
+</header>
+<main role="main">
+    <div class="header">
+        <h1 class="title">buildless-plugin-gradle </h1>
+    </div>
+        <div class="header">
+            <div class="subtitle">
+                <div class="block"><p>This documentation describes reference material for the <a href=https://less.build.html>Buildless</a> plugin for <a href=https://gradle.org.html>Gradle</a>. The plugin helps with  configuration of remote build caching via the Buildless API. See the <a href=https://docs.less.build.html>Buildless docs</a> for additional info including resources, code samples, API specs, and more.</p>&lt;hr /&gt;<p>&lt;h3&gt;Complete config sample&lt;/h3&gt;</p><p><code>settings.gradle.kts</code> (Kotlin DSL):</p><pre><code>import build.less.plugin.gradle.settings.*
+
+plugins {
+  id(&quot;build.less&quot;) version &quot;...&quot;
+}
+
+buildless {
+  // various flags:
+  debug = true  // activate or deactivate debug mode (verbose logging, API tracing, etc)
+  telemetry = true  // activate or deactivate private build telemetry (build analytics in the dashboard)
+  reportErrors = true  // activate or deactivate error reporting to the buildless team (just plugin errors)
+
+  // options for configuring your API key:
+  apiKey(&quot;...&quot;)
+  apiKey(ApiKey.of(&quot;...&quot;))
+  apiKey(ApiKey.of(&quot;...&quot;, type = SubjectType.ORG))
+
+  // configuring local caching (it defaults to being active):
+  localCache.enabled = true  // turn the local cache on or off
+  localCache.directory = &quot;...&quot;  // set the directory where the cache is stored (defaults to .gradle/cache)
+
+  // or...
+  localCache {
+    enabled = true
+    directory = &quot;...&quot;
+  }
+
+  // configuring remote caching (it defaults to being active):
+  remoteCache.enabled = true  // turn the remote cache on or off
+  remoteCache.endpoint = &quot;...&quot;  // set a custom or enterprise cache endpoint (not usually necessary)
+
+  // or...
+  remoteCache {
+      enabled = true
+      endpoint = &quot;...&quot;
+  }
+}</code></pre>&lt;hr /&gt;<p>Other resources</p><ul><li><p><a href=https://docs.less.build.html>Buildless docs</a>: API docs, reference material, getting started guides</p></li><li><p><a href=https://less.build/samples.html>Code samples</a>: Sample codebases in various frameworks, pre-integrated with Buildless</p></li><li><p><a href=https://less.build/login.html>Dashboard</a>: Log in to obtain your API keys and review analytics</p></li><li><p><a href=https://support.less.build.html>Contact support</a>: Contact the support team by chat, phone, email</p></li><li><p><a href=https://less.build.html>Our website</a>: Everything else including our Terms of Service and Privacy Policy</p></li></ul></div>
+            </div>
+            <p>See: <a href="#overview_description">Description</a></p>
+        </div>
+    <div class="contentContainer">
+        
+            <div class="overviewSummary">
+                
+<table>
+<caption><span>Packages</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Package</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+
+    <tr class="altColor"><th class="colFirst" scope="row"><a href=build/less/plugin/gradle/package-summary.html>build.less.plugin.gradle</a></th><td class="colLast">Main package for the Buildless plugin for Gradle.</td></tr>
+
+    <tr class="rowColor"><th class="colFirst" scope="row"><a href=build/less/plugin/gradle/err/package-summary.html>build.less.plugin.gradle.err</a></th><td class="colLast">Exceptions which are reliably thrown by the plugin, and which the developer may want to catch.</td></tr>
+
+    <tr class="altColor"><th class="colFirst" scope="row"><a href=build/less/plugin/settings/package-summary.html>build.less.plugin.settings</a></th><td class="colLast">Entrypoint for the plugin's configuration DSL when used from <code>settings.gradle.kts</code> or <code>settings.gradle</code>.</td></tr>
+</tbody>
+</table>
+
+            </div>
+        
+    </div>
+</main>
+<footer role="contentinfo">
+    <nav role="navigation">
+        <!-- ======= START OF BOTTOM NAVBAR ====== -->
+        <div class="bottomNav"><a id="navbar.bottom">
+            <!--   -->
+        </a>
+            <div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a>
+            </div>
+            <a id="navbar.bottom.firstrow">
+                <!--   -->
+            </a>
+            <ul class="navList" title="Navigation">
+    <li class="navBarCell1Rev">Overview</li>
+    
+    <li>Package</li>
+    
+    <li>Class</li>
+    
+    <li><a href="overview-tree.html">Tree</a></li>
+    
+    <li><a href="deprecated.html">Deprecated</a></li>
+    <li><a href="index-files/index-1.html">Index</a></li>
+    <li>Help</li>
+</ul></div>
+        <a id="skip.navbar.bottom">
+            <!--   -->
+        </a>
+        <div class="subNav">
+<ul class="navList" id="allclasses_navbar_top" style="display: block;">
+    <li><a href="allclasses.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+</div>
+<a id="skip.navbar.top">
+<!--   -->
+</a></div><!-- ======== END OF BOTTOM NAVBAR ======= -->
+    </nav>
+</footer><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0"
+    style="display: none;"></ul>
+<span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span>
+</body>
+</html>
