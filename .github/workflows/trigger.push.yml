@@ -17,6 +17,7 @@ env:
   CI: true
   SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
   CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+  BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
 
 jobs:
   ## Build: Gradle Plugin
@@ -26,7 +27,6 @@ jobs:
     secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
-      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
     permissions:
       checks: write
       pull-requests: read
