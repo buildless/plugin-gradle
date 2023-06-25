@@ -22,8 +22,6 @@ plugins {
 
 dependencies {
   implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-  implementation("org.jetbrains.dokka:dokka-base:${libs.versions.dokka.get()}")
-  implementation("org.jetbrains.dokka:dokka-core:${libs.versions.dokka.get()}")
   implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
 }
 

@@ -40,11 +40,16 @@ plugins {
   alias(libs.plugins.kotlinx.plugin.abiValidator)
   alias(libs.plugins.kover)
   alias(libs.plugins.pluginPublish)
-  alias(libs.plugins.shadow)
   alias(libs.plugins.sonar)
   alias(libs.plugins.spotless)
   alias(libs.plugins.testLogger)
   alias(libs.plugins.versionCheck)
+}
+
+buildscript {
+  dependencies {
+    classpath("org.jetbrains.dokka:dokka-base:${libs.versions.dokka.get()}")
+  }
 }
 
 val kotlinVersion by properties
@@ -301,31 +306,17 @@ tasks.withType(Tar::class.java).configureEach {
 //
 
 val docs = if (buildDocs == "true") {
-  val docsTask = tasks.register("docs") {
+  tasks.register("docs") {
     dependsOn(
       tasks.dokkaHtml,
       tasks.dokkaGfm,
       tasks.dokkaJavadoc,
     )
   }
-  tasks.build.configure {
-    dependsOn(docsTask)
-  }
-  docsTask
 } else null
 
 tasks.compileKotlin.configure {
   dependsOn(tasks.bufGenerate)
-}
-
-tasks.jar.configure {
-  enabled = false
-  archiveClassifier.set("default")
-}
-
-tasks.shadowJar.configure {
-  archiveClassifier.set(null as String?)
-  doNotTrackState("too big for cache")
 }
 
 tasks.test {
@@ -374,22 +365,6 @@ tasks.withType<DokkaTask>().configureEach {
       localDirectory.set(projectDir.resolve("src"))
       remoteUrl.set(URL("https://github.com/buildless/plugin-gradle/tree/main/src"))
       remoteLineSuffix.set("#L")
-    }
-  }
-}
-
-// --- Publishing
-//
-
-// This task is added by Gradle when we use java.withJavadocJar()
-val javadocJar = tasks.named<Jar>("javadocJar") {
-  from(tasks.dokkaJavadoc)
-}
-
-publishing {
-  publications {
-    create<MavenPublication>("gradle") {
-      from(components["java"])
     }
   }
 }
