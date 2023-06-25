@@ -124,7 +124,7 @@ import java.util.concurrent.atomic.AtomicReference
       System.getenv("BUILDLESS_APIKEY")
         ?: System.getenv("BUILDLESS_API_KEY")
           ?: System.getenv("GRADLE_CACHE_PASSWORD")
-    )?.let {
+    )?.ifEmpty { null }?.ifBlank { null }?.let {
       ApiKey.of(it)
     }
 
