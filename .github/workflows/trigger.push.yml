@@ -32,5 +32,5 @@ jobs:
     with:
       jvm: '11'
       runner: ubuntu-latest
-      action: 'build test docs check'
+      action: 'build test check'
       flags: '--scan --stacktrace'
