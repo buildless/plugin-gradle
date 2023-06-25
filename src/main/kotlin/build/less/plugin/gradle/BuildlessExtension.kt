@@ -129,19 +129,18 @@ import java.util.concurrent.atomic.AtomicReference
     }
 
     /** @return Built configuration from this builder. */
-    internal fun build(): BuildlessPluginConfig = BuildlessPluginConfig(
-      transport = this.transport,
-      debug = this.debug,
-      telemetry = this.telemetry,
-      reportErrors = this.reportErrors,
-      localCache = BuildlessPluginConfig.ImmutableLocalCacheSettings.from(localCache),
-      remoteCache = BuildlessPluginConfig.ImmutableRemoteCacheSettings.from(remoteCache) {
-        apiKey ?: detectBuildlessKey()
-      },
-      apiKey = requireNotNull(this.apiKey ?: detectBuildlessKey()) {
-        "Buildless API key must be set; please see ${Constants.DOCS_LINK} for more information."
-      },
-    )
+    internal fun build(): BuildlessPluginConfig? = when (val apiKey = this.apiKey ?: detectBuildlessKey()) {
+      null -> null
+      else -> BuildlessPluginConfig(
+        transport = this.transport,
+        debug = this.debug,
+        telemetry = this.telemetry,
+        reportErrors = this.reportErrors,
+        localCache = BuildlessPluginConfig.ImmutableLocalCacheSettings.from(localCache),
+        remoteCache = BuildlessPluginConfig.ImmutableRemoteCacheSettings.from(remoteCache) { apiKey },
+        apiKey = apiKey,
+      )
+    }
   }
 
   // Initialize Gradle's build cache settings from Buildless.
@@ -151,7 +150,7 @@ import java.util.concurrent.atomic.AtomicReference
 
   override fun config(context: Settings, configure: BuildlessSettings.() -> Unit): Unit = DefaultConfigurator().apply {
     configure.invoke(this)
-  }.build().let { config ->
+  }.build()?.let { config ->
     // notify buildless service of configuration
     service.get().notifySettings(config)
 
@@ -162,5 +161,5 @@ import java.util.concurrent.atomic.AtomicReference
     context.gradle.allprojects {
       it.pluginManager.apply(BuildlessProjectPlugin::class.java)
     }
-  }
+  } ?: Unit
 }
