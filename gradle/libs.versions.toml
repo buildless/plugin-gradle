@@ -1,0 +1,203 @@
+[versions]
+elide = "1.0-v3-alpha3-b7"
+kotlin_sdk = "1.8.22"
+ksp = "1.8.22-1.0.11"
+ktlint = "0.49.1"
+protobuf = "3.23.2"
+aircompressor = "0.24"
+grpc_java = "1.52.1"
+grpc_kotlin = "1.3.0"
+zstd = "1.5.5-4"
+netty_lib = "4.1.93.Final"
+netty_tcnative = "2.0.61.Final"
+kotlinx_coroutines = "1.7.1"
+kotlinx_collections = "0.3.5"
+kotlinx_datetime = "0.4.0"
+kotlinx_serialization = "1.5.1"
+kotlinx_abiValidator = "0.13.2"
+atomicfu = "0.20.2"
+detekt = "1.23.0"
+dokka = "1.8.20"
+mermaidDokka = "0.4.5"
+pluginPublish = "1.2.0"
+versionCheck = "0.47.0"
+sonar = "4.2.0.3129"
+truth = "1.1.4"
+junit_jupiter = "5.9.3"
+testLoggerPlugin = "3.2.0"
+kotlin_uuid = "0.8.21"
+gax = "2.29.0"
+snappy = "1.1.10.1"
+google_api_common = "2.4.0"
+lz4 = "1.3.0"
+shadow_plugin = "8.1.1"
+brotli4j = "1.12.0"
+kover = "0.7.1"
+doctor_plugin = "0.8.1"
+spotless = "6.19.0"
+buildconfig_plugin = "4.0.4"
+auto_common = "1.2.1"
+auto_service = "1.1.0"
+auto_factory = "1.0.1"
+auto_value = "1.10.1"
+envoy_mobile = "0.5.0.20230529"
+buf = "1.21.0"
+protoc_gen_validate = "1.0.1"
+connect_kotlin = "0.1.7"
+pluginBuf = "0.8.4"
+parallelGzip = "1.0.5"
+sentry = "6.22.0"
+kotlinx_benchmark = "0.4.8"
+jmh_core = "1.36"
+
+[plugins]
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+doctor = { id = "com.osacky.doctor", version.ref = "doctor_plugin" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+kotlin_jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin_sdk" }
+kotlin_js = { id = "org.jetbrains.kotlin.js", version.ref = "kotlin_sdk" }
+kotlin_multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin_sdk" }
+kotlin_plugin_noarg = { id = "org.jetbrains.kotlin.plugin.noarg", version.ref = "kotlin_sdk" }
+kotlin_plugin_allopen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "kotlin_sdk" }
+kotlin_plugin_serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin_sdk" }
+kotlin_plugin_atomicfu = { id = "org.jetbrains.kotlin.plugin.atomicfu", version.ref = "kotlin_sdk" }
+kotlinx_plugin_abiValidator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "kotlinx_abiValidator" }
+kotlinx_plugin_benchmark = { id = "org.jetbrains.kotlinx.benchmark", version.ref = "kotlinx_benchmark" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+sonar = { id = "org.sonarqube", version.ref = "sonar" }
+kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
+pluginPublish = { id = "com.gradle.plugin-publish", version.ref = "pluginPublish" }
+versionCheck = { id = "com.github.ben-manes.versions", version.ref = "versionCheck" }
+testLogger = { id = "com.adarshr.test-logger", version.ref = "testLoggerPlugin" }
+shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow_plugin" }
+buildConfig = { id = "com.github.gmazzo.buildconfig", version.ref = "buildconfig_plugin" }
+buf = { id = "build.buf", version.ref = "pluginBuf" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+
+[libraries]
+aircompressor = { group = "io.airlift", name = "aircompressor", version.ref = "aircompressor" }
+junit_jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit_jupiter" }
+junit_jupiter_api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit_jupiter" }
+junit_jupiter_engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit_jupiter" }
+junit_jupiter_params = { group = "org.junit.jupiter", name = "junit-jupiter-params", version.ref = "junit_jupiter" }
+protobuf_java = { group = "com.google.protobuf", name = "protobuf-java", version.ref = "protobuf" }
+protobuf_util = { group = "com.google.protobuf", name = "protobuf-java-util", version.ref = "protobuf" }
+protobuf_kotlin = { group = "com.google.protobuf", name = "protobuf-kotlin", version.ref = "protobuf" }
+buf_proto_validate = { group = "build.buf.protoc-gen-validate", name = "protoc-gen-validate", version.ref = "protoc_gen_validate" }
+buf_proto_validate_core = { group = "build.buf.protoc-gen-validate", name = "pgv-java", version.ref = "protoc_gen_validate" }
+buf_proto_validate_stub = { group = "build.buf.protoc-gen-validate", name = "pgv-java-stub", version.ref = "protoc_gen_validate" }
+buf_proto_validate_grpc = { group = "build.buf.protoc-gen-validate", name = "pgv-java-grpc", version.ref = "protoc_gen_validate" }
+envoy_mobile = { group = "io.envoyproxy.envoymobile", name = "envoy", version.ref = "envoy_mobile" }
+buf_connect_kotlin = { group = "build.buf", name = "connect-kotlin", version.ref = "connect_kotlin" }
+kotlinx_atomicfu = { group = "org.jetbrains.kotlin", name = "atomicfu", version.ref = "kotlin_sdk" }
+kotlinx_atomicfu_linux_x64 = { group = "org.jetbrains.kotlinx", name = "atomicfu-linuxx64", version.ref = "atomicfu" }
+kotlinx_atomicfu_macos_x64 = { group = "org.jetbrains.kotlinx", name = "atomicfu-macosx64", version.ref = "atomicfu" }
+kotlinx_coroutines_core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx_coroutines" }
+kotlinx_coroutines_test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx_coroutines" }
+kotlinx_coroutines_core_js = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core-js", version.ref = "kotlinx_coroutines" }
+kotlinx_coroutines_core_jvm = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core-jvm", version.ref = "kotlinx_coroutines" }
+kotlinx_coroutines_jdk8 = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-jdk8", version.ref = "kotlinx_coroutines" }
+kotlinx_coroutines_jdk9 = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-jdk9", version.ref = "kotlinx_coroutines" }
+kotlinx_coroutines_slf4j = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-slf4j", version.ref = "kotlinx_coroutines" }
+kotlinx_coroutines_guava = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-guava", version.ref = "kotlinx_coroutines" }
+kotlinx_coroutines_reactive = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-reactive", version.ref = "kotlinx_coroutines" }
+kotlinx_coroutines_reactor = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-reactor", version.ref = "kotlinx_coroutines" }
+kotlinx_coroutines_rx2 = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-rx2", version.ref = "kotlinx_coroutines" }
+kotlinx_coroutines_rx3 = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-rx3", version.ref = "kotlinx_coroutines" }
+kotlinx_collections_immutable = { group = "org.jetbrains.kotlinx", name = "kotlinx-collections-immutable", version.ref = "kotlinx_collections" }
+kotlinx_datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinx_datetime" }
+kotlinx_serialization_core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "kotlinx_serialization" }
+kotlinx_serialization_core_js = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core-js", version.ref = "kotlinx_serialization" }
+kotlinx_serialization_core_jvm = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core-jvm", version.ref = "kotlinx_serialization" }
+kotlinx_serialization_json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx_serialization" }
+kotlinx_serialization_json_js = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json-js", version.ref = "kotlinx_serialization" }
+kotlinx_serialization_json_jvm = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json-jvm", version.ref = "kotlinx_serialization" }
+kotlinx_serialization_protobuf = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-protobuf", version.ref = "kotlinx_serialization" }
+kotlinx_serialization_protobuf_js = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-protobuf-js", version.ref = "kotlinx_serialization" }
+kotlinx_serialization_protobuf_jvm = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-protobuf-jvm", version.ref = "kotlinx_serialization" }
+kotlinx_serialization_properties = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-properties", version.ref = "kotlinx_serialization" }
+kotlinx_serialization_properties_jvm = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-properties-jvm", version.ref = "kotlinx_serialization" }
+kotlinx_benchmark = { group = "org.jetbrains.kotlinx", name = "kotlinx-benchmark-runtime", version.ref = "kotlinx_benchmark" }
+jmh_core = { group = "org.openjdk.jmh", name = "jmh-core", version.ref = "jmh_core" }
+ksp_api = { group = "com.google.devtools.ksp", name = "symbol-processing-api", version.ref = "ksp" }
+ksp = { group = "com.google.devtools.ksp", name = "symbol-processing", version.ref = "ksp" }
+autoService_ksp = { module = "dev.zacsweers.autoservice:auto-service-ksp", version = "1.0.0" }
+truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
+truth_proto = { group = "com.google.truth.extensions", name = "truth-proto-extension", version.ref = "truth" }
+uuid = { group = "dev.elide", name = "uuid", version.ref = "kotlin_uuid" }
+lz4 = { group = "net.jpountz.lz4", name = "lz4", version.ref = "lz4" }
+zstd = { group = "com.github.luben", name = "zstd-jni", version.ref = "zstd" }
+grpc_api = { group = "io.grpc", name = "grpc-api", version.ref = "grpc_java" }
+grpc_auth = { group = "io.grpc", name = "grpc-auth", version.ref = "grpc_java" }
+grpc_bom = { group = "io.grpc", name = "grpc-bom", version.ref = "grpc_java" }
+grpc_core = { group = "io.grpc", name = "grpc-core", version.ref = "grpc_java" }
+grpc_stub = { group = "io.grpc", name = "grpc-stub", version.ref = "grpc_java" }
+grpc_services = { group = "io.grpc", name = "grpc-services", version.ref = "grpc_java" }
+grpc_testing = { group = "io.grpc", name = "grpc-testing", version.ref = "grpc_java" }
+grpc_netty = { group = "io.grpc", name = "grpc-netty", version.ref = "grpc_java" }
+grpc_protobuf = { group = "io.grpc", name = "grpc-protobuf", version.ref = "grpc_java" }
+grpc_kotlin_stub = { group = "io.grpc", name = "grpc-kotlin-stub", version.ref = "grpc_kotlin" }
+netty_bom = { group = "io.netty", name = "netty-bom", version.ref = "netty_lib" }
+netty_transport_native_unixCommon = { group = "io.netty", name = "netty-transport-native-unix-common", version.ref = "netty_lib" }
+netty_transport_native_epoll = { group = "io.netty", name = "netty-transport-native-epoll", version.ref = "netty_lib" }
+netty_transport_native_kqueue = { group = "io.netty", name = "netty-transport-native-kqueue", version.ref = "netty_lib" }
+netty_tcnative = { group = "io.netty", name = "netty-tcnative", version.ref = "netty_tcnative" }
+netty_tcnative_boringssl_static = { group = "io.netty", name = "netty-tcnative-boringssl-static", version.ref = "netty_tcnative" }
+netty_resolver_dns_native_macos = { group = "io.netty", name = "netty-resolver-dns-native-macos", version.ref = "netty_lib" }
+gax_java = { group = "com.google.api", name = "gax", version.ref = "gax" }
+gax_java_grpc = { group = "com.google.api", name = "gax-grpc", version.ref = "gax" }
+google_api_common = { group = "com.google.api", name = "api-common", version.ref = "google_api_common" }
+google_auto_service = { group = "com.google.auto.service", name = "auto-service", version.ref = "auto_service" }
+google_auto_service_annotations = { group = "com.google.auto.service", name = "auto-service-annotations", version.ref = "auto_service" }
+google_auto_factory = { group = "com.google.auto.factory", name = "auto-factory", version.ref = "auto_factory" }
+google_auto_factory_annotations = { group = "com.google.auto.factory", name = "auto-factory-annotations", version.ref = "auto_factory" }
+google_auto_value_annotations = { group = "com.google.auto.value", name = "auto-value-annotations", version.ref = "auto_value" }
+google_auto_value = { group = "com.google.auto.value", name = "auto-value", version.ref = "auto_value" }
+google_auto_common = { group = "com.google.auto", name = "auto-common", version.ref = "auto_common" }
+parallelGzip = { group = "org.anarres", name = "parallelgzip", version.ref = "parallelGzip" }
+brotli = { group = "com.aayushatharva.brotli4j", name = "brotli4j", version.ref = "brotli4j" }
+brotli_native_osx = { group = "com.aayushatharva.brotli4j", name = "native-osx-x86_64", version.ref = "brotli4j" }
+brotli_native_osx_amd64 = { group = "com.aayushatharva.brotli4j", name = "native-osx-x86_64", version.ref = "brotli4j" }
+brotli_native_osx_arm64 = { group = "com.aayushatharva.brotli4j", name = "native-osx-aarch64", version.ref = "brotli4j" }
+brotli_native_linux = { group = "com.aayushatharva.brotli4j", name = "native-linux-x86_64", version.ref = "brotli4j" }
+brotli_native_linux_amd64 = { group = "com.aayushatharva.brotli4j", name = "native-linux-x86_64", version.ref = "brotli4j" }
+brotli_native_linux_arm64 = { group = "com.aayushatharva.brotli4j", name = "native-linux-aarch64", version.ref = "brotli4j" }
+brotli_native_windows = { group = "com.aayushatharva.brotli4j", name = "native-windows-x86_64", version.ref = "brotli4j" }
+brotli_native_windows_amd64 = { group = "com.aayushatharva.brotli4j", name = "native-windows-x86_64", version.ref = "brotli4j" }
+snappy = { group = "org.xerial.snappy", name = "snappy-java", version.ref = "snappy" }
+sentry = { group = "io.sentry", name = "sentry", version.ref = "sentry" }
+## Elide deps (not in catalog at this time) @TODO(sgammon): transition to catalog
+elide_model = { group = "dev.elide", name= "elide-model", version.ref = "elide" }
+elide_proto_core = { group = "dev.elide", name = "elide-proto-core", version.ref = "elide" }
+elide_proto_protobuf = { group = "dev.elide", name = "elide-proto-protobuf", version.ref = "elide" }
+## Plugins
+plugin_buf = { group = "build.buf", name = "buf-gradle-plugin", version.ref = "pluginBuf" }
+plugin_sonar = { group = "org.sonarsource.scanner.gradle", name = "sonarqube-gradle-plugin", version.ref = "sonar" }
+
+[bundles]
+kotlinx_coroutines_jvm = [
+    "kotlinx_coroutines_core",
+    "kotlinx_coroutines_jdk8",
+    "kotlinx_coroutines_jdk9",
+    "kotlinx_coroutines_slf4j"
+]
+kotlinx_serialization = [
+    "kotlinx_serialization_core",
+    "kotlinx_serialization_json",
+    "kotlinx_serialization_protobuf",
+    "kotlinx_serialization_properties"
+]
+kotlinx_atomicfu = [
+    "kotlinx_atomicfu",
+    "kotlinx_atomicfu_linux_x64",
+    "kotlinx_atomicfu_macos_x64"
+]
+kotlinx = [
+    "kotlinx_coroutines_core",
+    "kotlinx_serialization_json",
+    "kotlinx_serialization_protobuf",
+    "kotlinx_serialization_properties",
+    "kotlinx_atomicfu",
+    "kotlinx_collections_immutable",
+    "kotlinx_datetime",
+]

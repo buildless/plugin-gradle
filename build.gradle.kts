@@ -33,7 +33,6 @@ plugins {
 
   alias(libs.plugins.buf)
   alias(libs.plugins.buildConfig)
-  alias(libs.plugins.cyclonedx)
   alias(libs.plugins.detekt)
   alias(libs.plugins.dokka)
   alias(libs.plugins.kotlin.plugin.allopen)
