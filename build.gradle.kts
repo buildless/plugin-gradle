@@ -328,6 +328,7 @@ tasks.jar.configure {
 
 tasks.shadowJar.configure {
   archiveClassifier.set(null as String?)
+  doNotTrackState("too big for cache")
 }
 
 tasks.test {
