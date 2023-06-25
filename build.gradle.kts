@@ -39,6 +39,7 @@ plugins {
   alias(libs.plugins.kotlinx.plugin.abiValidator)
   alias(libs.plugins.kover)
   alias(libs.plugins.pluginPublish)
+  alias(libs.plugins.shadow)
   alias(libs.plugins.sonar)
   alias(libs.plugins.spotless)
   alias(libs.plugins.testLogger)
@@ -321,6 +322,15 @@ val docs = if (buildDocs == "true") {
 
 tasks.compileKotlin.configure {
   dependsOn(tasks.bufGenerate)
+}
+
+tasks.jar.configure {
+  enabled = false
+  archiveClassifier.set("default")
+}
+
+tasks.shadowJar.configure {
+  archiveClassifier.set(null as String?)
 }
 
 tasks.test {
