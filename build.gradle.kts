@@ -17,10 +17,10 @@
 import build.buf.gradle.BUF_BUILD_DIR
 import build.buf.gradle.GENERATED_DIR
 import org.gradle.jvm.tasks.Jar
+import org.jetbrains.dokka.DokkaConfiguration.Visibility
 import org.jetbrains.dokka.base.DokkaBase
 import org.jetbrains.dokka.base.DokkaBaseConfiguration
 import org.jetbrains.dokka.gradle.DokkaTask
-import org.jetbrains.dokka.DokkaConfiguration.Visibility
 import org.jetbrains.kotlin.gradle.dsl.ExplicitApiMode
 import java.net.URL
 
@@ -34,6 +34,7 @@ plugins {
   alias(libs.plugins.buf)
   alias(libs.plugins.buildConfig)
   alias(libs.plugins.detekt)
+  alias(libs.plugins.doctor)
   alias(libs.plugins.dokka)
   alias(libs.plugins.kotlin.plugin.allopen)
   alias(libs.plugins.kotlinx.plugin.abiValidator)
@@ -88,7 +89,6 @@ val samplesList = arrayListOf(
 //
 //  ------------------------------------------------------------------------------------------------------------------
 //
-
 
 // --- Plugin Configuration
 //
@@ -223,7 +223,6 @@ if (enableChecks == "true") sonar {
   }
 }
 
-
 // --- Dependencies, Source Sets, Configurations
 //
 
@@ -282,7 +281,6 @@ dependencies {
   dokkaHtmlPlugin("org.jetbrains.dokka:versioning-plugin:${libs.versions.dokka.get()}")
 }
 
-
 // --- Project Baselines
 //
 
@@ -301,7 +299,6 @@ tasks.withType(Tar::class.java).configureEach {
   isReproducibleFileOrder = true
   isPreserveFileTimestamps = false
 }
-
 
 // --- Task Configuration
 //
