@@ -47,12 +47,6 @@ plugins {
   alias(libs.plugins.versionCheck)
 }
 
-buildscript {
-  dependencies {
-    classpath("org.jetbrains.dokka:dokka-base:${libs.versions.dokka.get()}")
-  }
-}
-
 val kotlinVersion by properties
 val javaVersion: String by properties
 val kotlinLangVersion: String by properties
