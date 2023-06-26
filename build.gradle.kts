@@ -217,9 +217,7 @@ publishing {
     }
   }
   publications {
-    create<MavenPublication>("mavenJava") {
-      from(components["java"])
-
+    create<MavenPublication>("pluginMaven") {
       pom {
         name.set("Buildless Plugin for Gradle")
         description.set("Easily configure Gradle builds for use with Buildless as a remote build cache")
@@ -243,10 +241,6 @@ publishing {
       }
     }
   }
-}
-
-signing {
-  sign(publishing.publications["mavenJava"])
 }
 
 spdxSbom {

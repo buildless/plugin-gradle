@@ -1,14 +1,17 @@
 <p align="center">
   <a href="https://less.build">
-    <img src="./dokka/images/wordmark.svg" width="500" />
+    <img src="./dokka/images/wordmark.svg" width="400" />
     <br />
   </a>
+  <center>
+    <h2>Buildless for Gradle</h2>
+  </center>
 </p>
-
-# Buildless Plugin for Gradle
+<br />
 
 [![CI](https://github.com/buildless/plugin-gradle/actions/workflows/trigger.yml/badge.svg)](https://github.com/buildless/plugin-gradle/actions/workflows/trigger.push.yml)
 ![Gradle Plugin Portal](https://img.shields.io/gradle-plugin-portal/v/build.less)
+![Maven Central](https://img.shields.io/maven-central/v/build.less/buildless-plugin-gradle)
 ![Discord](https://img.shields.io/discord/1119121740161884252?b1)
 [![codecov](https://codecov.io/gh/elide-dev/buildless/branch/main/graph/badge.svg?token=dXhkCeFqQH)](https://codecov.io/gh/elide-dev/cache)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=elide-dev_cache&metric=alert_status&token=3bb6370456614d6406aa9cfa772a7fd1bc368f3f)](https://sonarcloud.io/summary/new_code?id=elide-dev_cache)
@@ -18,7 +21,7 @@
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.8.22-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![Elide](https://elide.dev/shield)](https://elide.dev)
 
-This source set defines a plugin for Gradle which integrates with [Buildless][1] for [remote build caching][2].
+This repo defines a plugin for Gradle which integrates with [Buildless][1] for [remote build caching][2].
 Buildless can be used as a [drop-in remote HTTPS cache endpoint][3], or you can use this plug-in which offers a number
 of extra luxurious features (see below).
 
