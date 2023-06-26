@@ -63,7 +63,7 @@ jobs:
 
   ## Checks: CodeQL
   check-codeql:
-    name: "CodeQL"
+    name: "Checks"
     needs: ["build-plugin"]
     uses: ./.github/workflows/module.codeql.yml
     secrets:
@@ -78,7 +78,7 @@ jobs:
 
   ## Checks: Detekt
   check-detekt:
-    name: "Detekt"
+    name: "Checks"
     needs: ["build-plugin"]
     uses: ./.github/workflows/module.detekt.yml
     secrets:
@@ -93,7 +93,7 @@ jobs:
 
   ## Checks: Qodana
   check-qodana:
-    name: "Detekt"
+    name: "Checks"
     needs: ["build-plugin"]
     uses: ./.github/workflows/module.qodana.yml
     secrets:

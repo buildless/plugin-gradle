@@ -19,15 +19,20 @@ on:
 
 
 env:
-  DETEKT_RELEASE_TAG: v1.15.0
+  DETEKT_RELEASE_TAG: v1.23.0
 
 jobs:
   scan:
-    name: Scan
+    name: Detekt
     runs-on: ubuntu-latest
     steps:
       - name: "Setup: Checkout"
         uses: actions/checkout@v3
+      - name: "Setup: JDK ${{ vars.JVM_VERSION }}"
+        uses: buildjet/setup-java@v3
+        with:
+          distribution: "adopt-hotspot"
+          java-version: ${{ vars.JVM_VERSION }}
       - name: "Setup: Resolve Detekt Download URL"
         id: detekt_info
         env:

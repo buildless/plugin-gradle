@@ -27,11 +27,16 @@ on:
 
 jobs:
   scan:
-    name: Scan
+    name: Qodana
     runs-on: ubuntu-latest
     steps:
       - name: "Setup: Checkout"
         uses: actions/checkout@v3
+      - name: "Setup: JDK ${{ vars.JVM_VERSION }}"
+        uses: buildjet/setup-java@v3
+        with:
+          distribution: "adopt-hotspot"
+          java-version: ${{ vars.JVM_VERSION }}
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@main
         env:
