@@ -58,7 +58,7 @@ jobs:
       jvm: '11'
       label: "Gradle Plugin"
       runner: ubuntu-latest
-      action: 'build test check sonar'
+      action: 'build test koverXmlReport check sonar'
       flags: '--scan --stacktrace'
       coverage: true
 
