@@ -74,6 +74,8 @@ jobs:
       pull-requests: read
       id-token: write
       contents: read
+      actions: read
+      security-events: write
 
   ## Checks: Dependency Review
   dependency-review:
