@@ -7,7 +7,7 @@
 
 # Buildless Plugin for Gradle
 
-[![CI](https://github.com/buildless/plugin-gradle/actions/workflows/trigger.push.yml/badge.svg)](https://github.com/buildless/plugin-gradle/actions/workflows/trigger.push.yml)
+[![CI](https://github.com/buildless/plugin-gradle/actions/workflows/trigger.yml/badge.svg)](https://github.com/buildless/plugin-gradle/actions/workflows/trigger.push.yml)
 ![Gradle Plugin Portal](https://img.shields.io/gradle-plugin-portal/v/build.less)
 ![Discord](https://img.shields.io/discord/1119121740161884252?b1)
 [![codecov](https://codecov.io/gh/elide-dev/buildless/branch/main/graph/badge.svg?token=dXhkCeFqQH)](https://codecov.io/gh/elide-dev/cache)
