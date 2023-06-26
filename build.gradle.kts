@@ -215,7 +215,7 @@ if (enableChecks == "true") sonar {
     property("sonar.sources", "$projectDir/src/main/kotlin")
     property("sonar.java.binaries", "$projectDir/build/classes")
     property("sonar.projectKey", "buildless_plugin-gradle")
-    property("sonar.organization", "elide-dev")
+    property("sonar.organization", "buildless")
     property("sonar.host.url", "https://sonarcloud.io")
     property("sonar.dynamicAnalysis", "reuseReports")
     property("sonar.junit.reportsPath", "$rootDir/build/test-results/test/")

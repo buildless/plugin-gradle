@@ -5,6 +5,14 @@ on:
   merge_group:
     types: [checks_requested]
 
+  ## Event: Push on `main` or `stable`
+  push:
+    branches:
+      - main
+      - stable
+    tags:
+      - "v*"
+
   ## Event: PR
   pull_request:
     types:
@@ -57,6 +65,7 @@ jobs:
   ## Checks: CodeQL
   check-codeql:
     name: "CodeQL"
+    needs: ["build-plugin"]
     uses: .github/workflows/module.codeql.yml
     secrets:
       BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
@@ -65,3 +74,15 @@ jobs:
       pull-requests: read
       id-token: write
       contents: read
+
+  ## Checks: Dependency Review
+  dependency-review:
+    name: "Dependency Review"
+    needs: ["build-plugin"]
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: "Setup: Checkout"
+        uses: actions/checkout@v3
+      - name: "Analysis: Dependency Review"
+        uses: actions/dependency-review-action@v3
