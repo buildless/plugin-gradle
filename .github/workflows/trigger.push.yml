@@ -35,5 +35,7 @@ jobs:
     with:
       jvm: '11'
       runner: ubuntu-latest
-      action: 'build test check'
+      coverage: true
+      coverage_report: 'build/reports/kover/report.xml'
+      action: 'build test check sonar'
       flags: '--scan --stacktrace'
