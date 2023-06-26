@@ -43,7 +43,7 @@ env:
 jobs:
   ## Build: Gradle Plugin
   build-plugin:
-    name: "Gradle Plugin"
+    name: "Build"
     uses: elide-dev/build-infra/.github/workflows/jvm.gradle.yml@main
     secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -56,6 +56,7 @@ jobs:
       contents: read
     with:
       jvm: '11'
+      label: "Gradle Plugin"
       runner: ubuntu-latest
       action: 'build test check sonar'
       flags: '--scan --stacktrace'
@@ -63,7 +64,7 @@ jobs:
 
   ## Checks: CodeQL
   check-codeql:
-    name: "Checks"
+    name: "Check"
     needs: ["build-plugin"]
     uses: ./.github/workflows/module.codeql.yml
     secrets:
@@ -78,7 +79,7 @@ jobs:
 
   ## Checks: Detekt
   check-detekt:
-    name: "Checks"
+    name: "Check"
     needs: ["build-plugin"]
     uses: ./.github/workflows/module.detekt.yml
     secrets:
@@ -93,7 +94,7 @@ jobs:
 
   ## Checks: Qodana
   check-qodana:
-    name: "Checks"
+    name: "Check"
     needs: ["build-plugin"]
     uses: ./.github/workflows/module.qodana.yml
     secrets:
