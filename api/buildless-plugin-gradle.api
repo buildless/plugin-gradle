@@ -29,6 +29,7 @@ public final class build/less/plugin/gradle/ApiKey$Companion {
 
 public final class build/less/plugin/gradle/ApiKey$InvalidKey : build/less/plugin/gradle/err/InvalidConfiguration {
 	public fun <init> (Ljava/lang/Throwable;)V
+	public fun getCode ()Ljava/lang/String;
 }
 
 public final class build/less/plugin/gradle/ApiKey$SubjectType : java/lang/Enum {
@@ -128,6 +129,7 @@ public abstract class build/less/plugin/gradle/err/InvalidConfiguration : build/
 	public fun <init> ()V
 	public fun <init> (Ljava/lang/String;Ljava/lang/Throwable;)V
 	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public abstract fun getCode ()Ljava/lang/String;
 }
 
 public final class build/less/plugin/settings/EntryKt {
