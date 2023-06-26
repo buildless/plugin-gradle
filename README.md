@@ -18,7 +18,7 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle)
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.8.22-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.0-RC-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![Elide](https://elide.dev/shield)](https://elide.dev)
 
 This repo defines a plugin for Gradle which integrates with [Buildless][1] for [remote build caching][2].
