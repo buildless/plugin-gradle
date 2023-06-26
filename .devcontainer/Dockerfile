@@ -2,7 +2,7 @@ FROM --platform=linux/amd64 mcr.microsoft.com/vscode/devcontainers/base:ubuntu-2
 
 ARG DEV_USER=dev
 ARG GRADLE_VERSION=8.1.1
-ARG KOTLIN_VERSION=1.8.22
+ARG KOTLIN_VERSION=1.9.0-RC
 ARG GRADLE_DIST=bin
 ARG JAVA_VERSION=java19
 
