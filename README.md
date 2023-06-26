@@ -1,11 +1,8 @@
 <p align="center">
   <a href="https://less.build">
-    <img src="./dokka/images/wordmark.svg" width="400" />
+    <img src="./dokka/images/masthead@4x.png" width="800" />
     <br />
   </a>
-  <center>
-    <h2>Buildless for Gradle</h2>
-  </center>
 </p>
 <br />
 
