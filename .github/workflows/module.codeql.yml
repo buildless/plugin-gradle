@@ -36,17 +36,12 @@ jobs:
   analyze:
     name: Analyze
     continue-on-error: true
-    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || inputs.runner }}
-    timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
+    runs-on: ${{ inputs.runner }}
+    timeout-minutes: 360
     permissions:
       actions: read
       contents: read
       security-events: write
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: ['java']
 
     steps:
       - name: "Setup: Checkout"
@@ -54,7 +49,7 @@ jobs:
       - name: "Setup: Initialize CodeQL"
         uses: github/codeql-action/init@v2
         with:
-          languages: ${{ matrix.language }}
+          languages: java
       - name: "Build: Plugin"
         uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629 # v2
         id: gradlebuild
@@ -74,4 +69,4 @@ jobs:
         uses: github/codeql-action/analyze@v2
         continue-on-error: true
         with:
-          category: "/language:${{matrix.language}}"
+          category: "/language:java"
