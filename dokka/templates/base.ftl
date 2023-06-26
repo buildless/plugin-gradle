@@ -2,8 +2,13 @@
 <#import "includes/header.ftl" as header>
 <#import "includes/footer.ftl" as footer>
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" prefix="og: https://ogp.me/ns#">
 <head>
+    <meta charset="utf-8" />
+    <meta property="og:title" content="Buildless for Gradle" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://docs.gradle.less.build/" />
+    <meta property="og:image" content="https://docs.gradle.less.build/images/ogimage-banner-r1@1x.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <@page_metadata.display/>
     <@template_cmd name="pathToRoot"><script>var pathToRoot = "${pathToRoot}";</script></@template_cmd>
@@ -55,4 +60,38 @@
         </div>
     </div>
 </div>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "Buildless for Gradle",
+        "alternateName": "Buildless Plugin for Gradle",
+        "runtimePlatform": "Java 11",
+        "programmingLanguage": "Kotlin",
+        "creativeWorkStatus": "Published",
+        "codeRepository": "https://github.com/buildless/plugin-gradle",
+        "targetProduct": {
+            "name": "Gradle",
+            "alternateName": "Gradle Plugins",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Gradle, Inc."
+            }
+        },
+        "author": {
+            "@type": "Person",
+            "givenName": "Sam",
+            "familyName": "Gammon",
+            "url": "https://github.com/sgammon"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Buildless",
+            "url": "https://less.build",
+            "sameAs": [
+                "https://github.com/buildless"
+            ]
+        }
+    }
+</script>
 </body>
