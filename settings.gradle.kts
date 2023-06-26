@@ -24,7 +24,7 @@ dependencyResolutionManagement {
     RepositoriesMode.PREFER_SETTINGS
   )
   repositories {
-    mavenCentral()
+    maven("https://maven.pkg.st/")
   }
 }
 
