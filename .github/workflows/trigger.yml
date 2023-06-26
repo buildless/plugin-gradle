@@ -1,4 +1,4 @@
-name: PR
+name: CI
 
 on:
   ## Event: Merge group checks
@@ -66,7 +66,7 @@ jobs:
   check-codeql:
     name: "CodeQL"
     needs: ["build-plugin"]
-    uses: .github/workflows/module.codeql.yml
+    uses: ./.github/workflows/module.codeql.yml@main
     secrets:
       BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
     permissions:
