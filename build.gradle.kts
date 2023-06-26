@@ -113,6 +113,7 @@ buildConfig {
 buf {
   enforceFormat = true
   publishSchema = false
+  toolVersion = libs.versions.buf.get()
 
   generate {
     includeImports = true
@@ -373,6 +374,7 @@ dependencies {
   testImplementation(kotlin("test"))
   testImplementation(libs.protobuf.util)
   testImplementation(libs.grpc.testing)
+  testImplementation(libs.truth)
   testImplementation(libs.truth.proto)
   testImplementation(libs.junit.jupiter.api)
   testImplementation(libs.junit.jupiter.params)
