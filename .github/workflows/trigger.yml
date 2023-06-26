@@ -2,8 +2,7 @@ name: CI
 
 on:
   ## Event: Merge group checks
-  merge_group:
-    types: [checks_requested]
+  merge_group: {}
 
   ## Event: Push on `main` or `stable`
   push:
@@ -68,6 +67,37 @@ jobs:
     needs: ["build-plugin"]
     uses: ./.github/workflows/module.codeql.yml
     secrets:
+      BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
+    permissions:
+      checks: write
+      pull-requests: read
+      id-token: write
+      contents: read
+      actions: read
+      security-events: write
+
+  ## Checks: Detekt
+  check-detekt:
+    name: "Detekt"
+    needs: ["build-plugin"]
+    uses: ./.github/workflows/module.detekt.yml
+    secrets:
+      BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
+    permissions:
+      checks: write
+      pull-requests: read
+      id-token: write
+      contents: read
+      actions: read
+      security-events: write
+
+  ## Checks: Qodana
+  check-qodana:
+    name: "Detekt"
+    needs: ["build-plugin"]
+    uses: ./.github/workflows/module.qodana.yml
+    secrets:
+      QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
       BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
     permissions:
       checks: write

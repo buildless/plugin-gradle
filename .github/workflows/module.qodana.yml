@@ -1,0 +1,39 @@
+name: Qodana
+
+on:
+  schedule:
+    - cron: '39 6 * * 2'
+
+  workflow_call:
+    secrets:
+      ## Secrets: Qodana Token
+      QODANA_TOKEN:
+        required: true
+        description: "Qodana reporting token"
+
+      ## Buildless API key
+      BUILDLESS_APIKEY:
+        required: true
+        description: "Buildless API key"
+
+  workflow_dispatch:
+    secrets:
+      QODANA_TOKEN:
+        required: true
+        description: "Qodana reporting token"
+      BUILDLESS_APIKEY:
+        required: true
+        description: "Buildless API key"
+
+jobs:
+  scan:
+    name: Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Setup: Checkout"
+        uses: actions/checkout@v3
+      - name: 'Qodana Scan'
+        uses: JetBrains/qodana-action@main
+        env:
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+          BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
