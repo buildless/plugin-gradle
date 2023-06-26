@@ -134,10 +134,18 @@ import java.util.SortedSet
    * Exception which is thrown when an API key (detected or provided) is found to be invalid. This is a configuration
    * error which must be remedied by the user.
    */
-  public class InvalidKey(cause: Throwable) : InvalidConfiguration("Buildless API key is invalid", cause)
+  public class InvalidKey(cause: Throwable) : InvalidConfiguration("Buildless API key is invalid", cause) {
+    override val code: String get() = "API_KEY_INVALID"
+  }
 
   /** Provides factory methods for easily creating [ApiKey] objects. */
   public companion object {
+    /** Minimum key length. */
+    internal const val MIN_KEY_LENGTH: Int = 24
+
+    /** Maximum key length. */
+    internal const val MAX_KEY_LENGTH: Int = 64
+
     // Set of allowed API key prefixes.
     private val allowedKeyPrefixes: SortedSet<String> = sortedSetOf("org", "user")
 
@@ -145,8 +153,8 @@ import java.util.SortedSet
     private fun checkAndCreate(value: String, type: SubjectType?): ApiKey = try {
       require(value.isNotEmpty()) { "Buildless API key cannot be empty" }
       require(value.isNotBlank()) { "Buildless API key cannot be blank" }
-      require(value.length >= 24) { "Buildless API key is too short" }
-      require(value.length <= 64) { "Buildless API key is too long" }
+      require(value.length >= MIN_KEY_LENGTH) { "Buildless API key is too short" }
+      require(value.length <= MAX_KEY_LENGTH) { "Buildless API key is too long" }
       require(value.contains("_")) { "Buildless API key is malformed" }
       val prefix = value.substringBefore("_")
       require(prefix in allowedKeyPrefixes) { "Unrecognized key prefix: $prefix" }

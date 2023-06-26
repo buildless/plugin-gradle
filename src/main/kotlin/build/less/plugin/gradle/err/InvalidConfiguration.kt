@@ -23,4 +23,9 @@ package build.less.plugin.gradle.err
 public abstract class InvalidConfiguration(
   message: String? = null,
   cause: Throwable? = null,
-) : BuildlessPluginException(message, cause)
+) : BuildlessPluginException(message, cause) {
+  /**
+   * Unique error code for this error case.
+   */
+  public abstract val code: String
+}
