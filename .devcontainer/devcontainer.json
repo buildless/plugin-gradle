@@ -1,0 +1,56 @@
+{
+  "name": "buildless-plugin-gradle",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "overrideCommand": false,
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "gradle.autoDetect": "on",
+        "gradle.nestedProjects": false,
+        "java.completion.enabled": true,
+        "java.debug.settings.enableRunDebugCodeLens": true,
+        "java.jdt.ls.java.home": "/usr/local/sdkman/candidates/java/current",
+        "java.test.editor.enableShortcuts": true
+      },
+      "extensions": [
+        "mathiasfrohlich.kotlin",
+        "github.github-vscode-theme",
+        "github.vscode-github-actions",
+        "github.vscode-codeql",
+        "github.codespaces",
+        "github.copilot",
+        "github.copilot-labs",
+        "github.vscode-pull-request-github",
+        "github.remotehub",
+        "redhat.vscode-yaml",
+        "vscjava.vscode-gradle",
+        "bufbuild.vscode-buf",
+        "fwcd.kotlin",
+        "sourcegraph.sourcegraph"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": { "version": "latest" },
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "20",
+      "jdkDistro": "open",
+      "installMaven": "false",
+      "installGradle": "false"
+    }
+  },
+  "containerEnv": {
+    "JAVA_HOME": "/usr/local/sdkman/candidates/java/current",
+    "GRADLE_CACHE_LOCAL": "true",
+    "GRADLE_CACHE_PUSH": "true",
+    "GRADLE_CACHE_REMOTE": "true",
+    "GRADLE_CACHE_USERNAME": "apikey",
+    "CACHE_ENDPOINT": "https://gradle.less.build/cache/generic/",
+    "TEST_EXCEPTIONS": "true",
+    "EDITOR": "code --wait"
+  },
+  "updateContentCommand": "./gradlew dependencies || echo \"Dependencies download failed. Skipping.\";",
+  "remoteUser": "dev"
+}
