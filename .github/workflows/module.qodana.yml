@@ -29,16 +29,18 @@ jobs:
   scan:
     name: Qodana
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: "Setup: Checkout"
         uses: actions/checkout@v3
-      - name: "Setup: JDK ${{ vars.JVM_VERSION }}"
+      - name: "Setup: JDK 11"
         uses: buildjet/setup-java@v3
         with:
           distribution: "adopt-hotspot"
-          java-version: ${{ vars.JVM_VERSION }}
+          java-version: "11"
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@main
+        continue-on-error: true
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
           BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}

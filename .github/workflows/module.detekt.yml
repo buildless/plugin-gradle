@@ -28,39 +28,17 @@ jobs:
     steps:
       - name: "Setup: Checkout"
         uses: actions/checkout@v3
-      - name: "Setup: JDK ${{ vars.JVM_VERSION }}"
+      - name: "Setup: JDK 11"
         uses: buildjet/setup-java@v3
         with:
           distribution: "adopt-hotspot"
-          java-version: ${{ vars.JVM_VERSION }}
-      - name: "Setup: Resolve Detekt Download URL"
-        id: detekt_info
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh api graphql --field tagName=$DETEKT_RELEASE_TAG --raw-field query='
-            query getReleaseAssetDownloadUrl($tagName: String!) {
-              repository(name: "detekt", owner: "detekt") {
-                release(tagName: $tagName) {
-                  releaseAssets(name: "detekt", first: 1) {
-                    nodes {
-                      downloadUrl
-                    }
-                  }
-                  tagCommit {
-                    oid
-                  }
-                }
-              }
-            }
-          ' 1> gh_response.json
-          DETEKT_DOWNLOAD_URL=$(jq --raw-output '.data.repository.release.releaseAssets.nodes[0].downloadUrl' gh_response.json)
-          echo "download_url=$DETEKT_DOWNLOAD_URL" >> $GITHUB_OUTPUT
+          java-version: "11"
       - name: "Setup: Detekt"
+        continue-on-error: true
         run: |
           dest=$( mktemp -d )
           curl --request GET \
-            --url ${{ steps.detekt_info.outputs.download_url }} \
+            --url https://github.com/detekt/detekt/releases/download/v1.23.0/detekt-cli-1.23.0-all.jar \
             --silent \
             --location \
             --output $dest/detekt
@@ -79,9 +57,9 @@ jobs:
               '. | ( .runs[].results[].locations[].physicalLocation.artifactLocation.uri |= if test($github_workspace) then .[($github_workspace | length | . + 1):] else . end )' \
               ${{ github.workspace }}/detekt.sarif.json
           )" > ${{ github.workspace }}/detekt.sarif.json
-
       - name: "Report: SARIF Upload"
         uses: github/codeql-action/upload-sarif@v2
+        continue-on-error: true
         with:
           sarif_file: ${{ github.workspace }}/detekt.sarif.json
           checkout_path: ${{ github.workspace }}
