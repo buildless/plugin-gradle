@@ -1,6 +1,10 @@
 <p align="center">
   <a href="https://less.build">
-    <img src="./dokka/images/masthead@4x.png" width="800" />
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./dokka/images/masthead-dark@4x.png">
+      <source media="(prefers-color-scheme: light)" srcset="./dokka/images/masthead@4x.png">
+      <img src="./dokka/images/masthead@4x.png" width="800" alt="Buildless for Gradle" />
+    </picture>
     <br />
   </a>
 </p>
