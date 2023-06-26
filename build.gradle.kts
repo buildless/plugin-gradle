@@ -12,7 +12,7 @@
  * Buildless Plugin for Gradle
  */
 
-@file:Suppress("UnstableApiUsage")
+@file:Suppress("UnstableApiUsage", "COMPATIBILITY_WARNING")
 
 import build.buf.gradle.BUF_BUILD_DIR
 import build.buf.gradle.GENERATED_DIR
@@ -36,10 +36,14 @@ plugins {
   alias(libs.plugins.detekt)
   alias(libs.plugins.doctor)
   alias(libs.plugins.dokka)
+  alias(libs.plugins.freefair.dependencySubmission)
   alias(libs.plugins.kotlin.plugin.allopen)
   alias(libs.plugins.kotlinx.plugin.abiValidator)
   alias(libs.plugins.kover)
+  alias(libs.plugins.nexus.publish)
   alias(libs.plugins.pluginPublish)
+  alias(libs.plugins.sbom)
+  alias(libs.plugins.sigstore)
   alias(libs.plugins.sonar)
   alias(libs.plugins.spotless)
   alias(libs.plugins.testLogger)
@@ -190,6 +194,80 @@ if (enableChecks == "true") detekt {
   ignoreFailures = true
   buildUponDefaultConfig = true
   config.from(rootProject.files("../../.github/detekt.yml"))
+}
+
+nexusPublishing {
+  this.repositories {
+    sonatype {
+      nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+      snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+    }
+  }
+}
+
+publishing {
+  publications {
+    create<MavenPublication>("mavenJava") {
+      from(components["java"])
+
+      pom {
+        name.set("Buildless Plugin for Gradle")
+        description.set("Easily configure Gradle builds for use with Buildless as a remote build cache")
+        url.set("https://github.com/buildless/plugin-gradle")
+        licenses {
+          license {
+            name.set("Private")
+          }
+        }
+        developers {
+          developer {
+            id.set("sgammon")
+            name.set("Sam Gammon")
+          }
+        }
+        scm {
+          connection.set("https://github.com/buildless/plugin-gradle.git")
+          developerConnection.set("git@github.com:buildless/plugin-gradle.git")
+          url.set("https://github.com/buildless/plugin-gradle")
+        }
+      }
+    }
+  }
+}
+
+signing {
+  sign(publishing.publications["mavenJava"])
+}
+
+spdxSbom {
+  targets {
+    create("release") {
+      scm {
+        uri.set("https://github.com/buildless/plugin-gradle.git")
+        tool.set("git")
+      }
+
+      document {
+        name.set("Buildless for Gradle")
+        namespace.set("https://less.build/spdx/758A8D36-F55C-4FF8-8C22-7DD1CBE82EDF")
+        creator.set("Person:Sam Gammon")
+        packageSupplier.set("Organization:Elide")
+      }
+    }
+  }
+}
+
+sigstoreSign {
+  oidcClient {
+    gitHub {
+      audience.set("sigstore")
+    }
+    web {
+      clientId.set("sigstore")
+      issuer.set("https://oauth2.sigstore.dev/auth")
+    }
+    client.set(web)
+  }
 }
 
 if (enableChecks == "true") spotless {
