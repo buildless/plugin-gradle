@@ -61,6 +61,7 @@ jobs:
       action: 'build test koverXmlReport check sonar'
       flags: '--scan --stacktrace'
       coverage: true
+      coverage_report: 'build/reports/kover/report.xml'
 
   ## Checks: CodeQL
   check-codeql:

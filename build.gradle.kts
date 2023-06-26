@@ -17,6 +17,7 @@
 import build.buf.gradle.BUF_BUILD_DIR
 import build.buf.gradle.GENERATED_DIR
 import org.gradle.jvm.tasks.Jar
+import org.gradle.plugins.ide.idea.model.IdeaLanguageLevel
 import org.jetbrains.dokka.DokkaConfiguration.Visibility
 import org.jetbrains.dokka.base.DokkaBase
 import org.jetbrains.dokka.base.DokkaBaseConfiguration
@@ -65,6 +66,7 @@ val strictMode = strict == "true"
 val buildDocs: String by properties
 val enableChecks: String by properties
 val lockDeps: String by properties
+val isCI = project.hasProperty("ci") && project.properties["ci"] == "true"
 val kotlinVersionEnum = org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_1_8
 val jvmTargetEnum = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
 val javaVersionEnum = JavaVersion.VERSION_11
@@ -303,7 +305,23 @@ if (enableChecks == "true") sonar {
     property("sonar.junit.reportsPath", "$rootDir/build/test-results/test/")
     property("sonar.java.coveragePlugin", "jacoco")
     property("sonar.sourceEncoding", "UTF-8")
-    property("sonar.coverage.jacoco.xmlReportPaths", "${rootProject.buildDir}/reports/kover/merged/xml/report.xml")
+    property("sonar.coverage.jacoco.xmlReportPaths", "${rootProject.buildDir}/reports/kover/report.xml")
+  }
+}
+
+idea {
+  project {
+    languageLevel = IdeaLanguageLevel(javaVersion)
+    vcs = "Git"
+  }
+}
+
+koverReport {
+  defaults {
+    // reports configs for XML, HTML, verify reports
+    xml {
+      onCheck = isCI
+    }
   }
 }
 
