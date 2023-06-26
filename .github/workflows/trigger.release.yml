@@ -1,0 +1,228 @@
+name: Publish
+
+on:
+  ## Trigger: Release created.
+  release:
+    types: [created]
+
+  ## Trigger: Manual dispatch.
+  workflow_dispatch:
+    inputs:
+      ## Runner to use.
+      runner:
+        description: "Runner"
+        type: string
+        default: 'ubuntu-latest'
+
+      ## Whether to publish to Maven Central.
+      maven:
+        description: "Publish to Maven"
+        type: boolean
+        default: true
+
+      ## Whether to publish to staging only.
+      snapshot:
+        description: "Publish to Snapshots"
+        type: boolean
+        default: true
+
+      ## Whether to publish to the live Maven Central environment.
+      live:
+        description: "Publish to Live"
+        type: boolean
+        default: false
+
+      ## Whether to publish to the Gradle plugin portal.
+      gradle:
+        description: "Publish to Gradle"
+        type: boolean
+        default: false
+
+    secrets:
+      ## Maven: OSSRH Username.
+      OSSRH_USERNAME:
+        description: "OSSRH Username"
+        required: true
+
+      ## Maven: OSSRH Token.
+      OSSRH_TOKEN:
+        description: "OSSRH Token"
+        required: true
+
+      ## Gradle: Publish username.
+      PUBLISH_USER:
+        description: "Gradle user"
+        required: false
+
+      ## Gradle: Publish token.
+      PUBLISH_TOKEN:
+        description: "Gradle token"
+        required: false
+
+  ## Trigger: Workflow sub-routine.
+  workflow_call:
+    inputs:
+      runner:
+        description: "Runner"
+        type: string
+        default: 'ubuntu-latest'
+      maven:
+        description: "Publish to Maven"
+        type: boolean
+        default: true
+      snapshot:
+        description: "Publish to Snapshots"
+        type: boolean
+        default: true
+      live:
+        description: "Publish to Live"
+        type: boolean
+        default: false
+      gradle:
+        description: "Publish to Gradle"
+        type: boolean
+        default: false
+
+    secrets:
+      OSSRH_USERNAME:
+        description: "OSSRH Username"
+        required: true
+      OSSRH_TOKEN:
+        description: "OSSRH Token"
+        required: true
+      PUBLISH_USER:
+        description: "Gradle user"
+        required: false
+      PUBLISH_TOKEN:
+        description: "Gradle token"
+        required: false
+
+jobs:
+  publish-stage:
+    name: "Publish: Stage"
+    runs-on: ubuntu-latest
+    if: inputs.snapshot
+    permissions:
+      contents: read
+      packages: write
+      deployments: write
+    steps:
+      - name: "Setup: Checkout"
+        uses: actions/checkout@v3
+      - name: "Setup: JDK ${{ vars.JVM_VERSION }}"
+        uses: buildjet/setup-java@v3
+        with:
+          java-version: ${{ vars.JVM_VERSION }}
+          distribution: "adopt-hotspot"
+          server-id: ossrh
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+      - name: "Setup: GPG Key Material"
+        run: |
+          cat <(echo -e "${{ secrets.SIGNING_KEY }}") | base64 -d | gpg --batch --import
+          gpg --list-secret-keys --keyid-format LONG
+          gpg --export-secret-keys > /home/runner/.gnupg/secring.gpg
+      - name: "Publish: OSSRH Stage"
+        uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629
+        with:
+          arguments: |
+            publishPluginMavenPublicationToSonatypeRepository
+            -PsonatypeUsername=${{ secrets.MAVEN_USERNAME }}
+            -PsonatypePassword=${{ secrets.MAVEN_PASSWORD }}
+            -Psigning.keyId=${{ secrets.SIGNING_KEY_ID }}
+            -Psigning.password=${{ secrets.SIGNING_KEY_PASSPHRASE }}
+            -Psigning.secretKeyRingFile=/home/runner/.gnupg/secring.gpg
+      - name: "Setup: JDK ${{ vars.JVM_VERSION }} (GitHub Packages)"
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ vars.JVM_VERSION }}
+          distribution: "adopt-hotspot"
+      - name: "Publish: GitHub Packages"
+        uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629
+        with:
+          arguments: |
+            publishPluginMavenPublicationToGitHubPackagesRepository
+            -Psigning.keyId=${{ secrets.SIGNING_KEY_ID }}
+            -Psigning.password=${{ secrets.SIGNING_KEY_PASSPHRASE }}
+            -Psigning.secretKeyRingFile=/home/runner/.gnupg/secring.gpg
+
+  publish-live:
+    name: "Publish: Central"
+    runs-on: ubuntu-latest
+    if: inputs.live
+    permissions:
+      contents: read
+      packages: write
+      deployments: write
+    steps:
+      - name: "Setup: Checkout"
+        uses: actions/checkout@v3
+      - name: "Setup: JDK ${{ vars.JVM_VERSION }}"
+        uses: buildjet/setup-java@v3
+        with:
+          java-version: ${{ vars.JVM_VERSION }}
+          distribution: "adopt-hotspot"
+          server-id: ossrh
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+      - name: "Setup: GPG Key Material"
+        run: |
+          cat <(echo -e "${{ secrets.SIGNING_KEY }}") | base64 -d | gpg --batch --import
+          gpg --list-secret-keys --keyid-format LONG
+          gpg --export-secret-keys > /home/runner/.gnupg/secring.gpg
+      - name: "Publish: OSSRH Central"
+        uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629
+        with:
+          arguments: |
+            publishPluginMavenPublicationToSonatypeRepository
+            -PsonatypeUsername=${{ secrets.MAVEN_USERNAME }}
+            -PsonatypePassword=${{ secrets.MAVEN_PASSWORD }}
+            -Psigning.keyId=${{ secrets.SIGNING_KEY_ID }}
+            -Psigning.password=${{ secrets.SIGNING_KEY_PASSPHRASE }}
+            -Psigning.secretKeyRingFile=/home/runner/.gnupg/secring.gpg
+      - name: "Setup: JDK ${{ vars.JVM_VERSION }} (GitHub Packages)"
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ vars.JVM_VERSION }}
+          distribution: "adopt-hotspot"
+      - name: "Publish: GitHub Packages"
+        uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629
+        with:
+          arguments: |
+            publishPluginMavenPublicationToGitHubPackagesRepository
+            -Psigning.keyId=${{ secrets.SIGNING_KEY_ID }}
+            -Psigning.password=${{ secrets.SIGNING_KEY_PASSPHRASE }}
+            -Psigning.secretKeyRingFile=/home/runner/.gnupg/secring.gpg
+
+  publish-gradle:
+    name: "Publish: Gradle"
+    runs-on: ubuntu-latest
+    needs: ["publish-live"]
+    if: inputs.gradle && inputs.live
+    permissions:
+      contents: read
+      packages: write
+      deployments: write
+    steps:
+      - name: "Setup: Checkout"
+        uses: actions/checkout@v3
+      - name: "Setup: JDK ${{ vars.JVM_VERSION }}"
+        uses: buildjet/setup-java@v3
+        with:
+          java-version: ${{ vars.JVM_VERSION }}
+          distribution: "adopt-hotspot"
+      - name: "Setup: GPG Key Material"
+        run: |
+          cat <(echo -e "${{ secrets.SIGNING_KEY }}") | base64 -d | gpg --batch --import
+          gpg --list-secret-keys --keyid-format LONG
+          gpg --export-secret-keys > /home/runner/.gnupg/secring.gpg
+      - name: "Publish: Gradle"
+        uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629
+        with:
+          arguments: |
+            publishPlugins
+            -Pgradle.publish.key=${{ secrets.PUBLISH_USER }}
+            -Pgradle.publish.secret=${{ secrets.PUBLISH_TOKEN }}
+            -Psigning.keyId=${{ secrets.SIGNING_KEY_ID }}
+            -Psigning.password=${{ secrets.SIGNING_KEY_PASSPHRASE }}
+            -Psigning.secretKeyRingFile=/home/runner/.gnupg/secring.gpg
