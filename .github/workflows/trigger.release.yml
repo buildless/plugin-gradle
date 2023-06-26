@@ -133,7 +133,7 @@ jobs:
             -Psigning.password=${{ secrets.SIGNING_KEY_PASSPHRASE }}
             -Psigning.secretKeyRingFile=/home/runner/.gnupg/secring.gpg
       - name: "Setup: JDK ${{ vars.JVM_VERSION }} (GitHub Packages)"
-        uses: actions/setup-java@v3
+        uses: buildjet/setup-java@v3
         with:
           java-version: ${{ vars.JVM_VERSION }}
           distribution: "adopt-hotspot"
@@ -181,7 +181,7 @@ jobs:
             -Psigning.password=${{ secrets.SIGNING_KEY_PASSPHRASE }}
             -Psigning.secretKeyRingFile=/home/runner/.gnupg/secring.gpg
       - name: "Setup: JDK ${{ vars.JVM_VERSION }} (GitHub Packages)"
-        uses: actions/setup-java@v3
+        uses: buildjet/setup-java@v3
         with:
           java-version: ${{ vars.JVM_VERSION }}
           distribution: "adopt-hotspot"
