@@ -43,6 +43,17 @@ plugins {
 }
 ```
 
+**`libs.versions.toml` (Version Catalog):**
+```toml
+[versions]
+# ...
+buildless = "1.0.0-beta1"
+
+[plugins]
+# ...
+buildless = { id = "build.less", version.ref = "buildless" }
+```
+
 ## Getting started
 
 Installing and using the plugin is pretty easy.
