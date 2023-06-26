@@ -20,6 +20,7 @@ Exception which is thrown when an API key (detected or provided) is found to be 
 | Name | Summary |
 |---|---|
 | [cause](../../../build.less.plugin.gradle.err/-invalid-configuration/index.md#-654012527%2FProperties%2F73423754) | [JVM (Gradle)]<br>open val [cause](../../../build.less.plugin.gradle.err/-invalid-configuration/index.md#-654012527%2FProperties%2F73423754): [Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)? |
+| [code](code.md) | [JVM (Gradle)]<br>open override val [code](code.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Unique error code for this error case. |
 | [message](../../../build.less.plugin.gradle.err/-invalid-configuration/index.md#1824300659%2FProperties%2F73423754) | [JVM (Gradle)]<br>open val [message](../../../build.less.plugin.gradle.err/-invalid-configuration/index.md#1824300659%2FProperties%2F73423754): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? |
 
 ## Functions

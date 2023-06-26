@@ -34,6 +34,7 @@ JVM (Gradle)
 | Name | Summary |
 |---|---|
 | [cause](index.md#-654012527%2FProperties%2F73423754) | [JVM (Gradle)]<br>open val [cause](index.md#-654012527%2FProperties%2F73423754): [Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)? |
+| [code](code.md) | [JVM (Gradle)]<br>abstract val [code](code.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Unique error code for this error case. |
 | [message](index.md#1824300659%2FProperties%2F73423754) | [JVM (Gradle)]<br>open val [message](index.md#1824300659%2FProperties%2F73423754): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)? |
 
 ## Functions

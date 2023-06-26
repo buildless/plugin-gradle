@@ -4,6 +4,7 @@ $dokka.location:build.less.plugin.gradle.err////PointingToDeclaration/buildless
 $dokka.location:build.less.plugin.gradle.err/BuildlessPluginException///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle.err/-buildless-plugin-exception/index.md
 $dokka.location:build.less.plugin.gradle.err/InvalidConfiguration///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle.err/-invalid-configuration/index.md
 $dokka.location:build.less.plugin.gradle.err/InvalidConfiguration/InvalidConfiguration/#kotlin.String?#kotlin.Throwable?/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle.err/-invalid-configuration/-invalid-configuration.md
+$dokka.location:build.less.plugin.gradle.err/InvalidConfiguration/code/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle.err/-invalid-configuration/code.md
 $dokka.location:build.less.plugin.gradle////PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/index.md
 $dokka.location:build.less.plugin.gradle/ApiKey.Companion///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-companion/index.md
 $dokka.location:build.less.plugin.gradle/ApiKey.Companion/forOrg/#kotlin.String/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-companion/for-org.md
@@ -11,6 +12,7 @@ $dokka.location:build.less.plugin.gradle/ApiKey.Companion/forUser/#kotlin.String
 $dokka.location:build.less.plugin.gradle/ApiKey.Companion/of/#kotlin.String#build.less.plugin.gradle.ApiKey.SubjectType?/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-companion/of.md
 $dokka.location:build.less.plugin.gradle/ApiKey.InvalidKey///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-invalid-key/index.md
 $dokka.location:build.less.plugin.gradle/ApiKey.InvalidKey/InvalidKey/#kotlin.Throwable/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-invalid-key/-invalid-key.md
+$dokka.location:build.less.plugin.gradle/ApiKey.InvalidKey/code/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-invalid-key/code.md
 $dokka.location:build.less.plugin.gradle/ApiKey.SubjectType.ORG///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-subject-type/-o-r-g/index.md
 $dokka.location:build.less.plugin.gradle/ApiKey.SubjectType.USER///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-subject-type/-u-s-e-r/index.md
 $dokka.location:build.less.plugin.gradle/ApiKey.SubjectType///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-subject-type/index.md
