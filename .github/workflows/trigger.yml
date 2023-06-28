@@ -61,7 +61,7 @@ jobs:
         include:
           - platform: Linux
             runner: ubuntu-latest
-            tasks: koverXmlReport check sonar
+            tasks: koverXmlReport sonar
             main: true
           - platform: Windows
             runner: windows-latest
