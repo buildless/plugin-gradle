@@ -3,7 +3,6 @@
 pluginManagement {
   repositories {
     maven("https://gradle.pkg.st/")
-    gradlePluginPortal()
   }
 }
 

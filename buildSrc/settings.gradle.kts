@@ -18,7 +18,6 @@ dependencyResolutionManagement {
   )
   repositories {
     maven("https://gradle.pkg.st/")
-    mavenCentral()
   }
   versionCatalogs {
     create("libs") {
