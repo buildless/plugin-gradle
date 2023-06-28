@@ -65,8 +65,10 @@ jobs:
             main: true
           - platform: Windows
             runner: windows-latest
+            main: false
           - platform: macOS
             runner: macos-latest
+            main: false
     with:
       jvm: "19"
       label: "Gradle Plugin"
@@ -75,9 +77,9 @@ jobs:
       flags: "--scan --stacktrace"
       artifact: "buildless-plugin-gradle"
       coverage_report: "build/reports/kover/report.xml"
-      provenance: "${{ matrix.main }}"
-      coverage: "${{ matrix.main }}"
-      artifacts: "${{ matrix.main }}"
+      provenance: "${{ fromJson(matrix.main) }}"
+      coverage: "${{ fromJson(matrix.main) }}"
+      artifacts: "${{ fromJson(matrix.main) }}"
 
   ## Checks: API Breakage
   check-api:
