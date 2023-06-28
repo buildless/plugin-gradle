@@ -54,11 +54,22 @@ jobs:
       pull-requests: read
       id-token: write
       contents: read
+    strategy:
+      matrix:
+        platform: [Linux, Windows, macOS]
+        include:
+          - platform: Linux
+            runner: ubuntu-latest
+            tasks: koverXmlReport check sonar
+          - platform: Windows
+            runner: windows-latest
+          - platform: macOS
+            runner: macos-latest
     with:
       jvm: "11"
       label: "Gradle Plugin"
-      runner: ubuntu-latest
-      action: "build test koverXmlReport check sonar"
+      runner: "${{ matrix.runner }}"
+      action: "build test ${{ matrix.tasks }}"
       flags: "--scan --stacktrace"
       provenance: true
       artifacts: true
