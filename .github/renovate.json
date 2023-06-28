@@ -16,5 +16,15 @@
   "dependencyDashboardApproval": true,
   "lockFileMaintenance": { "enabled": true },
   "labels": ["dependencies"],
-  "packageRules": []
+  "packageRules": [],
+  "postUpgradeTasks": {
+    "commands": [
+      "./gradlew dependencies --write-locks"
+    ],
+    "fileFilters": [
+      "gradle.lockfile",
+      "settings-gradle.lockfile"
+    ],
+    "executionMode": "branch"
+  }
 }
