@@ -88,7 +88,7 @@ Our plugin is built in a secure fashion, and so is our service. Here are a few t
 - We ship SBOMs in OWASP [CycloneDX](https://cyclonedx.org/) format, and soon in SPDX too
 - Releases are stamped via [Sigstore](https://sigstore.dev)
 - We aggressively update versions, and only depend on high-quality libraries / plugins
-- All releases and publications are signed
+- All releases and publications are signed, all commits in those releases are signed
 - All plugin code is open source, in this repo
 
 ## Configuration
