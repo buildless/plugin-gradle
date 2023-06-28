@@ -1,0 +1,56 @@
+name: "API Check"
+
+on:
+  workflow_dispatch:
+    ## Input: Runner to use
+    inputs:
+      runner:
+        description: "Runner"
+        type: string
+        default: "ubuntu-latest"
+        required: false
+
+    ## Secrets: API Key
+    secrets:
+      BUILDLESS_APIKEY:
+        description: "Buildless API Key"
+        required: true
+
+  workflow_call:
+    inputs:
+      runner:
+        description: "Runner"
+        type: string
+        default: "ubuntu-latest"
+        required: false
+    secrets:
+      BUILDLESS_APIKEY:
+        description: "Buildless API Key"
+        required: true
+
+jobs:
+  analyze:
+    name: API Check
+    continue-on-error: true
+    runs-on: ${{ inputs.runner }}
+    timeout-minutes: 360
+    steps:
+      - name: "Setup: Checkout"
+        uses: actions/checkout@v3
+      - name: "Setup: JDK 11"
+        uses: buildjet/setup-java@v3
+        with:
+          distribution: "adopt-hotspot"
+          java-version: "11"
+      - name: "Build: API Check"
+        uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629 # v2
+        id: gradlebuild
+        continue-on-error: true
+        env:
+          CI: true
+          BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
+          CACHE_ENDPOINT: ${{ vars.CACHE_ENDPOINT_GRADLE || 'https://gradle.less.build/cache/generic/' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          cache-read-only: false
+          arguments: apiCheck

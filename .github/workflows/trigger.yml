@@ -63,6 +63,17 @@ jobs:
       coverage: true
       coverage_report: "build/reports/kover/report.xml"
 
+  ## Checks: API Breakage
+  check-api:
+    name: "API Check"
+    needs: ["build-plugin"]
+    uses: ./.github/workflows/module.apicheck.yml
+    secrets:
+      BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
+    permissions:
+      checks: write
+      contents: read
+
   ## Checks: CodeQL
   check-codeql:
     name: "Check"
