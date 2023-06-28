@@ -23,12 +23,12 @@ plugins {
   `java-gradle-plugin`
   kotlin("jvm")
 
+  alias(libs.plugins.cyclonedx)
   alias(libs.plugins.buf)
   alias(libs.plugins.buildConfig)
   alias(libs.plugins.detekt)
   alias(libs.plugins.doctor)
   alias(libs.plugins.dokka)
-  alias(libs.plugins.freefair.dependencySubmission)
   alias(libs.plugins.kotlin.plugin.allopen)
   alias(libs.plugins.kotlinx.plugin.abiValidator)
   alias(libs.plugins.kover)
@@ -436,6 +436,15 @@ tasks.compileTestKotlin.configure {
     jvmTarget = javaVersion
     javaParameters = true
   }
+}
+
+tasks.cyclonedxBom {
+  setProjectType("application")
+  setDestination(project.file("build/reports"))
+  setOutputName("sbom")
+  setOutputFormat("json")
+  setIncludeBomSerialNumber(true)
+  setIncludeLicenseText(true)
 }
 
 tasks.withType<DokkaTask>().configureEach {

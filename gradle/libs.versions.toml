@@ -53,6 +53,7 @@ sentry = "6.24.0"
 kotlinx_benchmark = "0.4.8"
 jmh_core = "1.36"
 nexus_publish = "1.3.0"
+cyclonedx = "1.7.4"
 
 [plugins]
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
@@ -78,6 +79,7 @@ buildConfig = { id = "com.github.gmazzo.buildconfig", version.ref = "buildconfig
 buf = { id = "build.buf", version.ref = "pluginBuf" }
 spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
 sbom = { id = "org.spdx.sbom", version.ref = "spdx_sbom" }
+cyclonedx = { id = "org.cyclonedx.bom", version.ref = "cyclonedx" }
 sigstore = { id = "dev.sigstore.sign", version.ref = "sigstore" }
 nexus_publish = { id = "io.github.gradle-nexus.publish-plugin", version.ref = "nexus_publish" }
 freefair_dependencySubmission = { id = "io.freefair.github.dependency-submission", version.ref = "freefair" }
