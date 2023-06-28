@@ -81,7 +81,7 @@ jobs:
 
   ## Checks: API Breakage
   check-api:
-    name: "API Check"
+    name: "Check"
     needs: ["build-plugin"]
     uses: ./.github/workflows/module.apicheck.yml
     secrets:
