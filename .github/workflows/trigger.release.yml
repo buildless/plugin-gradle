@@ -1,10 +1,6 @@
 name: Publish
 
 on:
-  ## Trigger: Release created.
-  release:
-    types: [created]
-
   ## Trigger: Manual dispatch.
   workflow_dispatch:
     inputs:
