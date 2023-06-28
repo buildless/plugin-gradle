@@ -75,9 +75,9 @@ jobs:
       flags: "--scan --stacktrace"
       artifact: "buildless-plugin-gradle"
       coverage_report: "build/reports/kover/report.xml"
-      provenance: ${{ matrix.main }}
-      coverage: ${{ matrix.main }}
-      artifacts: ${{ matrix.main }}
+      provenance: "${{ matrix.main }}"
+      coverage: "${{ matrix.main }}"
+      artifacts: "${{ matrix.main }}"
 
   ## Checks: API Breakage
   check-api:
