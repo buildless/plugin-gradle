@@ -1,12 +1,3 @@
-/* Copyright (c) 2023 Elide Ventures LLC
- *
- * This is private computer source code. This code is part of an application which is licensed privately, as part of
- * intellectual property owned by Elide Ventures, LLC. All rights are reserved. Viewing and editing this code implies
- * agreement with the Elide Non-Disclosure Agreement and Elide Inventions Assignment Agreement.
- *
- * Code bearing this header may not be shared outside of authorized circumstances without prior written consent from
- * authorized corporate officers of Elide Ventures, LLC.
- */
 
 /**
  * Buildless Plugin for Gradle
@@ -67,7 +58,7 @@ val buildDocs: String by properties
 val enableChecks: String by properties
 val lockDeps: String by properties
 val isCI = project.hasProperty("ci") && project.properties["ci"] == "true"
-val kotlinVersionEnum = org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_1_8
+val kotlinVersionEnum = org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_1_9
 val jvmTargetEnum = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
 val javaVersionEnum = JavaVersion.VERSION_11
 
@@ -220,7 +211,7 @@ publishing {
     }
   }
   publications {
-    create<MavenPublication>("pluginMaven") {
+    fun MavenPublication.pluginPom() {
       pom {
         name.set("Buildless Plugin for Gradle")
         description.set("Easily configure Gradle builds for use with Buildless as a remote build cache")
@@ -241,6 +232,12 @@ publishing {
           developerConnection.set("git@github.com:buildless/plugin-gradle.git")
           url.set("https://github.com/buildless/plugin-gradle")
         }
+      }
+    }
+
+    afterEvaluate {
+      withType(MavenPublication::class) {
+        pluginPom()
       }
     }
   }
@@ -280,12 +277,14 @@ sigstoreSign {
 if (enableChecks == "true") spotless {
   java {
     target("src/**/*.java")
+    targetExclude("**/generated/**", "*/bin/*", "app/*/build")
     importOrder()
     removeUnusedImports()
     googleJavaFormat()
   }
   kotlin {
     target("src/**/*.kt")
+    targetExclude("*/generated/*", "*/bin/*", "app/*/build")
     ktlint(libs.versions.ktlint.get()).apply {
       setEditorConfigPath("$rootDir/.editorconfig")
     }
