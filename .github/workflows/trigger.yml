@@ -62,6 +62,7 @@ jobs:
           - platform: Linux
             runner: ubuntu-latest
             tasks: koverXmlReport check sonar
+            main: true
           - platform: Windows
             runner: windows-latest
           - platform: macOS
@@ -72,11 +73,11 @@ jobs:
       runner: "${{ matrix.runner }}"
       action: "build test ${{ matrix.tasks }}"
       flags: "--scan --stacktrace"
-      provenance: true
-      artifacts: true
       artifact: "buildless-plugin-gradle"
-      coverage: true
       coverage_report: "build/reports/kover/report.xml"
+      provenance: ${{ matrix.main }}
+      coverage: ${{ matrix.main }}
+      artifacts: ${{ matrix.main }}
 
   ## Checks: API Breakage
   check-api:
