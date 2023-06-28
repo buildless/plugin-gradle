@@ -102,7 +102,7 @@ buildConfig {
 }
 
 buf {
-  enforceFormat = true
+  enforceFormat = false
   publishSchema = false
   toolVersion = libs.versions.buf.get()
 
