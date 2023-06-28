@@ -1,11 +1,14 @@
-/* Copyright (c) 2023 Elide Ventures LLC
+/*
+ * Copyright (c) 2023 Elide Ventures, LLC.
  *
- * This is private computer source code. This code is part of an application which is licensed privately, as part of
- * intellectual property owned by Elide Ventures, LLC. All rights are reserved. Viewing and editing this code implies
- * agreement with the Elide Non-Disclosure Agreement and Elide Inventions Assignment Agreement.
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at
  *
- * Code bearing this header may not be shared outside of authorized circumstances without prior written consent from
- * authorized corporate officers of Elide Ventures, LLC.
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under the License.
  */
 
 package build.less.plugin.gradle.err

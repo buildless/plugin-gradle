@@ -11,7 +11,7 @@ val javaVersion: String by properties
 val kotlinLangVersion: String by properties
 val strict: String by properties
 val strictMode = strict == "true"
-val kotlinVersionEnum = org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_1_8
+val kotlinVersionEnum = org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_1_9
 val jvmTargetEnum = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
 val javaVersionEnum = JavaVersion.VERSION_11
 
