@@ -19,7 +19,7 @@
   "packageRules": [],
   "postUpgradeTasks": {
     "commands": [
-      "./gradlew dependencies --write-locks"
+      "/gradlew :dependencies --write-locks"
     ],
     "fileFilters": [
       "gradle.lockfile",
