@@ -53,7 +53,8 @@ jobs:
       checks: write
       pull-requests: read
       id-token: write
-      contents: read
+      contents: write
+      actions: read
     strategy:
       matrix:
         platform: [Linux, Windows, macOS]
