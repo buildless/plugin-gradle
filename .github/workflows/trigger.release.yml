@@ -12,7 +12,7 @@ on:
       runner:
         description: "Runner"
         type: string
-        default: 'ubuntu-latest'
+        default: "ubuntu-latest"
 
       ## Whether to publish to Maven Central.
       maven:
@@ -65,7 +65,7 @@ on:
       runner:
         description: "Runner"
         type: string
-        default: 'ubuntu-latest'
+        default: "ubuntu-latest"
       maven:
         description: "Publish to Maven"
         type: boolean

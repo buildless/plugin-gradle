@@ -1,7 +1,7 @@
 # Module buildless-plugin-gradle
 
 This documentation describes reference material for the [Buildless](https://less.build) plugin for
-[Gradle](https://gradle.org). The plugin helps with  configuration of remote build caching via the Buildless API. See
+[Gradle](https://gradle.org). The plugin helps with configuration of remote build caching via the Buildless API. See
 the [Buildless docs](https://docs.less.build) for additional info including resources, code samples, API specs,
 and more.
 
@@ -10,6 +10,7 @@ and more.
 <h3>Complete config sample</h3>
 
 **`settings.gradle.kts` (Kotlin DSL):**
+
 ```kotlin
 import build.less.plugin.gradle.settings.*
 
@@ -79,4 +80,3 @@ Exceptions which are reliably thrown by the plugin, and which the developer may 
 # Package build.less.plugin.gradle.core
 
 Core data structures and internal classes used within the plugin itself.
-

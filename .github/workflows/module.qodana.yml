@@ -2,7 +2,7 @@ name: Qodana
 
 on:
   schedule:
-    - cron: '39 6 * * 2'
+    - cron: "39 6 * * 2"
 
   workflow_call:
     secrets:
@@ -38,7 +38,7 @@ jobs:
         with:
           distribution: "adopt-hotspot"
           java-version: "11"
-      - name: 'Qodana Scan'
+      - name: "Qodana Scan"
         uses: JetBrains/qodana-action@main
         continue-on-error: true
         env:

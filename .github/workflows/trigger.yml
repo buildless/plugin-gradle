@@ -55,13 +55,13 @@ jobs:
       id-token: write
       contents: read
     with:
-      jvm: '11'
+      jvm: "11"
       label: "Gradle Plugin"
       runner: ubuntu-latest
-      action: 'build test koverXmlReport check sonar'
-      flags: '--scan --stacktrace'
+      action: "build test koverXmlReport check sonar"
+      flags: "--scan --stacktrace"
       coverage: true
-      coverage_report: 'build/reports/kover/report.xml'
+      coverage_report: "build/reports/kover/report.xml"
 
   ## Checks: CodeQL
   check-codeql:

@@ -1,4 +1,3 @@
-
 # Contributing to the Buildless for Gradle Plugin
 
 Hey there! Welcome to our contribution guide. We're excited that you want to contribute. This document will help you get
@@ -19,6 +18,7 @@ You will need a recent copy of Java which can run Java 11-targeted code. We reco
 ### Building the plugin
 
 The codebase is a standard Gradle project, so you can build it with the `build` task:
+
 ```
 ./gradlew build
 ```
@@ -32,6 +32,7 @@ Running the build will:
 ### Testing the plugin
 
 You can run the tests, specifically, with:
+
 ```
 ./gradlew test
 ```
@@ -94,13 +95,15 @@ Here is a summary of this PR. It's explained here, in regular language.
 ### Changelog
 - [x] feat: add impl for cool thing
 - [x] fix: fix other thing
-- [ ] chore: relock dependencies (or something) 
+- [ ] chore: relock dependencies (or something)
 ```
 
 #### Summary section
+
 Use this section to explain your change, your approach, etc. It's a freeform area for your use.
 
 #### Changelog section
+
 Use this section to keep track of changes in the PR. If you want to, you can check the tasks off as you go.
 
 ### Draft lifecycle
@@ -121,7 +124,7 @@ who are ready to answer your questions:
 
 - **[Discord](https://less.build/discord):** Join and chat with our team directly
 - **[Support Portal](https://less.build/discord):** File a ticket for larger issues or if we are offline
-- **[Email](mailto:support@less.build):** `support@less.build`** goes to the entire team
+- **[Email](mailto:support@less.build):** `support@less.build`\*\* goes to the entire team
 - **[Phone](tel:+18444201414):** `+1-844-420-1414` will dial us directly, or you can leave a message (it files a ticket)
 - **In-app:** From inside your Buildless Dashboard, click the profile icon, then click _Help & Support_
 
