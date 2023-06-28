@@ -12,7 +12,7 @@ and more.
 **`settings.gradle.kts` (Kotlin DSL):**
 
 ```kotlin
-import build.less.plugin.gradle.settings.*
+import build.less.plugin.settings.buildless
 
 plugins {
   id("build.less") version "..."
