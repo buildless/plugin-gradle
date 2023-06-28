@@ -68,7 +68,7 @@ jobs:
           - platform: macOS
             runner: macos-latest
     with:
-      jvm: "11"
+      jvm: "19"
       label: "Gradle Plugin"
       runner: "${{ matrix.runner }}"
       action: "build test ${{ matrix.tasks }}"

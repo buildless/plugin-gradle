@@ -27,11 +27,11 @@ jobs:
     steps:
       - name: "Setup: Checkout"
         uses: actions/checkout@v3
-      - name: "Setup: JDK 11"
+      - name: "Setup: JDK 19"
         uses: buildjet/setup-java@v3
         with:
           distribution: "adopt-hotspot"
-          java-version: "11"
+          java-version: "19"
       - name: "Setup: Detekt"
         continue-on-error: true
         run: |
