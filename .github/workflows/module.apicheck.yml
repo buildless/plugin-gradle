@@ -37,11 +37,11 @@ jobs:
     steps:
       - name: "Setup: Checkout"
         uses: actions/checkout@v3
-      - name: "Setup: JDK 11"
+      - name: "Setup: JDK 19"
         uses: buildjet/setup-java@v3
         with:
           distribution: "adopt-hotspot"
-          java-version: "11"
+          java-version: "19"
       - name: "Build: API Check"
         uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629 # v2
         id: gradlebuild
