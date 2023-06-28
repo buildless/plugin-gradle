@@ -1,4 +1,3 @@
-
 ## Buildless for Gradle: Changelog
 
 ### `1.0.0-beta1`: June 25th, 2023

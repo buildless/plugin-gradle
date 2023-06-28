@@ -30,6 +30,7 @@ of extra luxurious features (see below).
 **Latest:** `1.0.0-beta1`
 
 **`settings.gradle.kts` (Kotlin DSL):**
+
 ```kotlin
 plugins {
     id("build.less") version "1.0.0-beta1"
@@ -37,6 +38,7 @@ plugins {
 ```
 
 **`settings.gradle` (Groovy DSL):**
+
 ```groovy
 plugins {
     id 'build.less' version '1.0.0-beta1'
@@ -44,6 +46,7 @@ plugins {
 ```
 
 **`libs.versions.toml` (Version Catalog):**
+
 ```toml
 [versions]
 # ...
@@ -86,6 +89,7 @@ exhaustively below, with their order of precedence.
 #### Complete configuration sample
 
 **`settings.gradle.kts` (Kotlin DSL):**
+
 ```kotlin
 import build.less.plugin.gradle.settings.*
 
@@ -129,13 +133,14 @@ buildless {
 ### API key
 
 Builds use your **regular API key**, not your events key. Once you setup your Buildless account, you can find your key
-in your [dashboard][5], either in the *Tenant > Settings* section (for an org-level key), or in your *Profile* (for your
+in your [dashboard][5], either in the _Tenant > Settings_ section (for an org-level key), or in your _Profile_ (for your
 user-level key).
 
 Once you obtain your API key, you can set it up in any of the following ways. The first key found (from top to bottom in
 this document) will be used:
 
 - **1) DSL string** (not recommended). For example:
+
   ```kotlin
   buildless {
     apiKey("...")
@@ -143,12 +148,14 @@ this document) will be used:
   ```
 
 - **2) Environment variables**. All the following values work:
+
   - `BUILDLESS_TOKEN`
   - `BUILDLESS_API_KEY`
   - `BUILDLESS_APIKEY`
   - `GRADLE_CACHE_PASSWORD`
 
 - **3) Gradle or JVM system properties**. All the following values work:
+
   - `buildless.apiKey`
   - `cachePassword`
 

@@ -1,4 +1,3 @@
-
 name: "CodeQL"
 
 on:
@@ -8,7 +7,7 @@ on:
       runner:
         description: "Runner"
         type: string
-        default: 'ubuntu-latest'
+        default: "ubuntu-latest"
         required: false
 
     ## Secrets: API Key
@@ -22,7 +21,7 @@ on:
       runner:
         description: "Runner"
         type: string
-        default: 'ubuntu-latest'
+        default: "ubuntu-latest"
         required: false
     secrets:
       BUILDLESS_APIKEY:
@@ -30,7 +29,7 @@ on:
         required: true
 
   schedule:
-    - cron: '33 9 * * 0'
+    - cron: "33 9 * * 0"
 
 jobs:
   analyze:

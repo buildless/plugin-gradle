@@ -2,7 +2,7 @@ name: Detekt
 
 on:
   schedule:
-    - cron: '39 6 * * 2'
+    - cron: "39 6 * * 2"
 
   workflow_call:
     secrets:
@@ -16,7 +16,6 @@ on:
       BUILDLESS_APIKEY:
         required: true
         description: "Buildless API key"
-
 
 env:
   DETEKT_RELEASE_TAG: v1.23.0
