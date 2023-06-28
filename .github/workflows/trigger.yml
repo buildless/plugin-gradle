@@ -60,6 +60,9 @@ jobs:
       runner: ubuntu-latest
       action: "build test koverXmlReport check sonar"
       flags: "--scan --stacktrace"
+      provenance: true
+      artifacts: true
+      artifact: "buildless-plugin-gradle"
       coverage: true
       coverage_report: "build/reports/kover/report.xml"
 
