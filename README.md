@@ -78,6 +78,19 @@ below the _Features_ section in this README.
 
 We have more exciting features coming soon! Check out our [public roadmap][4] for more info.
 
+### Supply Chain Security
+
+Our plugin is built in a secure fashion, and so is our service. Here are a few things we do keep things hardened:
+
+- [Dependency Verification](https://docs.gradle.org/current/userguide/dependency_verification.html): We aggressively
+  verify dependencies, and use [Dependency Locking](https://docs.gradle.org/current/userguide/dependency_locking.html)
+  to make sure versions don't drift
+- We ship SBOMs in OWASP [CycloneDX](https://cyclonedx.org/) format, and soon in SPDX too
+- Releases are stamped via [Sigstore](https://sigstore.dev)
+- We aggressively update versions, and only depend on high-quality libraries / plugins
+- All releases and publications are signed
+- All plugin code is open source, in this repo
+
 ## Configuration
 
 The plugin provides a **Gradle DSL** for configuring Buildless with Gradle, and additionally provides project-level
