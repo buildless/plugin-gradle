@@ -44,14 +44,14 @@ jobs:
 
     steps:
       - name: "Setup: Checkout"
-        uses: actions/checkout@v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
       - name: "Setup: JDK 19"
-        uses: buildjet/setup-java@v3
+        uses: buildjet/setup-java@3b5edd4799eb848d92664003cb1e6f74db868f19 # v3
         with:
           distribution: "adopt-hotspot"
           java-version: "19"
       - name: "Setup: Initialize CodeQL"
-        uses: github/codeql-action/init@v2
+        uses: github/codeql-action/init@f6e388ebf0efc915c6c5b165b019ee61a6746a38 # v2
         with:
           languages: java
       - name: "Build: Plugin"
@@ -70,7 +70,7 @@ jobs:
             -x test
             -x check
       - name: "Analsis: CodeQL"
-        uses: github/codeql-action/analyze@v2
+        uses: github/codeql-action/analyze@f6e388ebf0efc915c6c5b165b019ee61a6746a38 # v2
         continue-on-error: true
         with:
           category: "/language:java"
