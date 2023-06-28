@@ -36,6 +36,7 @@ public final class build/less/plugin/gradle/ApiKey$SubjectType : java/lang/Enum 
 	public static final field ORG Lbuild/less/plugin/gradle/ApiKey$SubjectType;
 	public static final field USER Lbuild/less/plugin/gradle/ApiKey$SubjectType;
 	public static final fun detect$buildless_plugin_gradle (Ljava/lang/String;)Lbuild/less/plugin/gradle/ApiKey$SubjectType;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
 	public static fun valueOf (Ljava/lang/String;)Lbuild/less/plugin/gradle/ApiKey$SubjectType;
 	public static fun values ()[Lbuild/less/plugin/gradle/ApiKey$SubjectType;
 }
@@ -116,6 +117,7 @@ public abstract interface class build/less/plugin/gradle/BuildlessService$Params
 
 public final class build/less/plugin/gradle/CacheTransport : java/lang/Enum {
 	public static final field STANDARD Lbuild/less/plugin/gradle/CacheTransport;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
 	public static fun valueOf (Ljava/lang/String;)Lbuild/less/plugin/gradle/CacheTransport;
 	public static fun values ()[Lbuild/less/plugin/gradle/CacheTransport;
 }
