@@ -77,7 +77,7 @@ internal data class BuildlessPluginConfig(
         it.password = apiKey.key
       }
     }.also {
-      target.isPush = true
+      target.isPush = push
       target.isAllowInsecureProtocol = false
       target.isAllowUntrustedServer = false
       target.isUseExpectContinue = true
