@@ -26,6 +26,9 @@ This repo defines a plugin for Gradle which integrates with [Buildless][1] for [
 Buildless can be used as a [drop-in remote HTTPS cache endpoint][3], or you can use this plug-in which offers a number
 of extra luxurious features (see below).
 
+> **Note**
+> Requires Gradle `8.0` or above
+
 ### Current version
 
 **Latest:** `1.0.0-beta1`
