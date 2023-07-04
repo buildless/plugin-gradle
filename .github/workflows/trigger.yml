@@ -101,7 +101,7 @@ jobs:
             main: false
     with:
       jvm: "19"
-      label: "Gradle Plugin"
+      label: "Plugin (Gradle ${{ matrix.gradle }})"
       runner: "${{ matrix.runner }}"
       action: "build test ${{ matrix.tasks }}"
       flags: "--scan --stacktrace"
