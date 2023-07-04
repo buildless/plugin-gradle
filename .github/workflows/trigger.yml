@@ -62,12 +62,39 @@ jobs:
           - platform: Linux
             runner: ubuntu-latest
             tasks: koverXmlReport sonar
+            gradle: '8.2'
             main: true
           - platform: Windows
             runner: windows-latest
+            gradle: '8.2'
             main: false
           - platform: macOS
             runner: macos-latest
+            gradle: '8.2'
+            main: false
+          - platform: Linux
+            runner: ubuntu-latest
+            gradle: '8.1'
+            main: false
+          - platform: Windows
+            runner: windows-latest
+            gradle: '8.1'
+            main: false
+          - platform: macOS
+            runner: macos-latest
+            gradle: '8.1'
+            main: false
+          - platform: Linux
+            runner: ubuntu-latest
+            gradle: '7.6'
+            main: false
+          - platform: Windows
+            runner: windows-latest
+            gradle: '7.6'
+            main: false
+          - platform: macOS
+            runner: macos-latest
+            gradle: '7.6'
             main: false
     with:
       jvm: "19"
@@ -76,6 +103,7 @@ jobs:
       action: "build test ${{ matrix.tasks }}"
       flags: "--scan --stacktrace"
       artifact: "buildless-plugin-gradle"
+      gradle: ${{ matrix.gradle }}
       coverage_report: "build/reports/kover/report.xml"
       provenance: "${{ fromJson(matrix.main) }}"
       coverage: "${{ fromJson(matrix.main) }}"
