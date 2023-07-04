@@ -1,9 +1,13 @@
-
 /**
  * Buildless Plugin for Gradle
  */
 
-@file:Suppress("UnstableApiUsage", "COMPATIBILITY_WARNING")
+@file:Suppress(
+  "COMPATIBILITY_WARNING",
+  "DSL_SCOPE_VIOLATION",
+  "KotlinRedundantDiagnosticSuppress",
+  "UnstableApiUsage",
+)
 
 import build.buf.gradle.BUF_BUILD_DIR
 import build.buf.gradle.GENERATED_DIR
@@ -57,8 +61,6 @@ val buildDocs: String by properties
 val enableChecks: String by properties
 val lockDeps: String by properties
 val isCI = project.hasProperty("ci") && project.properties["ci"] == "true"
-val kotlinVersionEnum = org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_1_9
-val jvmTargetEnum = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
 val javaVersionEnum = JavaVersion.VERSION_11
 
 // Set version from `.version` if stamping is enabled.

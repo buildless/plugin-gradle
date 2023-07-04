@@ -2,10 +2,6 @@
   "DSL_SCOPE_VIOLATION",
 )
 
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
-import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.targets
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 val kotlinVersion by properties
 val javaVersion: String by properties
 val kotlinLangVersion: String by properties
@@ -41,24 +37,13 @@ kotlin {
     languageSettings.apiVersion = resolvedKotlinLangVersion
   }
 
-  targets.forEach {
-    it.compilations.all {
-      kotlinOptions {
-        apiVersion = kotlinLangVersion
-        languageVersion = kotlinLangVersion
-        allWarningsAsErrors = strictMode
-
-        if (this is KotlinJvmOptions) {
-          javaParameters = true
-          jvmTarget = javaVersion
-        }
-      }
+  target.compilations.all {
+    kotlinOptions {
+      apiVersion = kotlinLangVersion
+      languageVersion = kotlinLangVersion
+      allWarningsAsErrors = strictMode
+      javaParameters = true
+      jvmTarget = javaVersionEnum.majorVersion
     }
-  }
-}
-
-afterEvaluate {
-  tasks.withType(KotlinCompile::class).configureEach {
-    kotlinOptions.jvmTarget = javaVersion
   }
 }
