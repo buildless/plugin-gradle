@@ -59,50 +59,61 @@ jobs:
       contents: write
       actions: read
     strategy:
+      fail-fast: false
+      max-parallel: 6
       matrix:
         platform: [Linux, Windows, macOS]
-        gradle: ['8.2', '8.1', '7.6']
+        gradleLabel: ['Gradle 8.2', 'Gradle 8.1', 'Gradle 7.6']
         include:
           - platform: Linux
             runner: ubuntu-latest
             tasks: koverXmlReport sonar
             gradle: '8.2'
+            gradleLabel: 'Gradle 8.2'
             main: true
           - platform: Windows
             runner: windows-latest
+            gradleLabel: 'Gradle 8.2'
             gradle: '8.2'
             main: false
           - platform: macOS
             runner: macos-latest
+            gradleLabel: 'Gradle 8.2'
             gradle: '8.2'
             main: false
           - platform: Linux
             runner: ubuntu-latest
+            gradleLabel: 'Gradle 8.1'
             gradle: '8.1'
             main: false
           - platform: Windows
             runner: windows-latest
+            gradleLabel: 'Gradle 8.1'
             gradle: '8.1'
             main: false
           - platform: macOS
             runner: macos-latest
+            gradleLabel: 'Gradle 8.1'
             gradle: '8.1'
             main: false
           - platform: Linux
             runner: ubuntu-latest
+            gradleLabel: 'Gradle 7.6'
             gradle: '7.6'
             main: false
           - platform: Windows
             runner: windows-latest
+            gradleLabel: 'Gradle 7.6'
             gradle: '7.6'
             main: false
           - platform: macOS
             runner: macos-latest
+            gradleLabel: 'Gradle 7.6'
             gradle: '7.6'
             main: false
     with:
       jvm: "19"
-      label: "Plugin (Gradle ${{ matrix.gradle }})"
+      label: "Plugin"
       runner: "${{ matrix.runner }}"
       action: "build test ${{ matrix.tasks }}"
       flags: "--scan --stacktrace"
