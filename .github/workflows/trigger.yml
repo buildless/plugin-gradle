@@ -61,6 +61,7 @@ jobs:
     strategy:
       matrix:
         platform: [Linux, Windows, macOS]
+        gradle: ['8.2', '8.1', '7.6']
         include:
           - platform: Linux
             runner: ubuntu-latest
