@@ -20,6 +20,9 @@ on:
       - reopened
       - synchronize
     paths:
+      ## Trigger: CI Changes
+      - ".github/workflows/trigger.yml"
+
       ## Trigger: Global changes/release
       - ".version"
       - ".release"
