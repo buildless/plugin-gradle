@@ -63,7 +63,7 @@ jobs:
       max-parallel: 6
       matrix:
         platform: [Linux, Windows, macOS]
-        gradleLabel: ['Gradle 8.2', 'Gradle 8.1', 'Gradle 7.6']
+        gradleLabel: ['Gradle 8.2', 'Gradle 8.1']
         include:
           - platform: Linux
             runner: ubuntu-latest
