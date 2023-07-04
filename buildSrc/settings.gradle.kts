@@ -8,10 +8,6 @@ pluginManagement {
 
 rootProject.name = "buildSrc"
 
-if ((gradle.gradleVersion.first().toString().toIntOrNull() ?: -1) >= 8) {
-  plugins.apply("org.gradle.toolchains.foojay-resolver-convention:0.5.0")
-}
-
 dependencyResolutionManagement {
   repositoriesMode.set(
     RepositoriesMode.PREFER_SETTINGS
