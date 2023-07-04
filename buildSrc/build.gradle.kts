@@ -2,8 +2,8 @@
   "DSL_SCOPE_VIOLATION",
 )
 
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompilerOptions
-import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.targets
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
+import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.targets
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val kotlinVersion by properties
@@ -11,9 +11,13 @@ val javaVersion: String by properties
 val kotlinLangVersion: String by properties
 val strict: String by properties
 val strictMode = strict == "true"
-val kotlinVersionEnum = org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_1_9
-val jvmTargetEnum = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
 val javaVersionEnum = JavaVersion.VERSION_11
+
+val resolvedKotlinLangVersion = when (val versionTarget = gradle.gradleVersion.first().toString().toIntOrNull() ?: 8) {
+  in 0..5 -> "1.3"
+  in 6..7 -> "1.7"
+  else -> kotlinLangVersion
+}
 
 plugins {
   `kotlin-dsl`
@@ -33,8 +37,8 @@ java {
 kotlin {
   sourceSets.all {
     languageSettings.progressiveMode = true
-    languageSettings.languageVersion = kotlinLangVersion
-    languageSettings.apiVersion = kotlinLangVersion
+    languageSettings.languageVersion = resolvedKotlinLangVersion
+    languageSettings.apiVersion = resolvedKotlinLangVersion
   }
 
   targets.forEach {
@@ -44,9 +48,9 @@ kotlin {
         languageVersion = kotlinLangVersion
         allWarningsAsErrors = strictMode
 
-        if (this is KotlinJvmCompilerOptions) {
-          javaParameters.set(true)
-          jvmTarget.set(jvmTargetEnum)
+        if (this is KotlinJvmOptions) {
+          javaParameters = true
+          jvmTarget = javaVersion
         }
       }
     }

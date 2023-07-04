@@ -96,6 +96,21 @@ jobs:
             gradleLabel: 'Gradle 8.1'
             gradle: '8.1'
             main: false
+          - platform: Linux
+            runner: ubuntu-latest
+            gradleLabel: 'Gradle 7.6'
+            gradle: '7.6'
+            main: false
+          - platform: Windows
+            runner: windows-latest
+            gradleLabel: 'Gradle 7.6'
+            gradle: '7.6'
+            main: false
+          - platform: macOS
+            runner: macos-latest
+            gradleLabel: 'Gradle 7.6'
+            gradle: '7.6'
+            main: false
     with:
       jvm: "19"
       label: "Plugin"
