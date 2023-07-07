@@ -18,10 +18,7 @@
   "labels": ["dependencies"],
   "packageRules": [],
   "postUpgradeTasks": {
-    "fileFilters": [
-      "gradle.lockfile",
-      "settings-gradle.lockfile"
-    ],
+    "fileFilters": ["gradle.lockfile", "settings-gradle.lockfile"],
     "executionMode": "branch"
   }
 }

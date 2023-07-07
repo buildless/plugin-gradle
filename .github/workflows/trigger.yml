@@ -63,38 +63,38 @@ jobs:
       max-parallel: 6
       matrix:
         platform: [Linux, Windows, macOS]
-        gradleLabel: ['Gradle 8.2', 'Gradle 8.1']
+        gradleLabel: ["Gradle 8.2", "Gradle 8.1"]
         include:
           - platform: Linux
             runner: ubuntu-latest
             tasks: koverXmlReport sonar
-            gradle: '8.2'
-            gradleLabel: 'Gradle 8.2'
+            gradle: "8.2"
+            gradleLabel: "Gradle 8.2"
             main: true
           - platform: Windows
             runner: windows-latest
-            gradleLabel: 'Gradle 8.2'
-            gradle: '8.2'
+            gradleLabel: "Gradle 8.2"
+            gradle: "8.2"
             main: false
           - platform: macOS
             runner: macos-latest
-            gradleLabel: 'Gradle 8.2'
-            gradle: '8.2'
+            gradleLabel: "Gradle 8.2"
+            gradle: "8.2"
             main: false
           - platform: Linux
             runner: ubuntu-latest
-            gradleLabel: 'Gradle 8.1'
-            gradle: '8.1'
+            gradleLabel: "Gradle 8.1"
+            gradle: "8.1"
             main: false
           - platform: Windows
             runner: windows-latest
-            gradleLabel: 'Gradle 8.1'
-            gradle: '8.1'
+            gradleLabel: "Gradle 8.1"
+            gradle: "8.1"
             main: false
           - platform: macOS
             runner: macos-latest
-            gradleLabel: 'Gradle 8.1'
-            gradle: '8.1'
+            gradleLabel: "Gradle 8.1"
+            gradle: "8.1"
             main: false
     with:
       jvm: "19"

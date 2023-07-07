@@ -250,6 +250,6 @@ local or remote caching in Gradle, though.
 [5]: https://less.build/login
 [6]: https://elide.dev
 
-
 ## License
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbuildless%2Fplugin-gradle.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbuildless%2Fplugin-gradle?ref=badge_large)
