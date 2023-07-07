@@ -25,7 +25,7 @@ dependencyResolutionManagement {
       from(files(if (embeddedDeps != "true") {
         "../../../gradle/libs.versions.toml"
       } else {
-        "./gradle/plugin.versions.toml"
+        "../gradle/plugin.versions.toml"
       }))
     }
   }
