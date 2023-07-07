@@ -11,6 +11,8 @@ plugins {
   id("org.gradle.toolchains.foojay-resolver-convention") version("0.5.0")
 }
 
+val embeddedDeps: String by settings
+
 gradleEnterprise {
   buildScan {
     termsOfServiceUrl = "https://gradle.com/terms-of-service"
@@ -24,6 +26,15 @@ dependencyResolutionManagement {
   )
   repositories {
     maven("https://maven.pkg.st/")
+  }
+  versionCatalogs {
+    create("libs") {
+      from(files(if (embeddedDeps != "true") {
+        "../../gradle/libs.versions.toml"
+      } else {
+        "./gradle/plugin.versions.toml"
+      }))
+    }
   }
 }
 

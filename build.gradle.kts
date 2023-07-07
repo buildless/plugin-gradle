@@ -415,15 +415,22 @@ val docs = if (buildDocs == "true") {
   }
 } else null
 
-tasks.compileKotlin.configure {
-  dependsOn(tasks.bufGenerate)
-}
-
 tasks.test {
   useJUnitPlatform()
 }
 
+tasks.bufGenerate.configure {
+  outputs.cacheIf { true }
+  inputs.files(
+    "$projectDir/buf.yaml",
+    "$projectDir/buf.lock",
+    "$projectDir/buf.gen.yaml",
+  )
+}
+
 tasks.compileKotlin.configure {
+  dependsOn(tasks.bufGenerate)
+
   kotlinOptions {
     jvmTarget = javaVersion
     javaParameters = true

@@ -11,6 +11,7 @@ plugins {
 }
 
 rootProject.name = "buildSrc"
+val embeddedDeps: String by settings
 
 dependencyResolutionManagement {
   repositoriesMode.set(
@@ -21,7 +22,11 @@ dependencyResolutionManagement {
   }
   versionCatalogs {
     create("libs") {
-      from(files("../gradle/libs.versions.toml"))
+      from(files(if (embeddedDeps != "true") {
+        "../../../gradle/libs.versions.toml"
+      } else {
+        "./gradle/plugin.versions.toml"
+      }))
     }
   }
 }
