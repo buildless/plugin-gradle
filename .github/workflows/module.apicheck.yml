@@ -43,7 +43,7 @@ jobs:
           distribution: "adopt-hotspot"
           java-version: "19"
       - name: "Build: API Check"
-        uses: gradle/gradle-build-action@40b6781dcdec2762ad36556682ac74e31030cfe2 # v2
+        uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2
         id: gradlebuild
         continue-on-error: true
         env:
