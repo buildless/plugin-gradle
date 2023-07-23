@@ -3537,6 +3537,274 @@ public class com/buildless/service/v1/CacheStoreResponseValidator : io/envoyprox
 	public static fun validatorFor (Ljava/lang/Class;)Lio/envoyproxy/pgv/ValidatorImpl;
 }
 
+public final class com/buildless/service/v1/ClientConfigClient : com/buildless/service/v1/ClientConfigClientInterface {
+	public fun <init> (Lbuild/buf/connect/ProtocolClientInterface;)V
+	public fun credentialsCheck (Lcom/buildless/service/v1/CredentialCheckRequest;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public abstract interface class com/buildless/service/v1/ClientConfigClientInterface {
+	public abstract fun credentialsCheck (Lcom/buildless/service/v1/CredentialCheckRequest;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class com/buildless/service/v1/ClientConfigClientInterface$DefaultImpls {
+	public static synthetic fun credentialsCheck$default (Lcom/buildless/service/v1/ClientConfigClientInterface;Lcom/buildless/service/v1/CredentialCheckRequest;Ljava/util/Map;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
+}
+
+public final class com/buildless/service/v1/ClientConfigGrpc {
+	public static final field SERVICE_NAME Ljava/lang/String;
+	public static final fun bindService (Lcom/buildless/service/v1/ClientConfigGrpc$AsyncService;)Lio/grpc/ServerServiceDefinition;
+	public static fun getCredentialsCheckMethod ()Lio/grpc/MethodDescriptor;
+	public static fun getServiceDescriptor ()Lio/grpc/ServiceDescriptor;
+	public static fun newBlockingStub (Lio/grpc/Channel;)Lcom/buildless/service/v1/ClientConfigGrpc$ClientConfigBlockingStub;
+	public static fun newFutureStub (Lio/grpc/Channel;)Lcom/buildless/service/v1/ClientConfigGrpc$ClientConfigFutureStub;
+	public static fun newStub (Lio/grpc/Channel;)Lcom/buildless/service/v1/ClientConfigGrpc$ClientConfigStub;
+}
+
+public abstract interface class com/buildless/service/v1/ClientConfigGrpc$AsyncService {
+	public fun credentialsCheck (Lcom/buildless/service/v1/CredentialCheckRequest;Lio/grpc/stub/StreamObserver;)V
+}
+
+public final class com/buildless/service/v1/ClientConfigGrpc$ClientConfigBlockingStub : io/grpc/stub/AbstractBlockingStub {
+	public fun credentialsCheck (Lcom/buildless/service/v1/CredentialCheckRequest;)Lcom/buildless/service/v1/CredentialCheckResponse;
+}
+
+public final class com/buildless/service/v1/ClientConfigGrpc$ClientConfigFutureStub : io/grpc/stub/AbstractFutureStub {
+	public fun credentialsCheck (Lcom/buildless/service/v1/CredentialCheckRequest;)Lcom/google/common/util/concurrent/ListenableFuture;
+}
+
+public abstract class com/buildless/service/v1/ClientConfigGrpc$ClientConfigImplBase : com/buildless/service/v1/ClientConfigGrpc$AsyncService, io/grpc/BindableService {
+	public fun <init> ()V
+	public final fun bindService ()Lio/grpc/ServerServiceDefinition;
+}
+
+public final class com/buildless/service/v1/ClientConfigGrpc$ClientConfigStub : io/grpc/stub/AbstractAsyncStub {
+	public fun credentialsCheck (Lcom/buildless/service/v1/CredentialCheckRequest;Lio/grpc/stub/StreamObserver;)V
+}
+
+public final class com/buildless/service/v1/CredentialCheckRequest : com/google/protobuf/GeneratedMessageV3, com/buildless/service/v1/CredentialCheckRequestOrBuilder {
+	public static final field PROJECT_FIELD_NUMBER I
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun getDefaultInstance ()Lcom/buildless/service/v1/CredentialCheckRequest;
+	public fun getDefaultInstanceForType ()Lcom/buildless/service/v1/CredentialCheckRequest;
+	public synthetic fun getDefaultInstanceForType ()Lcom/google/protobuf/Message;
+	public synthetic fun getDefaultInstanceForType ()Lcom/google/protobuf/MessageLite;
+	public static final fun getDescriptor ()Lcom/google/protobuf/Descriptors$Descriptor;
+	public fun getParserForType ()Lcom/google/protobuf/Parser;
+	public fun getProject ()Ljava/lang/String;
+	public fun getProjectBytes ()Lcom/google/protobuf/ByteString;
+	public fun getSerializedSize ()I
+	public fun hashCode ()I
+	public final fun isInitialized ()Z
+	public static fun newBuilder ()Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public static fun newBuilder (Lcom/buildless/service/v1/CredentialCheckRequest;)Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public fun newBuilderForType ()Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public synthetic fun newBuilderForType ()Lcom/google/protobuf/Message$Builder;
+	public synthetic fun newBuilderForType ()Lcom/google/protobuf/MessageLite$Builder;
+	public static fun parseDelimitedFrom (Ljava/io/InputStream;)Lcom/buildless/service/v1/CredentialCheckRequest;
+	public static fun parseDelimitedFrom (Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/buildless/service/v1/CredentialCheckRequest;
+	public static fun parseFrom (Lcom/google/protobuf/ByteString;)Lcom/buildless/service/v1/CredentialCheckRequest;
+	public static fun parseFrom (Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/buildless/service/v1/CredentialCheckRequest;
+	public static fun parseFrom (Lcom/google/protobuf/CodedInputStream;)Lcom/buildless/service/v1/CredentialCheckRequest;
+	public static fun parseFrom (Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/buildless/service/v1/CredentialCheckRequest;
+	public static fun parseFrom (Ljava/io/InputStream;)Lcom/buildless/service/v1/CredentialCheckRequest;
+	public static fun parseFrom (Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/buildless/service/v1/CredentialCheckRequest;
+	public static fun parseFrom (Ljava/nio/ByteBuffer;)Lcom/buildless/service/v1/CredentialCheckRequest;
+	public static fun parseFrom (Ljava/nio/ByteBuffer;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/buildless/service/v1/CredentialCheckRequest;
+	public static fun parseFrom ([B)Lcom/buildless/service/v1/CredentialCheckRequest;
+	public static fun parseFrom ([BLcom/google/protobuf/ExtensionRegistryLite;)Lcom/buildless/service/v1/CredentialCheckRequest;
+	public static fun parser ()Lcom/google/protobuf/Parser;
+	public fun toBuilder ()Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public synthetic fun toBuilder ()Lcom/google/protobuf/Message$Builder;
+	public synthetic fun toBuilder ()Lcom/google/protobuf/MessageLite$Builder;
+	public fun writeTo (Lcom/google/protobuf/CodedOutputStream;)V
+}
+
+public final class com/buildless/service/v1/CredentialCheckRequest$Builder : com/google/protobuf/GeneratedMessageV3$Builder, com/buildless/service/v1/CredentialCheckRequestOrBuilder {
+	public fun addRepeatedField (Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public synthetic fun addRepeatedField (Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun addRepeatedField (Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/google/protobuf/Message$Builder;
+	public fun build ()Lcom/buildless/service/v1/CredentialCheckRequest;
+	public synthetic fun build ()Lcom/google/protobuf/Message;
+	public synthetic fun build ()Lcom/google/protobuf/MessageLite;
+	public fun buildPartial ()Lcom/buildless/service/v1/CredentialCheckRequest;
+	public synthetic fun buildPartial ()Lcom/google/protobuf/Message;
+	public synthetic fun buildPartial ()Lcom/google/protobuf/MessageLite;
+	public fun clear ()Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public synthetic fun clear ()Lcom/google/protobuf/AbstractMessage$Builder;
+	public synthetic fun clear ()Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun clear ()Lcom/google/protobuf/Message$Builder;
+	public synthetic fun clear ()Lcom/google/protobuf/MessageLite$Builder;
+	public fun clearField (Lcom/google/protobuf/Descriptors$FieldDescriptor;)Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public synthetic fun clearField (Lcom/google/protobuf/Descriptors$FieldDescriptor;)Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun clearField (Lcom/google/protobuf/Descriptors$FieldDescriptor;)Lcom/google/protobuf/Message$Builder;
+	public fun clearOneof (Lcom/google/protobuf/Descriptors$OneofDescriptor;)Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public synthetic fun clearOneof (Lcom/google/protobuf/Descriptors$OneofDescriptor;)Lcom/google/protobuf/AbstractMessage$Builder;
+	public synthetic fun clearOneof (Lcom/google/protobuf/Descriptors$OneofDescriptor;)Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun clearOneof (Lcom/google/protobuf/Descriptors$OneofDescriptor;)Lcom/google/protobuf/Message$Builder;
+	public fun clearProject ()Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public fun clone ()Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public synthetic fun clone ()Lcom/google/protobuf/AbstractMessage$Builder;
+	public synthetic fun clone ()Lcom/google/protobuf/AbstractMessageLite$Builder;
+	public synthetic fun clone ()Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun clone ()Lcom/google/protobuf/Message$Builder;
+	public synthetic fun clone ()Lcom/google/protobuf/MessageLite$Builder;
+	public synthetic fun clone ()Ljava/lang/Object;
+	public fun getDefaultInstanceForType ()Lcom/buildless/service/v1/CredentialCheckRequest;
+	public synthetic fun getDefaultInstanceForType ()Lcom/google/protobuf/Message;
+	public synthetic fun getDefaultInstanceForType ()Lcom/google/protobuf/MessageLite;
+	public static final fun getDescriptor ()Lcom/google/protobuf/Descriptors$Descriptor;
+	public fun getDescriptorForType ()Lcom/google/protobuf/Descriptors$Descriptor;
+	public fun getProject ()Ljava/lang/String;
+	public fun getProjectBytes ()Lcom/google/protobuf/ByteString;
+	public final fun isInitialized ()Z
+	public fun mergeFrom (Lcom/buildless/service/v1/CredentialCheckRequest;)Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public fun mergeFrom (Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public synthetic fun mergeFrom (Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessage$Builder;
+	public synthetic fun mergeFrom (Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessageLite$Builder;
+	public synthetic fun mergeFrom (Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/Message$Builder;
+	public synthetic fun mergeFrom (Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite$Builder;
+	public fun mergeFrom (Lcom/google/protobuf/Message;)Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public synthetic fun mergeFrom (Lcom/google/protobuf/Message;)Lcom/google/protobuf/AbstractMessage$Builder;
+	public synthetic fun mergeFrom (Lcom/google/protobuf/Message;)Lcom/google/protobuf/Message$Builder;
+	public final fun mergeUnknownFields (Lcom/google/protobuf/UnknownFieldSet;)Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public synthetic fun mergeUnknownFields (Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/AbstractMessage$Builder;
+	public synthetic fun mergeUnknownFields (Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun mergeUnknownFields (Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/Message$Builder;
+	public fun setField (Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public synthetic fun setField (Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun setField (Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/google/protobuf/Message$Builder;
+	public fun setProject (Ljava/lang/String;)Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public fun setProjectBytes (Lcom/google/protobuf/ByteString;)Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public fun setRepeatedField (Lcom/google/protobuf/Descriptors$FieldDescriptor;ILjava/lang/Object;)Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public synthetic fun setRepeatedField (Lcom/google/protobuf/Descriptors$FieldDescriptor;ILjava/lang/Object;)Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun setRepeatedField (Lcom/google/protobuf/Descriptors$FieldDescriptor;ILjava/lang/Object;)Lcom/google/protobuf/Message$Builder;
+	public final fun setUnknownFields (Lcom/google/protobuf/UnknownFieldSet;)Lcom/buildless/service/v1/CredentialCheckRequest$Builder;
+	public synthetic fun setUnknownFields (Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun setUnknownFields (Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/Message$Builder;
+}
+
+public abstract interface class com/buildless/service/v1/CredentialCheckRequestOrBuilder : com/google/protobuf/MessageOrBuilder {
+	public abstract fun getProject ()Ljava/lang/String;
+	public abstract fun getProjectBytes ()Lcom/google/protobuf/ByteString;
+}
+
+public class com/buildless/service/v1/CredentialCheckRequestValidator : io/envoyproxy/pgv/ValidatorImpl {
+	public fun <init> ()V
+	public fun assertValid (Lcom/buildless/service/v1/CredentialCheckRequest;Lio/envoyproxy/pgv/ValidatorIndex;)V
+	public synthetic fun assertValid (Ljava/lang/Object;Lio/envoyproxy/pgv/ValidatorIndex;)V
+	public static fun validatorFor (Ljava/lang/Class;)Lio/envoyproxy/pgv/ValidatorImpl;
+}
+
+public final class com/buildless/service/v1/CredentialCheckResponse : com/google/protobuf/GeneratedMessageV3, com/buildless/service/v1/CredentialCheckResponseOrBuilder {
+	public static final field OK_FIELD_NUMBER I
+	public fun equals (Ljava/lang/Object;)Z
+	public static fun getDefaultInstance ()Lcom/buildless/service/v1/CredentialCheckResponse;
+	public fun getDefaultInstanceForType ()Lcom/buildless/service/v1/CredentialCheckResponse;
+	public synthetic fun getDefaultInstanceForType ()Lcom/google/protobuf/Message;
+	public synthetic fun getDefaultInstanceForType ()Lcom/google/protobuf/MessageLite;
+	public static final fun getDescriptor ()Lcom/google/protobuf/Descriptors$Descriptor;
+	public fun getOk ()Z
+	public fun getParserForType ()Lcom/google/protobuf/Parser;
+	public fun getSerializedSize ()I
+	public fun hashCode ()I
+	public final fun isInitialized ()Z
+	public static fun newBuilder ()Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public static fun newBuilder (Lcom/buildless/service/v1/CredentialCheckResponse;)Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public fun newBuilderForType ()Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public synthetic fun newBuilderForType ()Lcom/google/protobuf/Message$Builder;
+	public synthetic fun newBuilderForType ()Lcom/google/protobuf/MessageLite$Builder;
+	public static fun parseDelimitedFrom (Ljava/io/InputStream;)Lcom/buildless/service/v1/CredentialCheckResponse;
+	public static fun parseDelimitedFrom (Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/buildless/service/v1/CredentialCheckResponse;
+	public static fun parseFrom (Lcom/google/protobuf/ByteString;)Lcom/buildless/service/v1/CredentialCheckResponse;
+	public static fun parseFrom (Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/buildless/service/v1/CredentialCheckResponse;
+	public static fun parseFrom (Lcom/google/protobuf/CodedInputStream;)Lcom/buildless/service/v1/CredentialCheckResponse;
+	public static fun parseFrom (Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/buildless/service/v1/CredentialCheckResponse;
+	public static fun parseFrom (Ljava/io/InputStream;)Lcom/buildless/service/v1/CredentialCheckResponse;
+	public static fun parseFrom (Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/buildless/service/v1/CredentialCheckResponse;
+	public static fun parseFrom (Ljava/nio/ByteBuffer;)Lcom/buildless/service/v1/CredentialCheckResponse;
+	public static fun parseFrom (Ljava/nio/ByteBuffer;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/buildless/service/v1/CredentialCheckResponse;
+	public static fun parseFrom ([B)Lcom/buildless/service/v1/CredentialCheckResponse;
+	public static fun parseFrom ([BLcom/google/protobuf/ExtensionRegistryLite;)Lcom/buildless/service/v1/CredentialCheckResponse;
+	public static fun parser ()Lcom/google/protobuf/Parser;
+	public fun toBuilder ()Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public synthetic fun toBuilder ()Lcom/google/protobuf/Message$Builder;
+	public synthetic fun toBuilder ()Lcom/google/protobuf/MessageLite$Builder;
+	public fun writeTo (Lcom/google/protobuf/CodedOutputStream;)V
+}
+
+public final class com/buildless/service/v1/CredentialCheckResponse$Builder : com/google/protobuf/GeneratedMessageV3$Builder, com/buildless/service/v1/CredentialCheckResponseOrBuilder {
+	public fun addRepeatedField (Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public synthetic fun addRepeatedField (Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun addRepeatedField (Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/google/protobuf/Message$Builder;
+	public fun build ()Lcom/buildless/service/v1/CredentialCheckResponse;
+	public synthetic fun build ()Lcom/google/protobuf/Message;
+	public synthetic fun build ()Lcom/google/protobuf/MessageLite;
+	public fun buildPartial ()Lcom/buildless/service/v1/CredentialCheckResponse;
+	public synthetic fun buildPartial ()Lcom/google/protobuf/Message;
+	public synthetic fun buildPartial ()Lcom/google/protobuf/MessageLite;
+	public fun clear ()Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public synthetic fun clear ()Lcom/google/protobuf/AbstractMessage$Builder;
+	public synthetic fun clear ()Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun clear ()Lcom/google/protobuf/Message$Builder;
+	public synthetic fun clear ()Lcom/google/protobuf/MessageLite$Builder;
+	public fun clearField (Lcom/google/protobuf/Descriptors$FieldDescriptor;)Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public synthetic fun clearField (Lcom/google/protobuf/Descriptors$FieldDescriptor;)Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun clearField (Lcom/google/protobuf/Descriptors$FieldDescriptor;)Lcom/google/protobuf/Message$Builder;
+	public fun clearOk ()Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public fun clearOneof (Lcom/google/protobuf/Descriptors$OneofDescriptor;)Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public synthetic fun clearOneof (Lcom/google/protobuf/Descriptors$OneofDescriptor;)Lcom/google/protobuf/AbstractMessage$Builder;
+	public synthetic fun clearOneof (Lcom/google/protobuf/Descriptors$OneofDescriptor;)Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun clearOneof (Lcom/google/protobuf/Descriptors$OneofDescriptor;)Lcom/google/protobuf/Message$Builder;
+	public fun clone ()Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public synthetic fun clone ()Lcom/google/protobuf/AbstractMessage$Builder;
+	public synthetic fun clone ()Lcom/google/protobuf/AbstractMessageLite$Builder;
+	public synthetic fun clone ()Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun clone ()Lcom/google/protobuf/Message$Builder;
+	public synthetic fun clone ()Lcom/google/protobuf/MessageLite$Builder;
+	public synthetic fun clone ()Ljava/lang/Object;
+	public fun getDefaultInstanceForType ()Lcom/buildless/service/v1/CredentialCheckResponse;
+	public synthetic fun getDefaultInstanceForType ()Lcom/google/protobuf/Message;
+	public synthetic fun getDefaultInstanceForType ()Lcom/google/protobuf/MessageLite;
+	public static final fun getDescriptor ()Lcom/google/protobuf/Descriptors$Descriptor;
+	public fun getDescriptorForType ()Lcom/google/protobuf/Descriptors$Descriptor;
+	public fun getOk ()Z
+	public final fun isInitialized ()Z
+	public fun mergeFrom (Lcom/buildless/service/v1/CredentialCheckResponse;)Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public fun mergeFrom (Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public synthetic fun mergeFrom (Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessage$Builder;
+	public synthetic fun mergeFrom (Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessageLite$Builder;
+	public synthetic fun mergeFrom (Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/Message$Builder;
+	public synthetic fun mergeFrom (Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite$Builder;
+	public fun mergeFrom (Lcom/google/protobuf/Message;)Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public synthetic fun mergeFrom (Lcom/google/protobuf/Message;)Lcom/google/protobuf/AbstractMessage$Builder;
+	public synthetic fun mergeFrom (Lcom/google/protobuf/Message;)Lcom/google/protobuf/Message$Builder;
+	public final fun mergeUnknownFields (Lcom/google/protobuf/UnknownFieldSet;)Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public synthetic fun mergeUnknownFields (Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/AbstractMessage$Builder;
+	public synthetic fun mergeUnknownFields (Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun mergeUnknownFields (Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/Message$Builder;
+	public fun setField (Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public synthetic fun setField (Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun setField (Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/google/protobuf/Message$Builder;
+	public fun setOk (Z)Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public fun setRepeatedField (Lcom/google/protobuf/Descriptors$FieldDescriptor;ILjava/lang/Object;)Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public synthetic fun setRepeatedField (Lcom/google/protobuf/Descriptors$FieldDescriptor;ILjava/lang/Object;)Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun setRepeatedField (Lcom/google/protobuf/Descriptors$FieldDescriptor;ILjava/lang/Object;)Lcom/google/protobuf/Message$Builder;
+	public final fun setUnknownFields (Lcom/google/protobuf/UnknownFieldSet;)Lcom/buildless/service/v1/CredentialCheckResponse$Builder;
+	public synthetic fun setUnknownFields (Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/GeneratedMessageV3$Builder;
+	public synthetic fun setUnknownFields (Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/Message$Builder;
+}
+
+public abstract interface class com/buildless/service/v1/CredentialCheckResponseOrBuilder : com/google/protobuf/MessageOrBuilder {
+	public abstract fun getOk ()Z
+}
+
+public class com/buildless/service/v1/CredentialCheckResponseValidator : io/envoyproxy/pgv/ValidatorImpl {
+	public fun <init> ()V
+	public fun assertValid (Lcom/buildless/service/v1/CredentialCheckResponse;Lio/envoyproxy/pgv/ValidatorIndex;)V
+	public synthetic fun assertValid (Ljava/lang/Object;Lio/envoyproxy/pgv/ValidatorIndex;)V
+	public static fun validatorFor (Ljava/lang/Class;)Lio/envoyproxy/pgv/ValidatorImpl;
+}
+
 public final class com/buildless/service/v1/Event : com/google/protobuf/GeneratedMessageV3, com/buildless/service/v1/EventOrBuilder {
 	public static final field COLLECTION_FIELD_NUMBER I
 	public static final field EVENT_FIELD_NUMBER I
