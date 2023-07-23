@@ -71,46 +71,52 @@ jobs:
             gradle: "8.2"
             gradleLabel: "Gradle 8.2"
             main: true
+            labs: false
           - platform: Windows
             runner: windows-latest
             gradleLabel: "Gradle 8.2"
             gradle: "8.2"
             main: false
+            labs: false
           - platform: macOS
             runner: macos-latest
             gradleLabel: "Gradle 8.2"
             gradle: "8.2"
             main: false
+            labs: false
           - platform: Linux
             runner: ubuntu-latest
             gradleLabel: "Gradle 8.1"
             gradle: "8.1"
             main: false
+            labs: false
           - platform: Windows
             runner: windows-latest
             gradleLabel: "Gradle 8.1"
             gradle: "8.1"
             main: false
+            labs: false
           - platform: macOS
             runner: macos-latest
             gradleLabel: "Gradle 8.1"
             gradle: "8.1"
             main: false
+            labs: false
           - platform: Windows
             runner: windows-latest
-            gradleLabel: "Gradle (Latest)"
+            gradleLabel: "Gradle Latest"
             gradle: "release-candidate"
             main: false
             labs: true
           - platform: macOS
             runner: macos-latest
-            gradleLabel: "Gradle (Latest)"
+            gradleLabel: "Gradle Latest"
             gradle: "release-candidate"
             main: false
             labs: true
           - platform: Linux
             runner: ubuntu-latest
-            gradleLabel: "Gradle (Latest)"
+            gradleLabel: "Gradle Latest"
             gradle: "release-candidate"
             main: false
             labs: true
@@ -121,7 +127,7 @@ jobs:
       flags: "--scan --stacktrace"
       artifact: "buildless-plugin-gradle"
       gradle: ${{ matrix.gradle }}
-      labs: ${{ matrix.labs }}
+      labs: ${{ fromJson(matrix.labs) }}
       coverage_report: "build/reports/kover/report.xml"
       provenance: "${{ fromJson(matrix.main) }}"
       coverage: "${{ fromJson(matrix.main) }}"
