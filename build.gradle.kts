@@ -332,7 +332,6 @@ koverReport {
 
 if (lockDeps == "true") dependencyLocking {
   lockAllConfigurations()
-  lockMode = LockMode.LENIENT
 }
 
 sourceSets.main.configure {
