@@ -52,6 +52,7 @@ jobs:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       BUILDLESS_APIKEY: ${{ secrets.BUILDLESS_APIKEY }}
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    continue-on-error: ${{ matrix.labs }}
     permissions:
       checks: write
       pull-requests: read
@@ -96,8 +97,25 @@ jobs:
             gradleLabel: "Gradle 8.1"
             gradle: "8.1"
             main: false
+          - platform: Windows
+            runner: windows-latest
+            gradleLabel: "Gradle (Latest)"
+            gradle: "release-candidate"
+            main: false
+            labs: true
+          - platform: macOS
+            runner: macos-latest
+            gradleLabel: "Gradle (Latest)"
+            gradle: "release-candidate"
+            main: false
+            labs: true
+          - platform: Linux
+            runner: ubuntu-latest
+            gradleLabel: "Gradle (Latest)"
+            gradle: "release-candidate"
+            main: false
+            labs: true
     with:
-      jvm: "19"
       label: "Plugin"
       runner: "${{ matrix.runner }}"
       action: "build test ${{ matrix.tasks }}"
