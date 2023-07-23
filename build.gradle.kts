@@ -14,7 +14,7 @@ import org.jetbrains.dokka.base.DokkaBase
 import org.jetbrains.dokka.base.DokkaBaseConfiguration
 import org.jetbrains.dokka.gradle.DokkaTask
 import org.jetbrains.kotlin.gradle.dsl.ExplicitApiMode
-import java.net.URL
+import java.net.URI
 
 plugins {
   idea
@@ -103,7 +103,7 @@ buildConfig {
 buf {
   enforceFormat = false
   publishSchema = false
-  toolVersion = libs.versions.buf.get()
+  toolVersion = libs.versions.buf.tool.get()
 
   generate {
     includeImports = true
@@ -164,6 +164,9 @@ testlogger {
 
 kover {
   excludeJavaCode()
+
+  if (!project.hasProperty("useIntellij"))
+    useJacoco()
 
   excludeInstrumentation {
     packages(
@@ -329,6 +332,7 @@ koverReport {
 
 if (lockDeps == "true") dependencyLocking {
   lockAllConfigurations()
+  lockMode = LockMode.LENIENT
 }
 
 sourceSets.main.configure {
@@ -479,7 +483,7 @@ tasks.withType<DokkaTask>().configureEach {
     }
     sourceLink {
       localDirectory.set(projectDir.resolve("src"))
-      remoteUrl.set(URL("https://github.com/buildless/plugin-gradle/tree/main/src"))
+      remoteUrl.set(URI.create("https://github.com/buildless/plugin-gradle/tree/main/src").toURL())
       remoteLineSuffix.set("#L")
     }
   }
