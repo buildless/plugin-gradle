@@ -9,8 +9,8 @@ deps:
   - remote: buf.build
     owner: buildless
     repository: buildless
-    commit: 68382b21a34b43068e5f29e8c1623e00
-    digest: shake256:0b155bedda1252aef5f3d287ec34ed4fe6347cd131e852a5c97e8e661980d07e9415f9f7cef39759c2f40bbcb5fd87b09f5ec322b2ae3a6652231ff838fc895f
+    commit: 3e08b5e4ee544188865a31b224a04445
+    digest: shake256:6b0740ca79157bdc898ad93a3110e080ff75ec146c4b9d9ce415e0503e077f5a247077573927ea3a49206c99b911139f710734e45e214c547da179179240be03
   - remote: buf.build
     owner: cel
     repository: spec

@@ -12,6 +12,7 @@ breaking:
 deps:
   - buf.build/googleapis/googleapis
   - buf.build/buildless/buildless
+  - buf.build/grpc/grpc
 lint:
   allow_comment_ignores: true
   except:
