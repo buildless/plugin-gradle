@@ -17,3 +17,8 @@ updates:
       interval: "weekly"
     assignees:
       - "sgammon"
+
+  - package-ecosystem: docker
+    directory: /.devcontainer
+    schedule:
+      interval: daily
