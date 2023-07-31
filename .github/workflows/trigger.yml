@@ -70,6 +70,24 @@ jobs:
         include:
           - platform: Linux
             runner: ubuntu-latest
+            gradleLabel: "Gradle 8.3-rc2"
+            gradle: "8.3-rc2"
+            main: false
+            labs: true
+          - platform: Windows
+            runner: windows-latest
+            gradleLabel: "Gradle 8.3-rc2"
+            gradle: "8.3-rc2"
+            main: false
+            labs: true
+          - platform: macOS
+            runner: macos-latest
+            gradleLabel: "Gradle 8.3-rc2"
+            gradle: "8.3-rc2"
+            main: false
+            labs: true
+          - platform: Linux
+            runner: ubuntu-latest
             tasks: koverXmlReport sonar
             gradle: "8.2"
             gradleLabel: "Gradle 8.2"
