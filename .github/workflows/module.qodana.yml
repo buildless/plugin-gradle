@@ -31,6 +31,11 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@cba0d00b1fc9a034e1e642ea0f1103c282990604 # v2.5.0
+        with:
+          egress-policy: audit
+
       - name: "Setup: Checkout"
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
       - name: "Setup: JDK 19"
@@ -39,7 +44,7 @@ jobs:
           distribution: "adopt-hotspot"
           java-version: "19"
       - name: "Qodana Scan"
-        uses: JetBrains/qodana-action@main
+        uses: JetBrains/qodana-action@c33af005540b351ca67ddc16e63d26125517fd60 # main
         continue-on-error: true
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
