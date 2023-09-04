@@ -39,12 +39,13 @@
       };
       (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/' + APP_ID;var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
     </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
 <script type="text/javascript" src="scripts/sourceset_dependencies.js" async="async"></script>
 <link href="styles/style.css" rel="Stylesheet">
-<link href="styles/jetbrains-mono.css" rel="Stylesheet">
 <link href="styles/main.css" rel="Stylesheet">
 <link href="styles/prism.css" rel="Stylesheet">
 <link href="styles/logo-styles.css" rel="Stylesheet">
+<link href="styles/font-jb-sans-auto.css" rel="Stylesheet">
 <script type="text/javascript" src="scripts/clipboard.js" async="async"></script>
 <script type="text/javascript" src="scripts/navigation-loader.js" async="async"></script>
 <script type="text/javascript" src="scripts/platform-content-handler.js" async="async"></script>
@@ -53,16 +54,22 @@
 <script type="text/javascript" src="scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
 <link href="styles/multimodule.css" rel="Stylesheet">
 <script type="text/javascript" src="dokka-mermaid.js" async="async"></script>
+<link href="images/masthead-dark@1x.png">
 <link href="images/wordmark.svg">
 <link href="images/ogimage-banner-r1@4x.jpg">
 <link href="images/ogimage-banner-r1@4x.png">
+<link href="images/masthead@2x.png">
 <link href="images/logo-icon.svg">
 <link href="images/ogimage-banner-r1@2x.jpg">
 <link href="images/ogimage-banner-r1@2x.png">
+<link href="images/masthead@4x.png">
 <link href="images/logo-icon-color.svg">
+<link href="images/masthead-dark@4x.png">
 <link href="images/wordmark-gray.svg">
 <link href="images/ogimage-banner-r1@1x.jpg">
 <link href="images/ogimage-banner-r1@1x.png">
+<link href="images/masthead@1x.png">
+<link href="images/masthead-dark@2x.png">
 <link href="styles/prism.css" rel="Stylesheet">
 <link href="styles/style.css" rel="Stylesheet">
 <link href="styles/logo-styles.css" rel="Stylesheet">
@@ -77,7 +84,7 @@
                 </a>
         </div>
         <div>
-<dokka-template-command data="{&quot;@class&quot;:&quot;org.jetbrains.dokka.base.templating.ReplaceVersionsCommand&quot;,&quot;location&quot;:&quot;index.html&quot;}">1.0.0-beta1</dokka-template-command>        </div>
+<dokka-template-command data="{&quot;@class&quot;:&quot;org.jetbrains.dokka.base.templating.ReplaceVersionsCommand&quot;,&quot;location&quot;:&quot;index.html&quot;}">1.0.0-beta2</dokka-template-command>        </div>
         <div class="pull-right d-flex">
         <div class="filter-section" id="filter-section">
                 <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":dokkaHtml/main">JVM (Gradle)</button>
@@ -95,7 +102,7 @@
   <div class="breadcrumbs"></div>
   <div class="cover ">
     <h1 class="cover"><span><span>buildless-plugin-gradle</span></span></h1>
-    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><p class="paragraph">This documentation describes reference material for the <a href="https://less.build">Buildless</a> plugin for <a href="https://gradle.org">Gradle</a>. The plugin helps with  configuration of remote build caching via the Buildless API. See the <a href="https://docs.less.build">Buildless docs</a> for additional info including resources, code samples, API specs, and more.</p><hr /><p class="paragraph"><h3>Complete config sample</h3></p><p class="paragraph"><code class="strong lang-kotlin"><strong>settings.gradle.kts</strong></code><strong> (Kotlin DSL):</strong></p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">import build.less.plugin.settings.buildless<br><br>plugins {<br>  id(&quot;build.less&quot;) version &quot;...&quot;<br>}<br><br>buildless {<br>  // various flags:<br>  debug = true  // activate or deactivate debug mode (verbose logging, API tracing, etc)<br>  telemetry = true  // activate or deactivate private build telemetry (build analytics in the dashboard)<br>  reportErrors = true  // activate or deactivate error reporting to the buildless team (just plugin errors)<br><br>  // options for configuring your API key:<br>  apiKey(&quot;...&quot;)<br>  apiKey(ApiKey.of(&quot;...&quot;))<br>  apiKey(ApiKey.of(&quot;...&quot;, type = SubjectType.ORG))<br><br>  // configuring local caching (it defaults to being active):<br>  localCache.enabled = true  // turn the local cache on or off<br>  localCache.directory = &quot;...&quot;  // set the directory where the cache is stored (defaults to .gradle/cache)<br><br>  // or...<br>  localCache {<br>    enabled = true<br>    directory = &quot;...&quot;<br>  }<br><br>  // configuring remote caching (it defaults to being active):<br>  remoteCache.enabled = true  // turn the remote cache on or off<br>  remoteCache.endpoint = &quot;...&quot;  // set a custom or enterprise cache endpoint (not usually necessary)<br><br>  // or...<br>  remoteCache {<br>      enabled = true<br>      endpoint = &quot;...&quot;<br>  }<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><hr /><p class="paragraph"><strong>Other resources</strong></p><ul><li><p class="paragraph"><a href="https://docs.less.build"><strong>Buildless docs</strong></a>: API docs, reference material, getting started guides</p></li><li><p class="paragraph"><a href="https://less.build/samples"><strong>Code samples</strong></a>: Sample codebases in various frameworks, pre-integrated with Buildless</p></li><li><p class="paragraph"><a href="https://less.build/login"><strong>Dashboard</strong></a>: Log in to obtain your API keys and review analytics</p></li><li><p class="paragraph"><a href="https://support.less.build"><strong>Contact support</strong></a>: Contact the support team by chat, phone, email</p></li><li><p class="paragraph"><a href="https://less.build"><strong>Our website</strong></a>: Everything else including our Terms of Service and Privacy Policy</p></li></ul></div></div>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><p class="paragraph">This documentation describes reference material for the <a href="https://less.build">Buildless</a> plugin for <a href="https://gradle.org">Gradle</a>. The plugin helps with configuration of remote build caching via the Buildless API. See the <a href="https://docs.less.build">Buildless docs</a> for additional info including resources, code samples, API specs, and more.</p><hr /><p class="paragraph"><h3>Complete config sample</h3></p><p class="paragraph"><code class="strong lang-kotlin"><strong>settings.gradle.kts</strong></code><strong> (Kotlin DSL):</strong></p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">import build.less.plugin.settings.buildless<br><br>plugins {<br>  id(&quot;build.less&quot;) version &quot;...&quot;<br>}<br><br>buildless {<br>  // various flags:<br>  debug = true  // activate or deactivate debug mode (verbose logging, API tracing, etc)<br>  telemetry = true  // activate or deactivate private build telemetry (build analytics in the dashboard)<br>  reportErrors = true  // activate or deactivate error reporting to the buildless team (just plugin errors)<br><br>  // options for configuring your API key:<br>  apiKey(&quot;...&quot;)<br>  apiKey(ApiKey.of(&quot;...&quot;))<br>  apiKey(ApiKey.of(&quot;...&quot;, type = SubjectType.ORG))<br><br>  // configuring local caching (it defaults to being active):<br>  localCache.enabled = true  // turn the local cache on or off<br>  localCache.directory = &quot;...&quot;  // set the directory where the cache is stored (defaults to .gradle/cache)<br><br>  // or...<br>  localCache {<br>    enabled = true<br>    directory = &quot;...&quot;<br>  }<br><br>  // configuring remote caching (it defaults to being active):<br>  remoteCache.enabled = true  // turn the remote cache on or off<br>  remoteCache.endpoint = &quot;...&quot;  // set a custom or enterprise cache endpoint (not usually necessary)<br><br>  // or...<br>  remoteCache {<br>      enabled = true<br>      endpoint = &quot;...&quot;<br>  }<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><hr /><p class="paragraph"><strong>Other resources</strong></p><ul><li><p class="paragraph"><a href="https://docs.less.build"><strong>Buildless docs</strong></a>: API docs, reference material, getting started guides</p></li><li><p class="paragraph"><a href="https://less.build/samples"><strong>Code samples</strong></a>: Sample codebases in various frameworks, pre-integrated with Buildless</p></li><li><p class="paragraph"><a href="https://less.build/login"><strong>Dashboard</strong></a>: Log in to obtain your API keys and review analytics</p></li><li><p class="paragraph"><a href="https://support.less.build"><strong>Contact support</strong></a>: Contact the support team by chat, phone, email</p></li><li><p class="paragraph"><a href="https://less.build"><strong>Our website</strong></a>: Everything else including our Terms of Service and Privacy Policy</p></li></ul></div></div>
   </div>
   <h2 class="">Packages</h2>
   <div class="table"><a data-name="-1378670097%2FPackages%2F934854163" anchor-label="build.less.plugin.gradle" id="-1378670097%2FPackages%2F934854163" data-filterable-set=":dokkaHtml/main"></a>

@@ -16,6 +16,7 @@ $dokka.location:build.less.plugin.gradle/ApiKey.InvalidKey/code/#/PointingToDecl
 $dokka.location:build.less.plugin.gradle/ApiKey.SubjectType.ORG///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-subject-type/-o-r-g/index.html
 $dokka.location:build.less.plugin.gradle/ApiKey.SubjectType.USER///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-subject-type/-u-s-e-r/index.html
 $dokka.location:build.less.plugin.gradle/ApiKey.SubjectType///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-subject-type/index.html
+$dokka.location:build.less.plugin.gradle/ApiKey.SubjectType/entries/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-subject-type/entries.html
 $dokka.location:build.less.plugin.gradle/ApiKey.SubjectType/valueOf/#kotlin.String/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-subject-type/value-of.html
 $dokka.location:build.less.plugin.gradle/ApiKey.SubjectType/values/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/-subject-type/values.html
 $dokka.location:build.less.plugin.gradle/ApiKey///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-api-key/index.html
@@ -62,6 +63,7 @@ $dokka.location:build.less.plugin.gradle/BuildlessService/close/#/PointingToDecl
 $dokka.location:build.less.plugin.gradle/BuildlessService/getParameters/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-buildless-service/get-parameters.html
 $dokka.location:build.less.plugin.gradle/CacheTransport.STANDARD///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}buildless-plugin-gradle/build.less.plugin.gradle/-cache-transport/-s-t-a-n-d-a-r-d/index.html
 $dokka.location:build.less.plugin.gradle/CacheTransport///PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-cache-transport/index.html
+$dokka.location:build.less.plugin.gradle/CacheTransport/entries/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-cache-transport/entries.html
 $dokka.location:build.less.plugin.gradle/CacheTransport/valueOf/#kotlin.String/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-cache-transport/value-of.html
 $dokka.location:build.less.plugin.gradle/CacheTransport/values/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-cache-transport/values.html
 $dokka.location:build.less.plugin.settings////PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.settings/index.html
