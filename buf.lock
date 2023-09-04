@@ -9,8 +9,8 @@ deps:
   - remote: buf.build
     owner: buildless
     repository: buildless
-    commit: 3e08b5e4ee544188865a31b224a04445
-    digest: shake256:6b0740ca79157bdc898ad93a3110e080ff75ec146c4b9d9ce415e0503e077f5a247077573927ea3a49206c99b911139f710734e45e214c547da179179240be03
+    commit: 81091cd481e0457e8ec820c97a5cd380
+    digest: shake256:a512f88e5dcf32bb006fae97eb36fd3441fd30e729eb7f4d8a7a58601793e7a7b3fdfa5ec1ad61a8930b10bcca0fac78f0ed2915d1586cc10b7cfc41fd7f9e61
   - remote: buf.build
     owner: cel
     repository: spec
@@ -19,8 +19,8 @@ deps:
   - remote: buf.build
     owner: cncf
     repository: xds
-    commit: 197fca8a74c54bc888e0ccf2da3b9f65
-    digest: shake256:cc68ed395f3531a8fa3a053a2c6f013fee057945a39b934aecdb3a204af7ea512da3e366b24ef72a9123985aeacb000291354799d8ac7dcb30e9907f30158110
+    commit: 0d869d8e763c430498070035c02ac001
+    digest: shake256:b86eabc7d6290b46989d8db4ea39f7e4932d736373960ad4bf0d3118a76d5159c40cab7086fbb82d981aad1effcf45a3ff514adfff882460aa9dd2eb6d5535f5
   - remote: buf.build
     owner: elide
     repository: openapi
@@ -34,28 +34,28 @@ deps:
   - remote: buf.build
     owner: elide
     repository: v3
-    commit: 4af10f8b872b45f2a2789bee3d1f308b
-    digest: shake256:59df2ddb06a933a4ad8af6e3de9c8364644c848c144189371ea9ec266d630c3043ac7ad5752b0abf8e97efc9ab5e78bf6269f1fc8c254167cb8a4688bc381fc9
+    commit: d1d15f620a3e43f3a4403089a27f6dcc
+    digest: shake256:7a0ae7bd9b9f8c85e2d1d59d12dab9f0c0321aed9f246b69b71946d2e894b0850196d448d0fc89f269283ce757d49723a7c3e5e279ea0f7e807be21015ebfa88
   - remote: buf.build
     owner: envoyproxy
     repository: envoy
-    commit: 3afde44c0a3a4c68806763a2e0a3e32b
-    digest: shake256:22819862cc0524a9c441338a811363fb844e9578dc97170bfba96d4d9e488f9ad7277c2fe1ed7de8fc1356496148df81c2c1f086b7bce113ba81cae35a034afd
+    commit: 1ec8ea8729b64cde89d18b254411ff28
+    digest: shake256:8e972e382fe3e88301c4d3a51297e0edbfd696dc61e958dfd9ba0b0cb9c8ec6659d3f248e6206ea70987947a84ffc2107437d8275381d0ce1bda6e35c012be2a
   - remote: buf.build
     owner: envoyproxy
     repository: protoc-gen-validate
-    commit: 6607b10f00ed4a3d98f906807131c44a
-    digest: shake256:acc7b2ededb2f88d296862943a003b157bdb68ec93ed13dcd8566b2d06e47993ea6daf12013b9655658aaf6bbdb141cf65bfe400ce2870f4654b0a5b45e57c09
+    commit: eac44469a7af47e7839a7f1f3d7ac004
+    digest: shake256:0feabcde01b6b11e3c75a5e3f807968d5995626546f39c37e5d4205892b3a59cced0ed83b35a2eb9e6dddd3309660ad46b737c9dcd224b425de0a6654ce04417
   - remote: buf.build
     owner: googleapis
     repository: googleapis
-    commit: cc916c31859748a68fd229a3c8d7a2e8
-    digest: shake256:469b049d0eb04203d5272062636c078decefc96fec69739159c25d85349c50c34c7706918a8b216c5c27f76939df48452148cff8c5c3ae77fa6ba5c25c1b8bf8
+    commit: 28151c0d0a1641bf938a7672c500e01d
+    digest: shake256:49215edf8ef57f7863004539deff8834cfb2195113f0b890dd1f67815d9353e28e668019165b9d872395871eeafcbab3ccfdb2b5f11734d3cca95be9e8d139de
   - remote: buf.build
     owner: grpc
     repository: grpc
-    commit: d8bc6b0fb32a4ff0bf249f2ec39e63d2
-    digest: shake256:265c5207544c8dd86dcddd50480cfd731448e07422c21a340b6195f6cb4be43392eba63d143c60f4ecebd1cf8d2b3ca045636b8ba06329c5521b486f0c5557ce
+    commit: a5b3a068eb8c45dea1ce4f36873286f8
+    digest: shake256:ea78e2b906f1a2d5094d4b7fb576f4a05f5ab2f2a6957c4a6fb780e3aa49a5d7dc9a1845f9bff115e8033600cd5ede8f22284d7e8bc7c32c73bde753cfce24a8
   - remote: buf.build
     owner: opencensus
     repository: opencensus
@@ -64,10 +64,10 @@ deps:
   - remote: buf.build
     owner: opentelemetry
     repository: opentelemetry
-    commit: 547fa0c6b9254471b1c8a02f9c28577b
-    digest: shake256:9dca1e2f5107507a45e61c844b8b738bfbda7bd848d9e30e0622749d413a93137212ce778ca34b155bf9a9a18ce318dd8a854fa7e0675be0813df2627ba31861
+    commit: 2ad07e196ee74068901737616c3f9e6c
+    digest: shake256:b3ac419a36c0ab35b3d05ac4425cb6d824f8d8dbdebf12dd71f6f7ef6e728a527251080d22dddcfeae104840457153bf4f70e890562d120e76c609958c386fdc
   - remote: buf.build
     owner: prometheus
     repository: client-model
-    commit: 55bcfe88c9e54edc9048a91656832525
-    digest: shake256:a507d3f983e7b8ca8b9a0527a8273eda8e8db6474c6712e1dacbfedb137c9b6f4c0fbbb8638b515183ac7e5e2281f84ec98840fabcf20fb2a2aa5b264891eb82
+    commit: 741a6a7bbc7645f89b588c47a06fceb3
+    digest: shake256:1b6db8908bc8557f4e87b308ea98debe476a119fb620e41d873df1065dd0d1b04dbb4466b5da52b985efd47f5f6658c2e33d11df63557e96ff6d54752cffdef2

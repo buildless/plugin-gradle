@@ -716,7 +716,9 @@ a {
   color: inherit;
   font-size: inherit;
   line-height: inherit;
-  transition: color 0.1s, border-color 0.1s;
+  transition:
+    color 0.1s,
+    border-color 0.1s;
 }
 
 #main a:hover {

@@ -332,6 +332,7 @@ koverReport {
 
 if (lockDeps == "true") dependencyLocking {
   lockAllConfigurations()
+  lockMode = LockMode.LENIENT
 }
 
 sourceSets.main.configure {
@@ -360,6 +361,7 @@ configurations.all {
 
 dependencies {
   implementation(libs.buf.connect.kotlin)
+  implementation(libs.buf.connect.kotlin.googleJavaExt)
   implementation(libs.buf.proto.validate.core)
   implementation(libs.buf.proto.validate.grpc)
   implementation(libs.buf.proto.validate.stub)
