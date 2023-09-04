@@ -66,24 +66,24 @@ jobs:
       max-parallel: 6
       matrix:
         platform: [Linux, Windows, macOS]
-        gradleLabel: ["Gradle 8.2", "Gradle 8.1"]
+        gradleLabel: ["Gradle 8.2", "Gradle 8.1", "Gradle 8.3"]
         include:
           - platform: Linux
             runner: ubuntu-latest
-            gradleLabel: "Gradle 8.3-rc2"
-            gradle: "8.3-rc2"
+            gradleLabel: "Gradle 8.3"
+            gradle: "8.3"
             main: false
             labs: true
           - platform: Windows
             runner: windows-latest
-            gradleLabel: "Gradle 8.3-rc2"
-            gradle: "8.3-rc2"
+            gradleLabel: "Gradle 8.3"
+            gradle: "8.3"
             main: false
             labs: true
           - platform: macOS
             runner: macos-latest
-            gradleLabel: "Gradle 8.3-rc2"
-            gradle: "8.3-rc2"
+            gradleLabel: "Gradle 8.3"
+            gradle: "8.3"
             main: false
             labs: true
           - platform: Linux
