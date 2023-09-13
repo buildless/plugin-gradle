@@ -3,7 +3,7 @@
 # buildless-plugin-gradle
 
 [JVM (Gradle)]\
-This documentation describes reference material for the [Buildless](https://less.build) plugin for [Gradle](https://gradle.org). The plugin helps with  configuration of remote build caching via the Buildless API. See the [Buildless docs](https://docs.less.build) for additional info including resources, code samples, API specs, and more.
+This documentation describes reference material for the [Buildless](https://less.build) plugin for [Gradle](https://gradle.org). The plugin helps with configuration of remote build caching via the Buildless API. See the [Buildless docs](https://docs.less.build) for additional info including resources, code samples, API specs, and more.
 
 <hr />
 
@@ -12,7 +12,7 @@ This documentation describes reference material for the [Buildless](https://less
 `settings.gradle.kts` **(Kotlin DSL):**
 
 ```kotlin
-import build.less.plugin.gradle.settings.*
+import build.less.plugin.settings.buildless
 
 plugins {
   id("build.less") version "..."

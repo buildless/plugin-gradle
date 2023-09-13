@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>ConfigAPI 1.0.0-beta1 API </title>
+    <title>ConfigAPI 1.0.0-beta2 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
@@ -118,6 +118,14 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Confi
 
                     </pre>
                     <div class="block"><p>Describes the base interface from which all plugin settings interfaces inherit. Since the Buildless plugin can be configured in both the context of a Gradle <a href=BuildlessExtensionAPI.html>Settings</a> (initialization) file, and also a Project, the API needs to be extended into both circumstances; this interface bears the common fields between both.</p></div>
+
+                    <dl>
+
+                    
+
+                    
+
+                    </dl>
                 </li>
             </ul>
         </div>
@@ -315,8 +323,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Confi
                                         <h4>getDebug</h4>
                                         <pre class="methodSignature"> abstract <a href=https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html>Boolean</a> <a href=BuildlessExtensionAPI.ConfigAPI.html#getDebug()>getDebug</a>()</pre>
                                         <div class="block"><p>Whether the Buildless plugin is operating in debug mode; debug mode enables verbose logging, and applies trace values to API calls, so that they may be diagnosed from the dashboard.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -330,8 +346,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Confi
                                         <h4>getLocalCache</h4>
                                         <pre class="methodSignature"> abstract <a href=BuildlessExtensionAPI.LocalCacheSettings.html>BuildlessExtensionAPI.LocalCacheSettings</a> <a href=BuildlessExtensionAPI.ConfigAPI.html#getLocalCache()>getLocalCache</a>()</pre>
                                         <div class="block"><p>Local cache settings for this Gradle project. Local caching keeps various cached objects in a directory on-disk, and objects never leave the developer's machine.</p><p>It is generally recommended to leave local caching active. Buildless sets well-informed defaults, like moving the default directory for local caching to a location within the project directory.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -345,8 +369,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Confi
                                         <h4>getRemoteCache</h4>
                                         <pre class="methodSignature"> abstract <a href=BuildlessExtensionAPI.RemoteCacheSettings.html>BuildlessExtensionAPI.RemoteCacheSettings</a> <a href=BuildlessExtensionAPI.ConfigAPI.html#getRemoteCache()>getRemoteCache</a>()</pre>
                                         <div class="block"><p>Remote cache settings for this Gradle project. Remote caching keeps built outputs within a remote service, like, say, Buildless (although any remote caching can be configured via these settings).</p><p>Remote caching is on by default if an API key is present in the local environment; it is recommended to leave remote caching active at all times. Remote caching is designed to fail-fast and not to ever break the build.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 

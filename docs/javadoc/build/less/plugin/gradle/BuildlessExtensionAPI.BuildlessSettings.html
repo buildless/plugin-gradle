@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>BuildlessSettings 1.0.0-beta1 API </title>
+    <title>BuildlessSettings 1.0.0-beta2 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
@@ -121,6 +121,14 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
  implements <a href=BuildlessExtensionAPI.ConfigAPI.html>BuildlessExtensionAPI.ConfigAPI</a>&lt;Settings&gt;
                     </pre>
                     <div class="block"><p>Describes top-level settings which are available within <code>settings.gradle.kts</code> for a Buildless-enabled Gradle project. These settings apply within the scope of file in question (usually, all projects within a multi-project Gradle build, or a single Gradle project).</p><p>These settings implement the <a href=BuildlessExtensionAPI.ConfigAPI.html>ConfigAPI</a> interface for a target of <a href=BuildlessExtensionAPI.html>Settings</a>, but with mutable fields so that they may be set from a builder context.</p></div>
+
+                    <dl>
+
+                    
+
+                    
+
+                    </dl>
                 </li>
             </ul>
         </div>
@@ -422,17 +430,26 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>apiKey</h4>
                                         <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#apiKey(java.lang.String)>apiKey</a>(<a href=https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html>String</a> value)</pre>
                                         <div class="block"><p>Set the API key from the provided string <a href=BuildlessExtensionAPI.BuildlessSettings.html#apiKey(java.lang.String)>value</a>.</p></div>
-                                        
+
                                         <dl>
+
+                                        
                                             <dt><span class="paramLabel">Parameters:</span></dt>
                                             
                                             
                                             <dd><code>value</code> - API key value to use.</dd>
                                             
                                             
-                                        </dl>
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+                                            <dt><span class="returnLabel">Returns:</span></dt>
+                                            <dd><p>Checked API key value.</p></dd>
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -446,17 +463,23 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>apiKey</h4>
                                         <pre class="methodSignature"> <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#apiKey(build.less.plugin.gradle.ApiKey)>apiKey</a>(<a href=ApiKey.html>ApiKey</a> key)</pre>
                                         <div class="block"><p>Set the API <a href=BuildlessExtensionAPI.BuildlessSettings.html#apiKey(build.less.plugin.gradle.ApiKey)>key</a> to use when interacting with the Buildless service.</p><p>This interface accepts a key which has already been checked for use. For a full description of how API keys are resolved and loaded, see the <a href=BuildlessExtensionAPI.BuildlessSettings.html#apiKey(java.lang.String)>apiKey</a> field.</p></div>
-                                        
+
                                         <dl>
+
+                                        
                                             <dt><span class="paramLabel">Parameters:</span></dt>
                                             
                                             
                                             <dd><code>key</code> - API key to use (pre-checked).</dd>
                                             
                                             
-                                        </dl>
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -470,17 +493,23 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>localCache</h4>
                                         <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#localCache(kotlin.jvm.functions.Function1)>localCache</a>(Function1&lt;<a href=BuildlessExtensionAPI.MutableLocalCacheSettings.html>BuildlessExtensionAPI.MutableLocalCacheSettings</a>, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a>&gt; config)</pre>
                                         <div class="block"><p>Configure local caching settings with the provided <a href=BuildlessExtensionAPI.BuildlessSettings.html#localCache(kotlin.jvm.functions.Function1)>config</a> function.</p></div>
-                                        
+
                                         <dl>
+
+                                        
                                             <dt><span class="paramLabel">Parameters:</span></dt>
                                             
                                             
                                             <dd><code>config</code> - Function which configures local caching settings.</dd>
                                             
                                             
-                                        </dl>
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -494,17 +523,23 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>remoteCache</h4>
                                         <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#remoteCache(kotlin.jvm.functions.Function1)>remoteCache</a>(Function1&lt;<a href=BuildlessExtensionAPI.MutableRemoteCacheSettings.html>BuildlessExtensionAPI.MutableRemoteCacheSettings</a>, <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a>&gt; config)</pre>
                                         <div class="block"><p>Configure remote caching settings with the provided <a href=BuildlessExtensionAPI.BuildlessSettings.html#remoteCache(kotlin.jvm.functions.Function1)>config</a> function.</p></div>
-                                        
+
                                         <dl>
+
+                                        
                                             <dt><span class="paramLabel">Parameters:</span></dt>
                                             
                                             
                                             <dd><code>config</code> - Function which configures remote caching settings.</dd>
                                             
                                             
-                                        </dl>
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -518,8 +553,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>getApiKey</h4>
                                         <pre class="methodSignature"> abstract <a href=ApiKey.html>ApiKey</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#getApiKey()>getApiKey</a>()</pre>
                                         <div class="block"><p>API key that should be used to identify this project to the Buildless cache service.</p><p>API keys can be obtained from the Buildless Dashboard (see <a href=https://less.build.html>Buildless</a> for more information). Every tenant and user is issued two API keys: their &quot;events&quot; key (also referred to as the <code>PUBLISHABLE</code> key), and their own regular user access key.</p><p>The access key is the value which should be specified in this spot. Additionally, the key may be provided via any of the following mechanisms:</p><ul><li><p>Environment variables (<code>BUILDLESS_API_KEY</code>, <code>GRADLE_CACHE_PASSWORD</code>)</p></li><li><p>System properties (<code>buildless.apiKey</code>, <code>cachePassword</code>)</p></li><li><p>Local file (<code>.buildless.toml</code>, <code>.github/buildless.toml</code>, <code>.buildless/config.toml</code>, <code>package.json:buildcache</code>)</p></li><li><p>User-level configuration file (<code>~/.config/buildless.toml</code>, <code>~/.buildless/config.toml</code>)</p></li></ul></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -533,8 +576,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>setApiKey</h4>
                                         <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#setApiKey(build.less.plugin.gradle.ApiKey)>setApiKey</a>(<a href=ApiKey.html>ApiKey</a> apiKey)</pre>
                                         <div class="block"><p>API key that should be used to identify this project to the Buildless cache service.</p><p>API keys can be obtained from the Buildless Dashboard (see <a href=https://less.build.html>Buildless</a> for more information). Every tenant and user is issued two API keys: their &quot;events&quot; key (also referred to as the <code>PUBLISHABLE</code> key), and their own regular user access key.</p><p>The access key is the value which should be specified in this spot. Additionally, the key may be provided via any of the following mechanisms:</p><ul><li><p>Environment variables (<code>BUILDLESS_API_KEY</code>, <code>GRADLE_CACHE_PASSWORD</code>)</p></li><li><p>System properties (<code>buildless.apiKey</code>, <code>cachePassword</code>)</p></li><li><p>Local file (<code>.buildless.toml</code>, <code>.github/buildless.toml</code>, <code>.buildless/config.toml</code>, <code>package.json:buildcache</code>)</p></li><li><p>User-level configuration file (<code>~/.config/buildless.toml</code>, <code>~/.buildless/config.toml</code>)</p></li></ul></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -548,8 +599,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>getTransport</h4>
                                         <pre class="methodSignature"> abstract <a href=CacheTransport.html>CacheTransport</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#getTransport()>getTransport</a>()</pre>
                                         <div class="block"><p>Transport mechanism to use when interacting with the Buildless cache.</p><p>The transport mechanism implements protocol support, transport security (TLS), and authorization. The default transport is <a href=CacheTransport.html#STANDARD>CacheTransport.STANDARD</a> which uses Gradle's built-in HTTP build cache engine.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -563,8 +622,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>setTransport</h4>
                                         <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#setTransport(build.less.plugin.gradle.CacheTransport)>setTransport</a>(<a href=CacheTransport.html>CacheTransport</a> transport)</pre>
                                         <div class="block"><p>Transport mechanism to use when interacting with the Buildless cache.</p><p>The transport mechanism implements protocol support, transport security (TLS), and authorization. The default transport is <a href=CacheTransport.html#STANDARD>CacheTransport.STANDARD</a> which uses Gradle's built-in HTTP build cache engine.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -578,8 +645,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>getTelemetry</h4>
                                         <pre class="methodSignature"> abstract <a href=https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html>Boolean</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#getTelemetry()>getTelemetry</a>()</pre>
                                         <div class="block"><p>Whether to enable telemetry for this build.</p><p>Telemetry services send various events to the Buildless API, and additionally annotate builds with a unique ID which the service uses to correlate cache traffic. This is useful for debugging and diagnostics, and additionally powers several types of reporting provided by Buildless.</p><p>This data is inherently sensitive, and so it is never sold or shared with third parties (it's not that kind of analytics/telemetry). This feature may be disabled at any time, but it will result in missing report data.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -593,8 +668,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>setTelemetry</h4>
                                         <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#setTelemetry(java.lang.Boolean)>setTelemetry</a>(<a href=https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html>Boolean</a> telemetry)</pre>
                                         <div class="block"><p>Whether to enable telemetry for this build.</p><p>Telemetry services send various events to the Buildless API, and additionally annotate builds with a unique ID which the service uses to correlate cache traffic. This is useful for debugging and diagnostics, and additionally powers several types of reporting provided by Buildless.</p><p>This data is inherently sensitive, and so it is never sold or shared with third parties (it's not that kind of analytics/telemetry). This feature may be disabled at any time, but it will result in missing report data.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -608,8 +691,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>getDebug</h4>
                                         <pre class="methodSignature"> abstract <a href=https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html>Boolean</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#getDebug()>getDebug</a>()</pre>
                                         <div class="block"><p>Specifies whether &quot;debug mode&quot; is active within the Buildless plugin. When debug mode is active, verbose logging is emitted to the terminal, and various trace values are sent to the Buildless API, which can be used to diagnose issues with the cache from the web dashboard.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -623,8 +714,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>setDebug</h4>
                                         <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#setDebug(java.lang.Boolean)>setDebug</a>(<a href=https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html>Boolean</a> debug)</pre>
                                         <div class="block"><p>Specifies whether &quot;debug mode&quot; is active within the Buildless plugin. When debug mode is active, verbose logging is emitted to the terminal, and various trace values are sent to the Buildless API, which can be used to diagnose issues with the cache from the web dashboard.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -638,8 +737,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>getReportErrors</h4>
                                         <pre class="methodSignature"> abstract <a href=https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html>Boolean</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#getReportErrors()>getReportErrors</a>()</pre>
                                         <div class="block"><p>Specifies whether errors should be reported to the Buildless API. When error reporting is active, errors which are encountered when interacting with the cache are reported to a central service. These logs include only the authorization material provided by the developer, along with light context from the Gradle build.</p><p>For an exhaustive list of telemetry sent during error reporting, please contact support. It isn't anything weird, we just haven't documented it fully yet.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -653,8 +760,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>setReportErrors</h4>
                                         <pre class="methodSignature"> abstract <a href=https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html>Unit</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#setReportErrors(java.lang.Boolean)>setReportErrors</a>(<a href=https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html>Boolean</a> reportErrors)</pre>
                                         <div class="block"><p>Specifies whether errors should be reported to the Buildless API. When error reporting is active, errors which are encountered when interacting with the cache are reported to a central service. These logs include only the authorization material provided by the developer, along with light context from the Gradle build.</p><p>For an exhaustive list of telemetry sent during error reporting, please contact support. It isn't anything weird, we just haven't documented it fully yet.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -668,8 +783,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>getLocalCache</h4>
                                         <pre class="methodSignature"> abstract <a href=BuildlessExtensionAPI.MutableLocalCacheSettings.html>BuildlessExtensionAPI.MutableLocalCacheSettings</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#getLocalCache()>getLocalCache</a>()</pre>
                                         <div class="block"><p>Specifies local cache settings for this Gradle project. Local caching keeps various cached objects in a directory on-disk, and objects never leave the developer's machine. Local caching is enabled by default, and generally it is recommended to keep it active.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 
@@ -683,8 +806,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Build
                                         <h4>getRemoteCache</h4>
                                         <pre class="methodSignature"> abstract <a href=BuildlessExtensionAPI.MutableRemoteCacheSettings.html>BuildlessExtensionAPI.MutableRemoteCacheSettings</a> <a href=BuildlessExtensionAPI.BuildlessSettings.html#getRemoteCache()>getRemoteCache</a>()</pre>
                                         <div class="block"><p>Specifies remote cache settings for this Gradle project. Remote caching keeps built outputs within a remote cache service, like Buildless. Remote caching is enabled by default if an API key is present in the local environment, using the main Gradle cache endpoint.</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 

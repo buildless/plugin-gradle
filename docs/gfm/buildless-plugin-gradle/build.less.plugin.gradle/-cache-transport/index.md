@@ -19,6 +19,7 @@ Enumerates the types of transport engines which are available for use when inter
 
 | Name | Summary |
 |---|---|
+| [entries](entries.md) | [JVM (Gradle)]<br>val [entries](entries.md): [EnumEntries](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.enums/-enum-entries/index.html)&lt;[CacheTransport](index.md)&gt;<br>Returns a representation of an immutable list of all enum entries, in the order they're declared. |
 | [name](-s-t-a-n-d-a-r-d/index.md#-372974862%2FProperties%2F73423754) | [JVM (Gradle)]<br>val [name](-s-t-a-n-d-a-r-d/index.md#-372974862%2FProperties%2F73423754): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
 | [ordinal](-s-t-a-n-d-a-r-d/index.md#-739389684%2FProperties%2F73423754) | [JVM (Gradle)]<br>val [ordinal](-s-t-a-n-d-a-r-d/index.md#-739389684%2FProperties%2F73423754): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 
