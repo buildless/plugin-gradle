@@ -3,6 +3,9 @@
    <configuration>
       <verify-metadata>true</verify-metadata>
       <verify-signatures>true</verify-signatures>
+      <trusted-artifacts>
+         <trust file="github-dependency-graph-gradle-plugin-.*" regex="true" />
+      </trusted-artifacts>
       <ignored-keys>
          <ignored-key id="D7742D58455ECC7C" reason="Key couldn't be downloaded from any key server"/>
       </ignored-keys>
