@@ -1,0 +1,27 @@
+build:
+  maxIssues: 0
+  excludeCorrectable: false
+
+config:
+  validation: true
+  warningsAsErrors: false
+  checkExhaustiveness: false
+
+processors:
+  active: true
+
+console-reports:
+  active: true
+
+output-reports:
+  active: true
+  exclude:
+    - "TxtOutputReport"
+
+style:
+  active: true
+  WildcardImport:
+    active: true
+    excludeImports:
+      - "java.util.*"
+      - "kotlin.test.*"
