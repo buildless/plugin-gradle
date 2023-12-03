@@ -11,14 +11,14 @@
  * License for the specific language governing permissions and limitations under the License.
  */
 
-package build.less.plugin.settings
+package org.gradle.kotlin.dsl
 
 import build.less.plugin.gradle.BuildlessExtension
-import build.less.plugin.gradle.BuildlessExtensionAPI.BuildlessSettings
+import build.less.plugin.gradle.BuildlessSettings
 import org.gradle.api.initialization.Settings
 
 /**
- * # Buildless: Plugin Configuration
+ * # Buildless: Plugin Configuration (Groovy DSL)
  *
  * This function is the main entrypoint for configuring the Buildless Plugin for Gradle. All user-facing helpers which
  * are usable at [Settings] evaluation time are exposed in this package/file.
@@ -26,11 +26,9 @@ import org.gradle.api.initialization.Settings
  * The [buildless] function may be run within the [Settings] context once the plugin has loaded. This can be done via
  * the following snippet:
  *
- * ```kotlin
- * import build.less.plugin.settings.*;
- *
+ * ```groovy
  * plugins {
- *   id("build.less") version "..."
+ *   id "build.less" version "..."
  * }
  * ```
  *

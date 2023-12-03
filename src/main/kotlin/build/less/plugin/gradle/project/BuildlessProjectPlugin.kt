@@ -11,8 +11,11 @@
  * License for the specific language governing permissions and limitations under the License.
  */
 
+@file:Suppress("UnstableApiUsage")
+
 package build.less.plugin.gradle.project
 
+import build.less.plugin.gradle.Constants
 import build.less.plugin.gradle.core.API
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -25,7 +28,26 @@ import org.gradle.api.Project
  * main settings plug-in is applied.
  */
 @API internal class BuildlessProjectPlugin : Plugin<Project> {
+  companion object {
+    const val NAME: String = Constants.NAME
+  }
+
+  private fun Project.isAdviceEnabled(): Boolean {
+    return (
+      gradle.startParameter.isBuildCacheEnabled &&
+      findProperty(Constants.PLUGIN_ADVICE_PROPERTY) != "false"
+    )
+  }
+
   override fun apply(target: Project) {
-    target.extensions.add("buildless", BuildlessProjectExtension::class.java)
+    target.extensions.add(NAME, BuildlessProjectExtension::class.java)
+    if (target.isAdviceEnabled()) target.afterEvaluate {
+      target.afterEvaluate {
+        // trick: catch late-registered tasks
+        target.extensions.configure(BuildlessProjectExtension::class.java) {
+          it.initialize(target)
+        }
+      }
+    }
   }
 }

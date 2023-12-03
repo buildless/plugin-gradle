@@ -21,6 +21,7 @@ plugins {
   signing
   `project-reports`
   `java-gradle-plugin`
+  `groovy-gradle-plugin`
   kotlin("jvm")
 
   alias(libs.plugins.cyclonedx)
@@ -29,8 +30,10 @@ plugins {
   alias(libs.plugins.detekt)
   alias(libs.plugins.dokka)
   alias(libs.plugins.kotlin.plugin.allopen)
+  alias(libs.plugins.kotlin.plugin.serialization)
   alias(libs.plugins.kotlinx.plugin.abiValidator)
   alias(libs.plugins.kover)
+  alias(libs.plugins.ksp)
   alias(libs.plugins.nexus.publish)
   alias(libs.plugins.pluginPublish)
   alias(libs.plugins.sbom)
@@ -137,7 +140,7 @@ kotlin {
   explicitApi = ExplicitApiMode.Strict
 
   sourceSets.all {
-    languageSettings.progressiveMode = true
+    languageSettings.progressiveMode = false
     languageSettings.languageVersion = kotlinLangVersion
     languageSettings.apiVersion = kotlinLangVersion
   }
@@ -307,7 +310,7 @@ if (enableChecks == "true") sonar {
     property("sonar.junit.reportsPath", "$rootDir/build/test-results/test/")
     property("sonar.java.coveragePlugin", "jacoco")
     property("sonar.sourceEncoding", "UTF-8")
-    property("sonar.coverage.jacoco.xmlReportPaths", "${rootProject.buildDir}/reports/kover/report.xml")
+    property("sonar.coverage.jacoco.xmlReportPaths", rootProject.layout.buildDirectory.file("reports/kover/report.xml"))
   }
 }
 
@@ -337,12 +340,14 @@ if (lockDeps == "true") dependencyLocking {
 sourceSets.main.configure {
   java {
     srcDirs(
-      "$buildDir/$BUF_BUILD_DIR/$GENERATED_DIR/java",
-      "$buildDir/$BUF_BUILD_DIR/$GENERATED_DIR/pgv"
+      layout.buildDirectory.dir("$BUF_BUILD_DIR/$GENERATED_DIR/java"),
+      layout.buildDirectory.dir("$BUF_BUILD_DIR/$GENERATED_DIR/pgv"),
     )
   }
   kotlin {
-    srcDir("$buildDir/$BUF_BUILD_DIR/$GENERATED_DIR/kotlin")
+    srcDir(
+      layout.buildDirectory.dir("$BUF_BUILD_DIR/$GENERATED_DIR/kotlin"),
+    )
   }
 }
 
@@ -363,8 +368,11 @@ dependencies {
   implementation(libs.buf.proto.validate.core)
   implementation(libs.buf.proto.validate.grpc)
   implementation(libs.buf.proto.validate.stub)
+  implementation(libs.kotlinx.serialization.core)
+  implementation(libs.kotlinx.serialization.json)
   implementation(libs.protobuf.java)
   implementation(libs.protobuf.kotlin)
+  implementation(libs.okhttp3)
   implementation(libs.grpc.auth)
   implementation(libs.grpc.api)
   implementation(libs.grpc.core)
@@ -431,6 +439,11 @@ tasks.bufGenerate.configure {
   )
 }
 
+tasks.compileGroovy.configure {
+  dependsOn(tasks.compileKotlin)
+  classpath += files(tasks.compileKotlin.get().destinationDirectory)
+}
+
 tasks.compileKotlin.configure {
   dependsOn(tasks.bufGenerate)
 
@@ -469,7 +482,7 @@ tasks.withType<DokkaTask>().configureEach {
     documentedVisibilities.set(setOf(Visibility.PUBLIC))
     reportUndocumented.set(true)
     suppressGeneratedFiles.set(true)
-    suppressedFiles.from(files(project.buildDir.resolve(BUF_BUILD_DIR)))
+    suppressedFiles.from(files(layout.buildDirectory.dir(BUF_BUILD_DIR)))
     jdkVersion.set(11)
     languageVersion.set(kotlinLangVersion)
     apiVersion.set(kotlinLangVersion)

@@ -32,7 +32,7 @@ java {
 
 kotlin {
   sourceSets.all {
-    languageSettings.progressiveMode = true
+    languageSettings.progressiveMode = false
     languageSettings.languageVersion = kotlinLangVersion
     languageSettings.apiVersion = kotlinLangVersion
   }

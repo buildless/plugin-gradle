@@ -16,7 +16,8 @@
 package build.less.plugin.gradle
 
 import build.less.plugin.gradle.err.InvalidConfiguration
-import java.util.SortedSet
+import java.util.*
+import kotlinx.serialization.Serializable
 
 /**
  * Describes a checked Buildless API key, which also carries metadata with it about the key. The key itself can be
@@ -66,7 +67,7 @@ import java.util.SortedSet
  * of the environment variable, system/Gradle properties, or configuration file methods to specify your keys. In this
  * case, merely withholding the keys will gracefully skip enabling the cache.
  */
-@JvmInline public value class ApiKey private constructor(private val value: Pair<String, KeyInfo>) :
+@JvmInline @Serializable public value class ApiKey private constructor(private val value: Pair<String, KeyInfo>) :
  java.io.Serializable,
  Comparable<ApiKey> {
   /** API key value held by this object; this value is considered sensitive and should not be logged. */
@@ -127,7 +128,7 @@ import java.util.SortedSet
    *
    * @param type Subject type for the key.
    */
-  internal data class KeyInfo(
+  @Serializable internal data class KeyInfo(
     val type: SubjectType,
   )
 

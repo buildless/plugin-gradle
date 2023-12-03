@@ -12,8 +12,6 @@ This function is the main entrypoint for configuring the Buildless Plugin for Gr
 The [buildless](buildless.md) function may be run within the Settings context once the plugin has loaded. This can be done via the following snippet:
 
 ```kotlin
-import build.less.plugin.settings.*;
-
 plugins {
   id("build.less") version "..."
 }

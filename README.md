@@ -18,7 +18,7 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle)
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.0-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.21-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![Elide](https://elide.dev/shield)](https://elide.dev)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbuildless%2Fplugin-gradle.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbuildless%2Fplugin-gradle?ref=badge_shield)
 
@@ -31,13 +31,13 @@ of extra luxurious features (see below).
 
 ### Current version
 
-**Latest:** `1.0.0-beta1`
+**Latest:** `1.0.0-beta8`
 
 **`settings.gradle.kts` (Kotlin DSL):**
 
 ```kotlin
 plugins {
-    id("build.less") version "1.0.0-beta1"
+    id("build.less") version "1.0.0-beta8"
 }
 ```
 
@@ -45,7 +45,7 @@ plugins {
 
 ```groovy
 plugins {
-    id 'build.less' version '1.0.0-beta1'
+    id 'build.less' version '1.0.0-beta8'
 }
 ```
 
@@ -54,7 +54,7 @@ plugins {
 ```toml
 [versions]
 # ...
-buildless = "1.0.0-beta1"
+buildless = "1.0.0-beta8"
 
 [plugins]
 # ...
@@ -75,6 +75,8 @@ below the _Features_ section in this README.
 
 ## Features
 
+- 🚀 **Lightning-fast build caching** with [Buildless][1]
+- ⚡ **[Buildless Agent][7] support** for near-cache, async pushes, and protocol upgrades
 - 🔑 **Automatically load API keys** from environment vars, `.env`, config files, or Gradle or JVM properties
 - 🧠 **Smart auto-configuration** of lowest-latency endpoints based on your location
 - 📡 **Build telemetry** for enhanced cache reporting and performance
@@ -108,10 +110,8 @@ exhaustively below, with their order of precedence.
 **`settings.gradle.kts` (Kotlin DSL):**
 
 ```kotlin
-import build.less.plugin.settings.buildless
-
 plugins {
-  id("build.less") version "1.0.0-beta1"
+  id("build.less") version "1.0.0-beta8"
 }
 
 buildless {
@@ -166,15 +166,12 @@ this document) will be used:
 
 - **2) Environment variables**. All the following values work:
 
-  - `BUILDLESS_TOKEN`
-  - `BUILDLESS_API_KEY`
   - `BUILDLESS_APIKEY`
   - `GRADLE_CACHE_PASSWORD`
 
 - **3) Gradle or JVM system properties**. All the following values work:
 
   - `buildless.apiKey`
-  - `cachePassword`
 
 - **4) Config file (recommended)**. All the following locations work (project root unless otherwise specified):
   - `.buildless.toml`, `.buildless.yaml`, `.buildless.json` (with or without preceding `.`)
@@ -197,6 +194,58 @@ buildless {
 
 Activating debug mode **activate verbose logging** for the plugin, and additionally marks API calls with trace values
 which can be used for diagnosis from the [dashboard][5].
+
+### Agent
+
+> Default: On when Agent is active, off otherwise
+
+```kotlin
+buildless {
+  agent {
+    enabled = true  // enabled by default if agent is active
+  }
+}
+```
+
+The [Buildless Agent][7] is software which runs on the local machine and acts as a caching proxy between Gradle and
+Buildless. It is highly recommended to use the Agent, as it upgrades Gradle's cache traffic from HTTP/1.1 to HTTP/2 or
+HTTP/3, and performs a number of other optimizations.
+
+#### About the Agent
+
+Agent functionality is also recommended for two other reasons:
+
+- **Async pushes:** With the Agent enabled, your build no longer has to wait for pushes to fully complete to the Cloud.
+  Instead, these are deferred and your build continues immediately.
+
+
+- **Resilience:** If there is a network interruption or outage with Buildless Cloud, or your Cloud-based cache is
+  inaccessible for any other reason, your build continues and remains unaffected.
+
+The Buildless Agent is provided with the [CLI tools][8].
+
+#### Agent detection
+
+The Agent is detected, if running, via a known configuration file location on disk, as well as socket or port liveness
+checks, as applicable. There is no need to restart your Gradle daemon to notice an Agent process.
+
+### Local cache
+
+> Default: On when Agent is off, off when Agent is on
+
+```kotlin
+buildless {
+  local {
+    enabled = true  // enabled by default if agent is off
+  }
+}
+```
+
+Activating the local cache enables Gradle's built-in disk caching mechanism. This is generally good to leave <b>off</b>
+if the Buildless Agent is enabled, because the Agent will cache in-memory and on-disk intelligently, and there isn't
+much sense (or gain) in duplicating that effort.
+
+You can still opt-in to the local cache with the Agent if you want to using the snippet above.
 
 ### Telemetry
 
@@ -249,6 +298,8 @@ local or remote caching in Gradle, though.
 [4]: https://features.less.build
 [5]: https://less.build/login
 [6]: https://elide.dev
+[7]: https://docs.less.build/docs/agent
+[8]: https://docs.less.build/docs/cli
 
 ## License
 

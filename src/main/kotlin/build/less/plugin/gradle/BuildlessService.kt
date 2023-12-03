@@ -24,7 +24,13 @@ import java.util.concurrent.atomic.AtomicReference
  * This service implementation provides a dependency-injected way to access API clients for the Buildless service, from
  * within a Gradle build.
  */
-@API public class BuildlessService : BuildService<BuildlessService.Params>, AutoCloseable {
+@API public class BuildlessService :
+  BuildService<BuildlessService.Params>,
+  AutoCloseable {
+  public companion object {
+    public const val NAME: String = "buildless"
+  }
+
   // Active plugin-wide configuration.
   private val settings: AtomicReference<BuildlessPluginConfig?> = AtomicReference(null)
 

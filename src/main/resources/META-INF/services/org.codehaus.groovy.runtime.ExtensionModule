@@ -1,0 +1,3 @@
+moduleName = buildless-gradle-groovy-dsl
+moduleVersion = 1.0
+extensionClasses = build.less.plugin.gradle.dsl.groovy.BuildlessGroovyDsl

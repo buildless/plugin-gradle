@@ -11,22 +11,6 @@
  * License for the specific language governing permissions and limitations under the License.
  */
 
-package build.less.plugin.gradle
+package build.less.plugin.gradle.service
 
-/**
- * # Buildless for Gradle: Cache Transport
- *
- * Enumerates the types of transport engines which are available for use when interacting with Buildless. By default,
- * the [BUILTIN] transport is used, which leverages Gradle's built-in remote build caching over HTTP.
- */
-public enum class CacheTransport {
-  /**
-   * Use the built-in cache transport mechanism from Gradle.
-   */
-  BUILTIN,
-
-  /**
-   * Use optimized transport mechanisms from Buildless.
-   */
-  NEXTGEN,
-}
+public interface BuildlessConfiguration

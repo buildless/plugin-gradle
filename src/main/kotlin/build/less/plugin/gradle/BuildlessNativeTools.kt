@@ -13,20 +13,26 @@
 
 package build.less.plugin.gradle
 
+import java.nio.file.Path
+
 /**
- * # Buildless for Gradle: Cache Transport
+ * # Native Tools
  *
- * Enumerates the types of transport engines which are available for use when interacting with Buildless. By default,
- * the [BUILTIN] transport is used, which leverages Gradle's built-in remote build caching over HTTP.
+ * Provides an API for native OS functions which are needed by the Buildless plugin; implementations are supplied for
+ * each supported OS, and resolved via the DI context and [BuildlessNativeToolsFactory].
  */
-public enum class CacheTransport {
+internal interface BuildlessNativeTools {
   /**
-   * Use the built-in cache transport mechanism from Gradle.
+   * Returns the path to the agent configuration rendezvous file.
+   *
+   * @return Path to the configuration file for this OS.
    */
-  BUILTIN,
+  fun agentConfigPath(): Path
 
   /**
-   * Use optimized transport mechanisms from Buildless.
+   * Returns the current agent config, if any, or `null`.
+   *
+   * @return Agent configuration or `null`.
    */
-  NEXTGEN,
+  fun loadAgentConfig(): AgentConfig?
 }

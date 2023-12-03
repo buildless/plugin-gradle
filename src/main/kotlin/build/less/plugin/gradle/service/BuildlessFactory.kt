@@ -11,22 +11,23 @@
  * License for the specific language governing permissions and limitations under the License.
  */
 
-package build.less.plugin.gradle
+package build.less.plugin.gradle.service
+
+import build.less.plugin.gradle.AgentConfig
 
 /**
- * # Buildless for Gradle: Cache Transport
+ * # Buildless Factory
  *
- * Enumerates the types of transport engines which are available for use when interacting with Buildless. By default,
- * the [BUILTIN] transport is used, which leverages Gradle's built-in remote build caching over HTTP.
+ * Specifies extended method support for the Buildless Service factory.
  */
-public enum class CacheTransport {
+public interface BuildlessFactory {
   /**
-   * Use the built-in cache transport mechanism from Gradle.
+   * Retrieve the active agent configuration, if any.
+   *
+   * The first time this method is called, the configuration is found, read, and loaded from JSON; subsequent calls use
+   * a cached version.
+   *
+   * @return Active and decoded agent configuration, or `null`, if none exists.
    */
-  BUILTIN,
-
-  /**
-   * Use optimized transport mechanisms from Buildless.
-   */
-  NEXTGEN,
+  public fun activeAgent(): AgentConfig?
 }

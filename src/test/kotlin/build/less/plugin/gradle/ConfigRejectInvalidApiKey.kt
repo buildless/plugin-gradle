@@ -8,8 +8,6 @@ class ConfigRejectInvalidApiKey : AbstractBuildlessPluginTest() {
   }.withSettings {
     // language=kts
     """
-    import build.less.plugin.settings.buildless
-
     plugins {
       id("build.less")
     }
@@ -25,8 +23,6 @@ class ConfigRejectInvalidApiKey : AbstractBuildlessPluginTest() {
   }.withSettings {
     // language=kts
     """
-    import build.less.plugin.settings.buildless
-
     plugins {
       id("build.less")
     }
@@ -43,7 +39,6 @@ class ConfigRejectInvalidApiKey : AbstractBuildlessPluginTest() {
     // language=kts
     """
     import build.less.plugin.gradle.ApiKey.SubjectType
-    import build.less.plugin.settings.buildless
 
     plugins {
       id("build.less")

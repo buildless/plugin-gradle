@@ -12,8 +12,6 @@ This documentation describes reference material for the [Buildless](https://less
 `settings.gradle.kts` **(Kotlin DSL):**
 
 ```kotlin
-import build.less.plugin.gradle.settings.*
-
 plugins {
   id("build.less") version "..."
 }

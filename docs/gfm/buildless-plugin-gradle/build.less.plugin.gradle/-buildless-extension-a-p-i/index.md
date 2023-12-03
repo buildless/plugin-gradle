@@ -13,8 +13,6 @@ While Buildless may be used directly as a drop-in Gradle remote cache, the plugi
 To use Buildless from a Gradle build, the plugin must be applied at settings time, from `settings.gradle.kts` (or the Groovy equivalent):
 
 ```kotlin
-import build.less.plugin.settings.buildless
-
 plugins {
   id("build.less")
 }

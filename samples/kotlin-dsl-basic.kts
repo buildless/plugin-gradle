@@ -1,7 +1,6 @@
-
 plugins {
   // 1. load the latest version of the plugin
-  id("build.less") version "1.0.0-beta1"
+  id("build.less") version "1.0.0-beta5"
 }
 
 buildless {

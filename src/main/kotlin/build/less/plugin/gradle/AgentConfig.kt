@@ -13,20 +13,22 @@
 
 package build.less.plugin.gradle
 
-/**
- * # Buildless for Gradle: Cache Transport
- *
- * Enumerates the types of transport engines which are available for use when interacting with Buildless. By default,
- * the [BUILTIN] transport is used, which leverages Gradle's built-in remote build caching over HTTP.
- */
-public enum class CacheTransport {
-  /**
-   * Use the built-in cache transport mechanism from Gradle.
-   */
-  BUILTIN,
+import kotlinx.serialization.Serializable
 
-  /**
-   * Use optimized transport mechanisms from Buildless.
-   */
-  NEXTGEN,
+/**
+ * # Agent Configuration
+ *
+ * Describes the structure of a local agent configuration rendezvous file.
+ */
+@Serializable public data class AgentConfig(
+  val pid: Int,
+  val port: Int,
+  val socket: String? = null,
+  val control: AgentEndpoint? = null,
+) {
+  /** Describes a single agent endpoint. */
+  @Serializable public data class AgentEndpoint(
+    val port: Int,
+    val socket: String? = null,
+  )
 }

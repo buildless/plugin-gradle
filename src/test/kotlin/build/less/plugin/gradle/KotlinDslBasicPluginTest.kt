@@ -9,8 +9,6 @@ class KotlinDslBasicPluginTest : AbstractBasicPluginTest(kotlin = true) {
   override fun `gradle-settings`(): StringBuilder = StringBuilder().append(
     // language=kts
     """
-    import build.less.plugin.settings.buildless
-    
     plugins {
      id("build.less")
     }

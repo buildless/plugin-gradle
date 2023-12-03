@@ -33,7 +33,46 @@ internal object Constants {
   internal const val SAMPLES_LINK: String = "https://less.build/samples"
 
   /** Default API endpoint to use for the remote cache. */
-  internal const val DEFAULT_CACHE_ENDPOINT: String = "https://gradle.less.build/cache/generic/"
+  internal const val DEFAULT_CACHE_ENDPOINT: String = "https://gradle.less.build/cache/generic"
+
+  /** Name of the plugin and added extensions. */
+  internal const val NAME: String = "buildless"
+
+  /** Name of the environment variable where the API key is held. */
+  internal const val APIKEY_ENV_VAR: String = "BUILDLESS_APIKEY"
+
+  /** Alternate API key env var name. */
+  internal const val APIKEY_ENV_VAR_ALT: String = "BUILDLESS_API_KEY"
+
+  /** System or project property name for API key override. */
+  internal const val APIKEY_PROPERTY: String = "buildless.apikey"
+
+  /** API key username value (when no tenant is active). */
+  internal const val APIKEY_USERNAME: String = "apikey"
+
+  /** Endpoint override variable. */
+  internal const val ENDPOINT_OVERRIDE_VAR: String = "BUILDLESS_ENDPOINT"
+
+  /** Endpoint override property. */
+  internal const val ENDPOINT_OVERRIDE_PROPERTY: String = "buildless.endpoint"
+
+  /** Whether to enable advice and smart task state omission. */
+  internal const val PLUGIN_ADVICE_PROPERTY: String = "buildless.plugin.advice"
+
+  /** Domain to use for cloud-side caching. */
+  internal const val CLOUD_DOMAIN: String = "gradle.less.build"
+
+  /** Local agent services alias domain. */
+  internal const val LOCAL_AGENT_DOMAIN: String = "local.less.build"
+
+  /** Default endpoint for local agent control. */
+  internal const val LOCAL_AGENT_CONTROL_DEFAULT: Int = 42010
+
+  /** Default endpoint for local agent services. */
+  internal const val LOCAL_AGENT_SERVICE_DEFAULT: Int = 42011
+
+  /** Property which enables/disables caching in Gradle. */
+  internal const val GRADLE_CACHING_PROPERTY: String = "org.gradle.caching"
 
   /** Describes specific Buildless Support contact information/methods. */
   internal object Support {

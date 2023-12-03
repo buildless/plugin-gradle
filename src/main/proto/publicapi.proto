@@ -19,6 +19,9 @@ package publicapi;
 // The Buildless gateway trans-codes errors to JSON, where applicable; `error_details` is used in this process.
 // buf:lint:ignore IMPORT_USED
 import "buildless/service/v1/buildless-v1.proto";
+// buf:lint:ignore IMPORT_USED
+import "buildless/service/v1/projects-v1.proto";
+// buf:lint:ignore IMPORT_USED
 // The Buildless gateway trans-codes errors to JSON, where applicable; `error_details` is used in this process.
 // buf:lint:ignore IMPORT_USED
 import "google/rpc/error_details.proto";
