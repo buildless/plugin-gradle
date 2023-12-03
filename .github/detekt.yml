@@ -25,6 +25,7 @@ style:
     excludeImports:
       - "java.util.*"
       - "kotlin.test.*"
+      - "kotlinx.coroutines.*"
 
 complexity:
   active: true
