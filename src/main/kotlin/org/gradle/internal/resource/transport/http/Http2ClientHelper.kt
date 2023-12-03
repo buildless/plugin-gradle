@@ -91,11 +91,14 @@ public class Http2ClientHelper internal constructor (
       if (e !is SSLHandshakeException) {
         e
       } else {
-        val message: String
-        message =
-          if (!e.message!!.contains("PKIX path building failed") && !e.message!!.contains("certificate_unknown")) {
+        val condition = (
+          e.message?.contains("PKIX path building failed") != true &&
+          e.message?.contains("certificate_unknown") != true
+        )
+        val message = if (condition) {
             String.format(
-              "The server %s not support the client's requested TLS protocol versions: (%s). You may need to configure the client to allow other protocols to be used. %s",
+              "The server %s not support the client's requested TLS protocol versions: (%s). You may need to " +
+              "configure the client to allow other protocols to be used. %s",
               getConfidenceNote(
                 e
               ),
@@ -118,7 +121,11 @@ public class Http2ClientHelper internal constructor (
 
   @Nonnull
   private fun getConfidenceNote(sslException: SSLHandshakeException): String {
-    return if (sslException.message != null && sslException.message!!.contains("protocol_version")) "does" else "may"
+    return if (sslException.message != null && sslException.message!!.contains("protocol_version")) {
+      "does"
+    } else {
+      "may"
+    }
   }
 
   @Throws(IOException::class)
