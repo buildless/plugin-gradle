@@ -291,7 +291,10 @@ if (enableChecks == "true") spotless {
     target("src/**/*.kt")
     targetExclude("*/generated/*", "*/bin/*", "app/*/build")
     ktlint(libs.versions.ktlint.get()).apply {
-      setEditorConfigPath("$rootDir/.editorconfig")
+      setEditorConfigPath(project.layout.projectDirectory.file(".editorconfig")).editorConfigOverride(mapOf(
+        "ktlint_standard_annotation" to "disabled",
+        "ij_kotlin_imports_layout" to "*,java.**,javax.**,jakarta.**,kotlinx.**,kotlin.**,^",
+      ))
     }
   }
   kotlinGradle {
