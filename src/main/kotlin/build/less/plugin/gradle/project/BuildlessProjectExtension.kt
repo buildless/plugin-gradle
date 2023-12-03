@@ -26,7 +26,7 @@ import javax.inject.Inject
  * Adds project-level configuration features to Gradle projects which are enabled with Buildless, via the main settings
  * time plugin.
  */
-@API internal class BuildlessProjectExtension @Inject constructor () {
+@API internal class BuildlessProjectExtension @Inject constructor() {
   /** Known plugin IDs which can be configured by Buildless. */
   private data object KnownPluginID {
     const val ANDROID_LIBRARY = "com.android.library"
@@ -69,7 +69,7 @@ import javax.inject.Inject
   }
 
   /** Known plugins which can be configured by Buildless. */
-  private enum class KnownPlugin (vararg ids: String) : ProjectCondition {
+  private enum class KnownPlugin(vararg ids: String) : ProjectCondition {
     // Android family of plugins.
     ANDROID(KnownPluginID.ANDROID_LIBRARY, KnownPluginID.ANDROID_APPLICATION),
 
@@ -105,7 +105,7 @@ import javax.inject.Inject
   }
 
   /** Enumerates known reasons why something might be disabled by default for caching. */
-  private enum class KnownReason (override val description: String): Reasoning {
+  private enum class KnownReason(override val description: String) : Reasoning {
     TOO_BIG("Task has large outputs which are generally too big to cache."),
     BUGGY("Task or task outputs have known conflicts or issues with build caching.");
 
@@ -113,12 +113,13 @@ import javax.inject.Inject
   }
 
   /** Describes why a task was disabled for caching by Buildless, either because of a [KnownReason] or custom one. */
-  @JvmInline private value class DisabledReason(private val knownOrCustom: Pair<KnownReason?, String?>): Reasoning {
+  @JvmInline private value class DisabledReason(private val knownOrCustom: Pair<KnownReason?, String?>) : Reasoning {
     override val known: Boolean get() = knownOrCustom.first?.known ?: false
     override val description: String get() = knownOrCustom.second ?: knownOrCustom.first?.description ?: "unknown"
 
     companion object {
       @JvmStatic fun known(reason: KnownReason): DisabledReason = DisabledReason(reason to null)
+
       @JvmStatic fun because(reason: String): DisabledReason = DisabledReason(null to reason)
 
       /** The object is generally too big to cache, or too big to be profitable for caching. */
@@ -130,7 +131,7 @@ import javax.inject.Inject
   }
 
   /** Utility method context for project configurators. */
-  private inner class ProjectUtilities (initial: Project) {
+  private inner class ProjectUtilities(initial: Project) {
     // Keeps track of tasks which have already been disabled.
     private val disabledTasks = TreeSet<String>()
 
@@ -177,7 +178,7 @@ import javax.inject.Inject
 
   @JvmInline private value class CompoundFilter(
     private val filters: Pair<Boolean, Array<out ProjectCondition>>,
-  ): ProjectCondition {
+  ) : ProjectCondition {
     private val strict: Boolean get() = filters.first
 
     override fun eligible(project: Project): Boolean = when (strict) {
@@ -189,7 +190,7 @@ import javax.inject.Inject
   /** Project filter with a [condition] and [configurator]. */
   @JvmInline private value class BuildlessProjectFilter(
     private val pair: Pair<ProjectConfigurator, ProjectCondition>,
-  ): ProjectCondition {
+  ) : ProjectCondition {
     val condition: ProjectCondition get() = pair.second
     val configurator: ProjectConfigurator get() = pair.first
 

@@ -16,8 +16,8 @@
 package build.less.plugin.gradle
 
 import build.less.plugin.gradle.err.InvalidConfiguration
-import kotlinx.serialization.Serializable
 import java.util.*
+import kotlinx.serialization.Serializable
 
 /**
  * Describes a checked Buildless API key, which also carries metadata with it about the key. The key itself can be

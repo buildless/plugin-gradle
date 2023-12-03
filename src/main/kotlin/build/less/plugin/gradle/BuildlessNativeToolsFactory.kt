@@ -50,7 +50,7 @@ internal class BuildlessNativeToolsFactory {
   }
 
   // Baseline native tools implementation class.
-  private abstract class BuildlessNativeOSTools (
+  private abstract class BuildlessNativeOSTools(
     path: String,
     private val configPath: Path = Path.of(path),
   ) : BuildlessNativeTools {
