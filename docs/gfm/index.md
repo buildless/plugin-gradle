@@ -3,7 +3,7 @@
 # buildless-plugin-gradle
 
 [JVM (Gradle)]\
-This documentation describes reference material for the [Buildless](https://less.build) plugin for [Gradle](https://gradle.org). The plugin helps with  configuration of remote build caching via the Buildless API. See the [Buildless docs](https://docs.less.build) for additional info including resources, code samples, API specs, and more.
+This documentation describes reference material for the [Buildless](https://less.build) plugin for [Gradle](https://gradle.org). The plugin helps with configuration of remote build caching via the Buildless API. See the [Buildless docs](https://docs.less.build) for additional info including resources, code samples, API specs, and more.
 
 <hr />
 
@@ -69,4 +69,5 @@ buildless {
 |---|
 | [build.less.plugin.gradle](buildless-plugin-gradle/build.less.plugin.gradle/index.md) | Main package for the Buildless plugin for Gradle. Includes all user-facing interfaces and classes. |
 | [build.less.plugin.gradle.err](buildless-plugin-gradle/build.less.plugin.gradle.err/index.md) | Exceptions which are reliably thrown by the plugin, and which the developer may want to catch. |
-| [build.less.plugin.settings](buildless-plugin-gradle/build.less.plugin.settings/index.md) | Entrypoint for the plugin's configuration DSL when used from `settings.gradle.kts` or `settings.gradle`. |
+| [build.less.plugin.gradle.service](buildless-plugin-gradle/build.less.plugin.gradle.service/index.md) |
+| [org.gradle.kotlin.dsl](buildless-plugin-gradle/org.gradle.kotlin.dsl/index.md) |

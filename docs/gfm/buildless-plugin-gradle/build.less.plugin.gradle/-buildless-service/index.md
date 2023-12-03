@@ -19,6 +19,7 @@ This service implementation provides a dependency-injected way to access API cli
 
 | Name | Summary |
 |---|---|
+| [Companion](-companion/index.md) | [JVM (Gradle)]<br>object [Companion](-companion/index.md) |
 | [Params](-params/index.md) | [JVM (Gradle)]<br>interface [Params](-params/index.md) : BuildServiceParameters |
 
 ## Functions

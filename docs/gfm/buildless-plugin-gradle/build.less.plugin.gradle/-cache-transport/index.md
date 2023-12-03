@@ -7,20 +7,22 @@ enum [CacheTransport](index.md) : [Enum](https://kotlinlang.org/api/latest/jvm/s
 
 # Buildless for Gradle: Cache Transport
 
-Enumerates the types of transport engines which are available for use when interacting with Buildless. By default, the [STANDARD](-s-t-a-n-d-a-r-d/index.md) transport is used, which leverages Gradle's built-in remote build caching over HTTP.
+Enumerates the types of transport engines which are available for use when interacting with Buildless. By default, the [BUILTIN](-b-u-i-l-t-i-n/index.md) transport is used, which leverages Gradle's built-in remote build caching over HTTP.
 
 ## Entries
 
 | | |
 |---|---|
-| [STANDARD](-s-t-a-n-d-a-r-d/index.md) | [JVM (Gradle)]<br>[STANDARD](-s-t-a-n-d-a-r-d/index.md)<br>Use the built-in cache transport mechanism from Gradle. |
+| [BUILTIN](-b-u-i-l-t-i-n/index.md) | [JVM (Gradle)]<br>[BUILTIN](-b-u-i-l-t-i-n/index.md)<br>Use the built-in cache transport mechanism from Gradle. |
+| [NEXTGEN](-n-e-x-t-g-e-n/index.md) | [JVM (Gradle)]<br>[NEXTGEN](-n-e-x-t-g-e-n/index.md)<br>Use optimized transport mechanisms from Buildless. |
 
 ## Properties
 
 | Name | Summary |
 |---|---|
-| [name](-s-t-a-n-d-a-r-d/index.md#-372974862%2FProperties%2F73423754) | [JVM (Gradle)]<br>val [name](-s-t-a-n-d-a-r-d/index.md#-372974862%2FProperties%2F73423754): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [ordinal](-s-t-a-n-d-a-r-d/index.md#-739389684%2FProperties%2F73423754) | [JVM (Gradle)]<br>val [ordinal](-s-t-a-n-d-a-r-d/index.md#-739389684%2FProperties%2F73423754): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [entries](entries.md) | [JVM (Gradle)]<br>val [entries](entries.md): [EnumEntries](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.enums/-enum-entries/index.html)&lt;[CacheTransport](index.md)&gt;<br>Returns a representation of an immutable list of all enum entries, in the order they're declared. |
+| [name](-n-e-x-t-g-e-n/index.md#-372974862%2FProperties%2F73423754) | [JVM (Gradle)]<br>val [name](-n-e-x-t-g-e-n/index.md#-372974862%2FProperties%2F73423754): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [ordinal](-n-e-x-t-g-e-n/index.md#-739389684%2FProperties%2F73423754) | [JVM (Gradle)]<br>val [ordinal](-n-e-x-t-g-e-n/index.md#-739389684%2FProperties%2F73423754): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 
 ## Functions
 
