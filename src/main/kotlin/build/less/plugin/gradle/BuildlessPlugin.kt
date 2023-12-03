@@ -43,7 +43,7 @@ import javax.inject.Inject
  * Entrypoint for the official Buildless plug-in for Gradle, which adds (1) optimized transport capabilities for caching
  * and artifact downloads, (2) a lightning fast remote build cache, and (3) helpful configuration for the Kotlin DSL.
  */
-@API public class BuildlessPlugin @Inject constructor (
+@API public class BuildlessPlugin @Inject constructor(
   docRegistry: DocumentationRegistry,
   sslContextFactory: SslContextFactory,
   private val httpClientHelperFactory: HttpClientHelper.Factory,

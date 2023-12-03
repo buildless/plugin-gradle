@@ -15,7 +15,6 @@
 
 package org.gradle.internal.resource.transport.http
 
-
 import okhttp3.OkHttpClient
 import org.gradle.api.internal.DocumentationRegistry
 import org.gradle.internal.UncheckedException
@@ -28,7 +27,6 @@ import org.gradle.internal.impldep.org.apache.http.client.methods.HttpRequestBas
 import org.gradle.internal.impldep.org.apache.http.client.utils.URIBuilder
 import org.gradle.internal.impldep.org.apache.http.protocol.BasicHttpContext
 import org.gradle.internal.impldep.org.apache.http.protocol.HttpContext
-import org.gradle.internal.resource.transport.http.*
 import org.gradle.internal.resource.transport.http.Http2ClientHelper.Factory
 import org.slf4j.LoggerFactory
 import java.io.Closeable
@@ -46,7 +44,7 @@ import javax.net.ssl.SSLHandshakeException
 /**
  * TBD.
  */
-public class Http2ClientHelper internal constructor (
+public class Http2ClientHelper internal constructor(
   private val docRegistry: DocumentationRegistry,
   private val settings: Http2Settings,
 ) : Closeable {
@@ -55,11 +53,13 @@ public class Http2ClientHelper internal constructor (
   }
 
   // Backing HTTP/1.1 helper.
-  private val helper: HttpClientHelper = HttpClientHelper.Factory.createFactory(docRegistry).create(settings)
+  @Suppress("unused") private val helper: HttpClientHelper = HttpClientHelper.Factory
+    .createFactory(docRegistry)
+    .create(settings)
   private val initialized: AtomicBoolean = AtomicBoolean(false)
   private val active: AtomicBoolean = AtomicBoolean(false)
   private val client: AtomicReference<OkHttpClient> = AtomicReference(null)
-  private val sharedContext: ConcurrentLinkedQueue<HttpContext> = ConcurrentLinkedQueue()
+  private val sharedContext: ConcurrentLinkedQueue<HttpContext>? = ConcurrentLinkedQueue()
   private val supportedTlsVersions: Collection<String> = listOf("")
 
   private fun performRawHead(source: String, revalidate: Boolean): HttpClientResponse {
@@ -155,8 +155,7 @@ public class Http2ClientHelper internal constructor (
       this.performHttpRequest(request, BasicHttpContext())
     } else {
       val httpContext = nextAvailableSharedContext()
-      val var3: HttpClientResponse
-      var3 = try {
+      val var3: HttpClientResponse = try {
         this.performHttpRequest(request, httpContext)
       } finally {
         this.sharedContext.add(httpContext)
@@ -166,14 +165,14 @@ public class Http2ClientHelper internal constructor (
   }
 
   private fun nextAvailableSharedContext(): HttpContext {
-    return (sharedContext.poll() ?: BasicHttpContext())
+    return (sharedContext?.poll() ?: BasicHttpContext())
   }
 
   @Throws(IOException::class)
   private fun performHttpRequest(request: HttpRequestBase, httpContext: HttpContext): HttpClientResponse {
     httpContext.removeAttribute("http.protocol.redirect-locations")
     LOGGER.debug("Performing HTTP {}: {}", request.method, stripUserCredentials(request.uri))
-    return try {
+    try {
 //      val response = getClient().execute(request, httpContext)
 //      toHttpClientResponse(request, httpContext, response)
       TODO("not yet implemented")
@@ -199,9 +198,10 @@ public class Http2ClientHelper internal constructor (
     settings.redirectVerifier.validateRedirects(getRedirectLocations(httpContext))
   }
 
+  @Suppress("UNCHECKED_CAST")
   @Nonnull
   private fun getRedirectLocations(httpContext: HttpContext): List<URI> {
-    val redirects: List<URI> = httpContext.getAttribute("http.protocol.redirect-locations") as List<URI>
+    val redirects: List<URI>? = httpContext.getAttribute("http.protocol.redirect-locations") as? List<URI>
     return redirects ?: emptyList()
   }
 
@@ -254,7 +254,7 @@ public class Http2ClientHelper internal constructor (
     if (initialized.get() && active.get()) {
       active.compareAndSet(true, false)
       client.get().dispatcher.executorService.shutdown()
-      sharedContext.clear()
+      sharedContext?.clear()
     }
   }
 

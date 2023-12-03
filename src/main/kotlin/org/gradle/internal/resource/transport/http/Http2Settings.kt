@@ -41,7 +41,7 @@ public interface Http2Settings : HttpSettings {
           }
       }.build()
 
-      return object: Http2Settings, HttpSettings by base {
+      return object : Http2Settings, HttpSettings by base {
         // Nothing at this time.
       }
     }

@@ -19,7 +19,6 @@ import org.gradle.api.file.DirectoryProperty
 import org.gradle.api.initialization.Settings
 import org.gradle.api.provider.Property
 
-
 /**
  * ### Local Cache Settings
  *

@@ -38,7 +38,7 @@ import kotlinx.serialization.Transient
  * @param localCache Local build cache settings to apply.
  * @param remoteCache Remote build cache settings to apply.
  */
-@Serializable internal data class BuildlessPluginConfig private constructor (
+@Serializable internal data class BuildlessPluginConfig private constructor(
   val apiKey: ApiKey?,
   val enableAgent: Boolean,
   val agentConfig: AgentConfig?,
@@ -120,8 +120,8 @@ import kotlinx.serialization.Transient
   ) {
     // Resolve the endpoint to use for remote caching.
     private fun resolveRemoteEndpoint(): URI = when (val override = (
-      System.getenv(Constants.ENDPOINT_OVERRIDE_VAR) ?:
-      System.getProperty(Constants.ENDPOINT_OVERRIDE_PROPERTY)
+      System.getenv(Constants.ENDPOINT_OVERRIDE_VAR)
+        ?: System.getProperty(Constants.ENDPOINT_OVERRIDE_PROPERTY)
     )) {
       // with no override present, use the default cloud cache endpoint
       null -> URI.create(Constants.DEFAULT_CACHE_ENDPOINT)
