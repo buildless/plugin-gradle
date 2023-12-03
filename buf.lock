@@ -9,8 +9,8 @@ deps:
   - remote: buf.build
     owner: buildless
     repository: buildless
-    commit: 1dfe229d1afd450ab270130fe2d752f2
-    digest: shake256:276f11d549fdb5507beb2582bee41ef012665827854b140037736c4ccbcae8ffd336079b593e1c7902ee54f62ed0515ef3bc2c10fe95f7a05d41dbfa22339ed8
+    commit: d59d75d74bd3415188b691bf12dc6c1c
+    digest: shake256:e80954d20b5293756e7a9acb565374a62cca80538173810d2bb38e688915fe6a3379e5337568ac06d72873b4c29827e44fc4bb5727ebf0fc7a032c4475765afe
   - remote: buf.build
     owner: cel
     repository: spec
@@ -44,8 +44,8 @@ deps:
   - remote: buf.build
     owner: envoyproxy
     repository: protoc-gen-validate
-    commit: eac44469a7af47e7839a7f1f3d7ac004
-    digest: shake256:0feabcde01b6b11e3c75a5e3f807968d5995626546f39c37e5d4205892b3a59cced0ed83b35a2eb9e6dddd3309660ad46b737c9dcd224b425de0a6654ce04417
+    commit: 71881f09a0c5420a9545a07987a86728
+    digest: shake256:d320bbf06653b1b2b45a1f95bfa82bf7b998221a777a042708c50d6f86a30d1a85b50c5704c597142d9b308280efe1295d39d76d1abea5f7046d3df4c8cc3cef
   - remote: buf.build
     owner: googleapis
     repository: googleapis
