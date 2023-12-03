@@ -1,3 +1,5 @@
+@file:Suppress("detekt:all", "unused", "unused_parameter")
+
 package org.gradle.internal.resource.transport.http
 
 import org.gradle.internal.impldep.org.apache.http.client.methods.CloseableHttpResponse

@@ -500,3 +500,10 @@ tasks.withType<DokkaTask>().configureEach {
     }
   }
 }
+
+tasks.javadoc {
+  options {
+    quiet()
+    (this as CoreJavadocOptions).addStringOption("Xdoclint:none", "-quiet")
+  }
+}

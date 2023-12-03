@@ -25,3 +25,9 @@ style:
     excludeImports:
       - "java.util.*"
       - "kotlin.test.*"
+
+complexity:
+  active: true
+  TooManyFunctions:
+    active: true
+    thresholdInClasses: 25
