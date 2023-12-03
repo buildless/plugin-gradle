@@ -192,7 +192,7 @@ if (enableChecks == "true") detekt {
   parallel = true
   ignoreFailures = true
   buildUponDefaultConfig = true
-  config.from(rootProject.files("../../.github/detekt.yml"))
+  config.from(rootProject.layout.projectDirectory.file(".github/detekt.yml"))
 }
 
 nexusPublishing {
