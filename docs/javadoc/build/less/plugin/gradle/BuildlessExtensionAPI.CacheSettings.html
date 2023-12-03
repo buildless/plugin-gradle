@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <!-- NewPage -->
 <html lang="en"><head>
-    <title>CacheSettings 1.0.0-beta1 API </title>
+    <title>CacheSettings 1.0.0-beta2 API </title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="dc.created" content="2020-03-25">
     <link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
@@ -118,6 +118,14 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Cache
 
                     </pre>
                     <div class="block"><p>Describes generic cache settings which apply to all types of caches; see <a href=BuildlessExtensionAPI.LocalCacheSettings.html>LocalCacheSettings</a> and <a href=BuildlessExtensionAPI.RemoteCacheSettings.html>RemoteCacheSettings</a> for further information.</p></div>
+
+                    <dl>
+
+                    
+
+                    
+
+                    </dl>
                 </li>
             </ul>
         </div>
@@ -299,8 +307,16 @@ public interface <span class="typeNameLabel"><a href=BuildlessExtensionAPI.Cache
                                         <h4>getEnabled</h4>
                                         <pre class="methodSignature"> abstract <a href=https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Boolean.html>Boolean</a> <a href=BuildlessExtensionAPI.CacheSettings.html#getEnabled()>getEnabled</a>()</pre>
                                         <div class="block"><p>Indicates whether a given cache sub-system should be enabled or disabled (either a local cache or remote cache). If a caching sub-system is &quot;disabled,&quot; it is not used <i>at all</i> for the current build.</p><p>Enabling a cache sub-system only enables <i>checks</i> for cached objects (i.e. fetches). Pushes to the cache (i.e. uploads) are governed by other properties (and are enabled by default).</p></div>
+
+                                        <dl>
+
                                         
-                                        <!-- TODO missing return annotation -->
+
+                                        
+
+                                        
+
+                                        </dl>
                                     </li>
                                 </ul>
                                 

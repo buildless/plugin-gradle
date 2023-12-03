@@ -13,5 +13,5 @@ Specifies an API key which is minted for a Buildless user, and which authorizes 
 
 | Name | Summary |
 |---|---|
-| [name](../../../-cache-transport/-s-t-a-n-d-a-r-d/index.md#-372974862%2FProperties%2F73423754) | [JVM (Gradle)]<br>val [name](../../../-cache-transport/-s-t-a-n-d-a-r-d/index.md#-372974862%2FProperties%2F73423754): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [ordinal](../../../-cache-transport/-s-t-a-n-d-a-r-d/index.md#-739389684%2FProperties%2F73423754) | [JVM (Gradle)]<br>val [ordinal](../../../-cache-transport/-s-t-a-n-d-a-r-d/index.md#-739389684%2FProperties%2F73423754): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [name](../../../-cache-transport/-n-e-x-t-g-e-n/index.md#-372974862%2FProperties%2F73423754) | [JVM (Gradle)]<br>val [name](../../../-cache-transport/-n-e-x-t-g-e-n/index.md#-372974862%2FProperties%2F73423754): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [ordinal](../../../-cache-transport/-n-e-x-t-g-e-n/index.md#-739389684%2FProperties%2F73423754) | [JVM (Gradle)]<br>val [ordinal](../../../-cache-transport/-n-e-x-t-g-e-n/index.md#-739389684%2FProperties%2F73423754): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |

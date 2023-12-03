@@ -20,8 +20,9 @@ Enumerates the types of &quot;subjects&quot; (security principals) for which API
 
 | Name | Summary |
 |---|---|
-| [name](../../-cache-transport/-s-t-a-n-d-a-r-d/index.md#-372974862%2FProperties%2F73423754) | [JVM (Gradle)]<br>val [name](../../-cache-transport/-s-t-a-n-d-a-r-d/index.md#-372974862%2FProperties%2F73423754): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [ordinal](../../-cache-transport/-s-t-a-n-d-a-r-d/index.md#-739389684%2FProperties%2F73423754) | [JVM (Gradle)]<br>val [ordinal](../../-cache-transport/-s-t-a-n-d-a-r-d/index.md#-739389684%2FProperties%2F73423754): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
+| [entries](entries.md) | [JVM (Gradle)]<br>val [entries](entries.md): [EnumEntries](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.enums/-enum-entries/index.html)&lt;[ApiKey.SubjectType](index.md)&gt;<br>Returns a representation of an immutable list of all enum entries, in the order they're declared. |
+| [name](../../-cache-transport/-n-e-x-t-g-e-n/index.md#-372974862%2FProperties%2F73423754) | [JVM (Gradle)]<br>val [name](../../-cache-transport/-n-e-x-t-g-e-n/index.md#-372974862%2FProperties%2F73423754): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [ordinal](../../-cache-transport/-n-e-x-t-g-e-n/index.md#-739389684%2FProperties%2F73423754) | [JVM (Gradle)]<br>val [ordinal](../../-cache-transport/-n-e-x-t-g-e-n/index.md#-739389684%2FProperties%2F73423754): [Int](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html) |
 
 ## Functions
 

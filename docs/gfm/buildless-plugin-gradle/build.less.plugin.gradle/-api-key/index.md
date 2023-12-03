@@ -5,6 +5,8 @@
 [JVM (Gradle)]\
 @[JvmInline](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-inline/index.html)
 
+@Serializable
+
 value class [ApiKey](index.md) : [Serializable](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/Serializable.html), [Comparable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html)&lt;[ApiKey](index.md)&gt; 
 
 Describes a checked Buildless API key, which also carries metadata with it about the key. The key itself can be accessed via the [key](key.md) getter.
