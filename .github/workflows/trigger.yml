@@ -19,23 +19,6 @@ on:
       - closed
       - reopened
       - synchronize
-    paths:
-      ## Trigger: CI Changes
-      - ".github/workflows/trigger.yml"
-
-      ## Trigger: Global changes/release
-      - ".version"
-      - ".release"
-
-      ## Trigger: Server Changes
-      - "gradle.properties"
-      - "*.kts"
-      - "**/*.kts"
-      - "**/*.kt"
-      - "**/*.java"
-      - "**/*.properties"
-      - "app/server/**"
-      - "gradle/**"
 
 env:
   CI: true
