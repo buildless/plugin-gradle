@@ -360,7 +360,7 @@ configurations.all {
     preferProjectModules()
     if (lockDeps != "true") failOnNonReproducibleResolution()
 
-    if (name.contains("detached")) {
+    if (name.contains("detached") || name.contains("kover")) {
       disableDependencyVerification()
     }
   }
