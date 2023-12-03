@@ -46,35 +46,70 @@ jobs:
       actions: read
     strategy:
       fail-fast: false
-      max-parallel: 6
       matrix:
         platform: [Linux, Windows, macOS]
-        gradleLabel: ["Gradle 8.2", "Gradle 8.1"]
+        gradleLabel: ["Gradle 8.5", "Gradle 8.4", "Gradle 8.3", "Gradle 8.2", "Gradle 8.1"]
         include:
           - platform: Linux
             runner: ubuntu-latest
-            gradleLabel: "Gradle 8.3-rc2"
-            gradle: "8.3-rc2"
-            main: false
-            labs: true
+            gradleLabel: "Gradle 8.5"
+            gradle: "8.5"
+            main: true
+            labs: false
           - platform: Windows
             runner: windows-latest
-            gradleLabel: "Gradle 8.3-rc2"
-            gradle: "8.3-rc2"
+            gradleLabel: "Gradle 8.5"
+            gradle: "8.5"
             main: false
-            labs: true
+            labs: false
           - platform: macOS
             runner: macos-latest
-            gradleLabel: "Gradle 8.3-rc2"
-            gradle: "8.3-rc2"
+            gradleLabel: "Gradle 8.5"
+            gradle: "8.5"
             main: false
-            labs: true
+            labs: false
+          - platform: Linux
+            runner: ubuntu-latest
+            gradleLabel: "Gradle 8.4"
+            gradle: "8.4"
+            main: false
+            labs: false
+          - platform: Windows
+            runner: windows-latest
+            gradleLabel: "Gradle 8.4"
+            gradle: "8.4"
+            main: false
+            labs: false
+          - platform: macOS
+            runner: macos-latest
+            gradleLabel: "Gradle 8.4"
+            gradle: "8.4"
+            main: false
+            labs: false
+          - platform: Linux
+            runner: ubuntu-latest
+            gradleLabel: "Gradle 8.3"
+            gradle: "8.3"
+            main: false
+            labs: false
+          - platform: Windows
+            runner: windows-latest
+            gradleLabel: "Gradle 8.3"
+            gradle: "8.3"
+            main: false
+            labs: false
+          - platform: macOS
+            runner: macos-latest
+            gradleLabel: "Gradle 8.3"
+            gradle: "8.3"
+            main: false
+            labs: false
           - platform: Linux
             runner: ubuntu-latest
             tasks: koverXmlReport sonar
             gradle: "8.2"
             gradleLabel: "Gradle 8.2"
-            main: true
+            main: false
             labs: false
           - platform: Windows
             runner: windows-latest
