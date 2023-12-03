@@ -163,7 +163,7 @@ jobs:
       label: "Plugin"
       runner: "${{ matrix.runner }}"
       action: "build test ${{ matrix.tasks }}"
-      flags: "--scan --stacktrace"
+      flags: "--scan"
       artifact: "buildless-plugin-gradle"
       gradle: ${{ matrix.gradle }}
       labs: ${{ fromJson(matrix.labs) }}

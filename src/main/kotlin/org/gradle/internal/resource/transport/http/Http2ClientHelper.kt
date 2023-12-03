@@ -11,7 +11,10 @@
  * License for the specific language governing permissions and limitations under the License.
  */
 
+@file:Suppress("detekt:all")
+
 package org.gradle.internal.resource.transport.http
+
 
 import okhttp3.OkHttpClient
 import org.gradle.api.internal.DocumentationRegistry
