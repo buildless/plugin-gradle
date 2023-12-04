@@ -165,6 +165,7 @@ jobs:
       action: "build test ${{ matrix.tasks }}"
       flags: "--scan"
       artifact: "buildless-plugin-gradle"
+      checks: ${{ fromJson(matrix.main) }}
       gradle: ${{ matrix.gradle }}
       labs: ${{ fromJson(matrix.labs) }}
       coverage_report: "build/reports/kover/report.xml"
