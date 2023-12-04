@@ -304,8 +304,8 @@ if (enableChecks == "true") spotless {
 
 if (enableChecks == "true") sonar {
   properties {
-    property("sonar.sources", "$projectDir/src/main/kotlin")
-    property("sonar.java.binaries", "$projectDir/build/classes")
+    property("sonar.sources", mutableListOf("$projectDir/src/main/kotlin"))
+    property("sonar.java.binaries", mutableListOf("$projectDir/build/classes"))
     property("sonar.projectKey", "buildless_plugin-gradle")
     property("sonar.organization", "buildless")
     property("sonar.host.url", "https://sonarcloud.io")
