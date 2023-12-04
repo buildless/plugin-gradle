@@ -2,9 +2,9 @@ version: v1
 managed:
   enabled: true
 plugins:
-  - plugin: buf.build/bufbuild/connect-kotlin:v0.1.7
+  - plugin: buf.build/bufbuild/connect-kotlin:v0.1.9
     out: kotlin
-  - plugin: buf.build/protocolbuffers/java:v23.4
+  - plugin: buf.build/protocolbuffers/java:v24.2
     out: java
   - plugin: buf.build/grpc/java:v1.59.1
     out: java
