@@ -101,16 +101,11 @@ public class Http2ClientHelper internal constructor(
         val message = if (condition) {
             String.format(
               "The server %s not support the client's requested TLS protocol versions: (%s). You may need to " +
-              "configure the client to allow other protocols to be used. %s",
+              "configure the client to allow other protocols to be used.",
               getConfidenceNote(
                 e
               ),
               java.lang.String.join(", ", supportedTlsVersions),
-              docRegistry.getDocumentationRecommendationFor(
-                "on this",
-                "build_environment",
-                "sec:gradle_system_properties"
-              )
             )
           } else {
             "Got SSL handshake exception during request. It might be caused by SSL misconfiguration"
