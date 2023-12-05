@@ -41,7 +41,7 @@ jobs:
           egress-policy: audit
 
       - name: "Setup: Checkout"
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v3
       - name: "Setup: JDK 19"
         uses: buildjet/setup-java@3b5edd4799eb848d92664003cb1e6f74db868f19 # v3
         with:
