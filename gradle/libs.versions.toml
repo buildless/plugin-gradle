@@ -35,7 +35,7 @@ truth = "1.1.5"
 versionCheck = "0.50.0"
 micronaut_lib = "4.2.0"
 micronaut_plugin = "4.2.1"
-kotlinx_serialization = "1.6.1"
+kotlinx_serialization = "1.6.2"
 
 [plugins]
 buf = { id = "build.buf", version.ref = "pluginBuf" }
