@@ -19,6 +19,11 @@ import kotlinx.serialization.Serializable
  * # Agent Configuration
  *
  * Describes the structure of a local agent configuration rendezvous file.
+ *
+ * @param pid Process ID where the Buildless Agent is running.
+ * @param port TCP port where the Agent service is listening.
+ * @param socket Unix domain socket where the Agent service is listening (if enabled).
+ * @param control Coordinates for the Agent control service.
  */
 @Serializable public data class AgentConfig(
   val pid: Int,
@@ -26,7 +31,12 @@ import kotlinx.serialization.Serializable
   val socket: String? = null,
   val control: AgentEndpoint? = null,
 ) {
-  /** Describes a single agent endpoint. */
+  /**
+   * Describes a single agent endpoint.
+   *
+   * @param port Port where a service is listening.
+   * @param socket Unix domain socket where a service is listening (if enabled).
+   */
   @Serializable public data class AgentEndpoint(
     val port: Int,
     val socket: String? = null,

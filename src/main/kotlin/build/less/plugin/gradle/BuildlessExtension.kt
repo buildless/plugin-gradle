@@ -37,7 +37,9 @@ import javax.inject.Inject
  */
 @API public abstract class BuildlessExtension @Inject constructor(private val factory: ObjectFactory) :
   BuildlessExtensionAPI<Settings, BuildlessSettings> {
+  /** Constants associated with the Buildless extension. */
   public companion object {
+    /** Name of the Buildless extension (`buildless`). */
     public const val NAME: String = "buildless"
   }
 

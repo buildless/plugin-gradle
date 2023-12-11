@@ -27,7 +27,9 @@ import java.util.concurrent.atomic.AtomicReference
 @API public class BuildlessService :
   BuildService<BuildlessService.Params>,
   AutoCloseable {
+  /** Constants associated with the Buildless service. */
   public companion object {
+    /** Name where the Buildless service is available. */
     public const val NAME: String = "buildless"
   }
 

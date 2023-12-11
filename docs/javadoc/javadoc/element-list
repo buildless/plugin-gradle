@@ -1,0 +1,15 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:build.less.plugin.gradle/AgentConfig.AgentEndpoint///PointingToDeclaration/build/less/plugin/gradle/AgentConfig.AgentEndpoint.html
+$dokka.location:build.less.plugin.gradle/ApiKey.InvalidKey///PointingToDeclaration/build/less/plugin/gradle/ApiKey.InvalidKey.html
+$dokka.location:build.less.plugin.gradle/ApiKey.SubjectType///PointingToDeclaration/build/less/plugin/gradle/ApiKey.SubjectType.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtension.LocalAgentSetup///PointingToDeclaration/build/less/plugin/gradle/BuildlessExtension.LocalAgentSetup.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtension.LocalCacheSetup///PointingToDeclaration/build/less/plugin/gradle/BuildlessExtension.LocalCacheSetup.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtension.RemoteCacheSetup///PointingToDeclaration/build/less/plugin/gradle/BuildlessExtension.RemoteCacheSetup.html
+$dokka.location:build.less.plugin.gradle/BuildlessExtensionAPI.CacheSettings///PointingToDeclaration/build/less/plugin/gradle/BuildlessExtensionAPI.CacheSettings.html
+$dokka.location:build.less.plugin.gradle/BuildlessService.Params///PointingToDeclaration/build/less/plugin/gradle/BuildlessService.Params.html
+build.less.plugin.gradle
+build.less.plugin.gradle.err
+build.less.plugin.gradle.service
+org.gradle.kotlin.dsl
+

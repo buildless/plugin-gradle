@@ -14,7 +14,7 @@ connect_kotlin = "0.1.10"
 cyclonedx = "1.8.1"
 detekt = "1.23.4"
 dokka = "1.9.10"
-grpc_java = "1.59.1"
+grpc_java = "1.60.0"
 grpc_kotlin = "1.3.1"
 junit_jupiter = "5.10.1"
 kotlin_sdk = "1.9.21"
@@ -24,7 +24,7 @@ nexus_publish = "2.0.0-rc-1"
 okhttp3 = "4.12.0"
 pluginBuf = "0.8.6"
 pluginPublish = "1.2.1"
-protobuf = "3.24.3"
+protobuf = "3.25.1"
 protoc_gen_validate = "1.0.2"
 sigstore = "0.5.0"
 sonar = "4.4.1.3373"
@@ -84,7 +84,7 @@ junit_jupiter_engine = { module = "org.junit.jupiter:junit-jupiter-engine", vers
 junit_jupiter_params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit_jupiter" }
 okhttp3 = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp3" }
 protobuf_java = { module = "com.google.protobuf:protobuf-java", version.ref = "protobuf" }
-protobuf_kotlin = "com.google.protobuf:protobuf-kotlin:3.24.3"
+protobuf_kotlin = "com.google.protobuf:protobuf-kotlin:3.25.1"
 protobuf_util = { module = "com.google.protobuf:protobuf-java-util", version.ref = "protobuf" }
 truth = { module = "com.google.truth:truth", version.ref = "truth" }
 truth_proto = { module = "com.google.truth.extensions:truth-proto-extension", version.ref = "truth" }

@@ -1,0 +1,14 @@
+//[buildless-plugin-gradle](../../../../index.md)/[build.less.plugin.gradle](../../index.md)/[BuildlessExtension](../index.md)/[Companion](index.md)
+
+# Companion
+
+[JVM (Gradle)]\
+object [Companion](index.md)
+
+Constants associated with the Buildless extension.
+
+## Properties
+
+| Name | Summary |
+|---|---|
+| [NAME](-n-a-m-e.md) | [JVM (Gradle)]<br>const val [NAME](-n-a-m-e.md): [String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)<br>Name of the Buildless extension (`buildless`). |
