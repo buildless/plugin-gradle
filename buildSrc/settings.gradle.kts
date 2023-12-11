@@ -10,7 +10,7 @@ plugins {
   id("org.gradle.toolchains.foojay-resolver-convention")
 }
 
-rootProject.name = "buildSrc"
+rootProject.name = "gradle-build"
 val embeddedDeps: String by settings
 
 dependencyResolutionManagement {

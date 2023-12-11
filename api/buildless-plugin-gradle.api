@@ -42001,3 +42001,21 @@ public final class org/gradle/kotlin/dsl/BuildlessEntryKt {
 	public static final fun buildless (Lorg/gradle/api/initialization/Settings;Lkotlin/jvm/functions/Function1;)V
 }
 
+public final class org/gradle/kotlin/dsl/PkgstEcosystem : java/lang/Enum, org/gradle/kotlin/dsl/PkgstEndpoint {
+	public static final field GOOGLE Lorg/gradle/kotlin/dsl/PkgstEcosystem;
+	public static final field GRADLE Lorg/gradle/kotlin/dsl/PkgstEcosystem;
+	public static final field JITPACK Lorg/gradle/kotlin/dsl/PkgstEcosystem;
+	public static final field MAVEN Lorg/gradle/kotlin/dsl/PkgstEcosystem;
+	public static final field NPM Lorg/gradle/kotlin/dsl/PkgstEcosystem;
+	public fun getContent ()Ljava/util/List;
+	public fun getDomain ()Ljava/lang/String;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public fun getUri ()Ljava/net/URI;
+	public static fun valueOf (Ljava/lang/String;)Lorg/gradle/kotlin/dsl/PkgstEcosystem;
+	public static fun values ()[Lorg/gradle/kotlin/dsl/PkgstEcosystem;
+}
+
+public final class org/gradle/kotlin/dsl/PkgstRepositoriesKt {
+	public static final fun pkgst (Lorg/gradle/api/artifacts/dsl/RepositoryHandler;[Lorg/gradle/kotlin/dsl/PkgstEcosystem;)V
+}
+

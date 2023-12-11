@@ -6,7 +6,7 @@ plugins:
     out: kotlin
   - plugin: buf.build/protocolbuffers/java:v24.2
     out: java
-  - plugin: buf.build/grpc/java:v1.59.1
+  - plugin: buf.build/grpc/java:v1.60.0
     out: java
   - plugin: buf.build/bufbuild/validate-java:v1.0.2
     out: pgv

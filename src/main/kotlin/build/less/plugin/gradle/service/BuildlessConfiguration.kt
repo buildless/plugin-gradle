@@ -13,4 +13,10 @@
 
 package build.less.plugin.gradle.service
 
+/**
+ * # Buildless: Configuration
+ *
+ * Describes configuration applied to the [BuildlessCacheService] and other services managed by Buildless, throughout
+ * the lifecycle of a single Gradle build.
+ */
 public interface BuildlessConfiguration

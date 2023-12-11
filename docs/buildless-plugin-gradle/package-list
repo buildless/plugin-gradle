@@ -129,6 +129,17 @@ $dokka.location:build.less.plugin.gradle/RemoteCacheSettings///PointingToDeclara
 $dokka.location:build.less.plugin.gradle/RemoteCacheSettings/push/#/PointingToDeclaration/buildless-plugin-gradle/build.less.plugin.gradle/-remote-cache-settings/push.html
 $dokka.location:org.gradle.kotlin.dsl////PointingToDeclaration/buildless-plugin-gradle/org.gradle.kotlin.dsl/index.html
 $dokka.location:org.gradle.kotlin.dsl//buildless/org.gradle.api.initialization.Settings#kotlin.Function1[build.less.plugin.gradle.BuildlessSettings,kotlin.Unit]/PointingToDeclaration/buildless-plugin-gradle/org.gradle.kotlin.dsl/buildless.html
+$dokka.location:org.gradle.kotlin.dsl//pkgst/org.gradle.api.artifacts.dsl.RepositoryHandler#kotlin.Array[org.gradle.kotlin.dsl.PkgstEcosystem]/PointingToDeclaration/buildless-plugin-gradle/org.gradle.kotlin.dsl/pkgst.html
+$dokka.location:org.gradle.kotlin.dsl/PkgstEcosystem.GOOGLE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}buildless-plugin-gradle/org.gradle.kotlin.dsl/-pkgst-ecosystem/-g-o-o-g-l-e/index.html
+$dokka.location:org.gradle.kotlin.dsl/PkgstEcosystem.GRADLE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}buildless-plugin-gradle/org.gradle.kotlin.dsl/-pkgst-ecosystem/-g-r-a-d-l-e/index.html
+$dokka.location:org.gradle.kotlin.dsl/PkgstEcosystem.JITPACK///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}buildless-plugin-gradle/org.gradle.kotlin.dsl/-pkgst-ecosystem/-j-i-t-p-a-c-k/index.html
+$dokka.location:org.gradle.kotlin.dsl/PkgstEcosystem.MAVEN///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}buildless-plugin-gradle/org.gradle.kotlin.dsl/-pkgst-ecosystem/-m-a-v-e-n/index.html
+$dokka.location:org.gradle.kotlin.dsl/PkgstEcosystem.NPM///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}buildless-plugin-gradle/org.gradle.kotlin.dsl/-pkgst-ecosystem/-n-p-m/index.html
+$dokka.location:org.gradle.kotlin.dsl/PkgstEcosystem///PointingToDeclaration/buildless-plugin-gradle/org.gradle.kotlin.dsl/-pkgst-ecosystem/index.html
+$dokka.location:org.gradle.kotlin.dsl/PkgstEcosystem/domain/#/PointingToDeclaration/buildless-plugin-gradle/org.gradle.kotlin.dsl/-pkgst-ecosystem/domain.html
+$dokka.location:org.gradle.kotlin.dsl/PkgstEcosystem/entries/#/PointingToDeclaration/buildless-plugin-gradle/org.gradle.kotlin.dsl/-pkgst-ecosystem/entries.html
+$dokka.location:org.gradle.kotlin.dsl/PkgstEcosystem/valueOf/#kotlin.String/PointingToDeclaration/buildless-plugin-gradle/org.gradle.kotlin.dsl/-pkgst-ecosystem/value-of.html
+$dokka.location:org.gradle.kotlin.dsl/PkgstEcosystem/values/#/PointingToDeclaration/buildless-plugin-gradle/org.gradle.kotlin.dsl/-pkgst-ecosystem/values.html
 build.less.plugin.gradle
 build.less.plugin.gradle.err
 build.less.plugin.gradle.service

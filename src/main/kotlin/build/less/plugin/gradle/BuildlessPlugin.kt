@@ -75,6 +75,11 @@ import javax.inject.Inject
     URI.create("https://${Constants.CLOUD_DOMAIN}/cache/generic")
   }
 
+  /**
+   * Apply the Buildless plugin to the provided [target] Gradle [Settings].
+   *
+   * @param target Settings which will be configured.
+   */
   override fun apply(target: Settings) {
     settings.compareAndSet(null, target)
 
@@ -167,6 +172,15 @@ import javax.inject.Inject
     }
   }
 
+  /**
+   * Create an instance of the [BuildlessCacheService].
+   *
+   * This method is intended for internal use by Gradle.
+   *
+   * @param configuration Configuration for the cache service.
+   * @param describer Describer for the cache service.
+   * @return Instance of the Buildless cache service.
+   */
   override fun createBuildCacheService(configuration: BuildlessCache, describer: Describer): BuildlessCacheService {
     return BuildlessCacheService(
       cloudUrl,
