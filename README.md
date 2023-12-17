@@ -18,7 +18,6 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.21-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![Elide](https://elide.dev/shield)](https://elide.dev)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fbuildless%2Fplugin-gradle.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fbuildless%2Fplugin-gradle?ref=badge_shield)
 
 This repo defines a plugin for Gradle which integrates with [Buildless][1] for [remote build caching][2].
 Buildless can be used as a [drop-in remote HTTPS cache endpoint][3], or you can use this plug-in which offers a number
