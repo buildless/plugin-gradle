@@ -13,7 +13,6 @@
 [![CI](https://github.com/buildless/plugin-gradle/actions/workflows/trigger.yml/badge.svg)](https://github.com/buildless/plugin-gradle/actions/workflows/trigger.push.yml)
 ![Gradle Plugin Portal](https://img.shields.io/gradle-plugin-portal/v/build.less)
 ![Discord](https://img.shields.io/discord/1119121740161884252?b1)
-[![codecov](https://codecov.io/gh/buildless/plugin-gradle/branch/main/graph/badge.svg?token=5JOZVNX444)](https://codecov.io/gh/buildless/plugin-gradle)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle)
