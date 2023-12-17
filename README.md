@@ -10,13 +10,15 @@
 </p>
 <br />
 
-[![CI](https://github.com/buildless/plugin-gradle/actions/workflows/trigger.yml/badge.svg)](https://github.com/buildless/plugin-gradle/actions/workflows/trigger.push.yml)
-![Gradle Plugin Portal](https://img.shields.io/gradle-plugin-portal/v/build.less)
-![Discord](https://img.shields.io/discord/1119121740161884252?b1)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle)
-[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.21-blue.svg?logo=kotlin)](http://kotlinlang.org)
+<p align="center">
+<a href="https://github.com/buildless/plugin-gradle/actions/workflows/trigger.push.yml"><img src="https://github.com/buildless/plugin-gradle/actions/workflows/trigger.yml/badge.svg" /></a>
+<a href="https://plugins.gradle.org/plugin/build.less"><img src="https://img.shields.io/gradle-plugin-portal/v/build.less" /></a>
+<a href="https://less.build/discord"><img src="https://img.shields.io/discord/1119121740161884252?b1" /></a>
+<a href="https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle"><img src="https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=security_rating" /></a>
+<a href="https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle"><img src="https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=sqale_rating" /></a>
+<a href="https://sonarcloud.io/summary/new_code?id=buildless_plugin-gradle"><img src="https://sonarcloud.io/api/project_badges/measure?project=buildless_plugin-gradle&metric=reliability_rating" /></a>
+<a href="http://kotlinlang.org"><img src="https://img.shields.io/badge/Kotlin-1.9.21-blue.svg?logo=kotlin" /></a>
+</p>
 
 This repo defines a plugin for Gradle which integrates with [Buildless][1] for [remote build caching][2].
 Buildless can be used as a [drop-in remote HTTPS cache endpoint][3], or you can use this plug-in which offers a number
