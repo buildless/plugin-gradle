@@ -127,7 +127,7 @@ jobs:
           gpg --list-secret-keys --keyid-format LONG
           gpg --export-secret-keys > /home/runner/.gnupg/secring.gpg
       - name: "Publish: OSSRH Stage"
-        uses: gradle/gradle-build-action@d1b726d8c1e0cc120447ad1a950d6e6794c51ad8
+        uses: gradle/gradle-build-action@f95e9c74599bc49122b76ecfe1306f0034f87266
         with:
           arguments: |
             publishPluginMavenPublicationToSonatypeRepository
@@ -142,7 +142,7 @@ jobs:
           java-version: "11"
           distribution: "adopt-hotspot"
       - name: "Publish: GitHub Packages"
-        uses: gradle/gradle-build-action@d1b726d8c1e0cc120447ad1a950d6e6794c51ad8
+        uses: gradle/gradle-build-action@f95e9c74599bc49122b76ecfe1306f0034f87266
         with:
           arguments: |
             publishPluginMavenPublicationToGitHubPackagesRepository
@@ -180,7 +180,7 @@ jobs:
           gpg --list-secret-keys --keyid-format LONG
           gpg --export-secret-keys > /home/runner/.gnupg/secring.gpg
       - name: "Publish: OSSRH Central"
-        uses: gradle/gradle-build-action@d1b726d8c1e0cc120447ad1a950d6e6794c51ad8
+        uses: gradle/gradle-build-action@f95e9c74599bc49122b76ecfe1306f0034f87266
         with:
           arguments: |
             publishPluginMavenPublicationToSonatypeRepository
@@ -195,7 +195,7 @@ jobs:
           java-version: "11"
           distribution: "adopt-hotspot"
       - name: "Publish: GitHub Packages"
-        uses: gradle/gradle-build-action@d1b726d8c1e0cc120447ad1a950d6e6794c51ad8
+        uses: gradle/gradle-build-action@f95e9c74599bc49122b76ecfe1306f0034f87266
         with:
           arguments: |
             publishPluginMavenPublicationToGitHubPackagesRepository
@@ -231,7 +231,7 @@ jobs:
           gpg --list-secret-keys --keyid-format LONG
           gpg --export-secret-keys > /home/runner/.gnupg/secring.gpg
       - name: "Publish: Gradle"
-        uses: gradle/gradle-build-action@d1b726d8c1e0cc120447ad1a950d6e6794c51ad8
+        uses: gradle/gradle-build-action@f95e9c74599bc49122b76ecfe1306f0034f87266
         with:
           arguments: |
             publishPlugins
