@@ -63,7 +63,7 @@ jobs:
         with:
           languages: java
       - name: "Build: Plugin"
-        uses: gradle/gradle-build-action@d1b726d8c1e0cc120447ad1a950d6e6794c51ad8 # v2
+        uses: gradle/gradle-build-action@982da8e78c05368c70dac0351bb82647a9e9a5d2 # v2
         id: gradlebuild
         continue-on-error: true
         env:
