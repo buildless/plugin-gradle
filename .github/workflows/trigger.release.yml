@@ -114,7 +114,7 @@ jobs:
       - name: "Setup: Checkout"
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v3
       - name: "Setup: JDK 11"
-        uses: buildjet/setup-java@3b5edd4799eb848d92664003cb1e6f74db868f19 # v3
+        uses: buildjet/setup-java@89ddc594b1d96eada357fc2824610d5d6650f2da # v4
         with:
           java-version: "11"
           distribution: "adopt-hotspot"
@@ -137,7 +137,7 @@ jobs:
             -Psigning.password=${{ secrets.SIGNING_KEY_PASSPHRASE }}
             -Psigning.secretKeyRingFile=/home/runner/.gnupg/secring.gpg
       - name: "Setup: JDK 11 (GitHub Packages)"
-        uses: buildjet/setup-java@3b5edd4799eb848d92664003cb1e6f74db868f19 # v3
+        uses: buildjet/setup-java@89ddc594b1d96eada357fc2824610d5d6650f2da # v4
         with:
           java-version: "11"
           distribution: "adopt-hotspot"
@@ -167,7 +167,7 @@ jobs:
       - name: "Setup: Checkout"
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v3
       - name: "Setup: JDK 11"
-        uses: buildjet/setup-java@3b5edd4799eb848d92664003cb1e6f74db868f19 # v3
+        uses: buildjet/setup-java@89ddc594b1d96eada357fc2824610d5d6650f2da # v4
         with:
           java-version: "11"
           distribution: "adopt-hotspot"
@@ -190,7 +190,7 @@ jobs:
             -Psigning.password=${{ secrets.SIGNING_KEY_PASSPHRASE }}
             -Psigning.secretKeyRingFile=/home/runner/.gnupg/secring.gpg
       - name: "Setup: JDK 11 (GitHub Packages)"
-        uses: buildjet/setup-java@3b5edd4799eb848d92664003cb1e6f74db868f19 # v3
+        uses: buildjet/setup-java@89ddc594b1d96eada357fc2824610d5d6650f2da # v4
         with:
           java-version: "11"
           distribution: "adopt-hotspot"
@@ -221,7 +221,7 @@ jobs:
       - name: "Setup: Checkout"
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v3
       - name: "Setup: JDK 11"
-        uses: buildjet/setup-java@3b5edd4799eb848d92664003cb1e6f74db868f19 # v3
+        uses: buildjet/setup-java@89ddc594b1d96eada357fc2824610d5d6650f2da # v4
         with:
           java-version: "11"
           distribution: "adopt-hotspot"
