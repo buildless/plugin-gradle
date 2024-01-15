@@ -84,7 +84,7 @@ junit_jupiter_engine = { module = "org.junit.jupiter:junit-jupiter-engine", vers
 junit_jupiter_params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit_jupiter" }
 okhttp3 = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp3" }
 protobuf_java = { module = "com.google.protobuf:protobuf-java", version.ref = "protobuf" }
-protobuf_kotlin = "com.google.protobuf:protobuf-kotlin:3.25.1"
+protobuf_kotlin = "com.google.protobuf:protobuf-kotlin:3.25.2"
 protobuf_util = { module = "com.google.protobuf:protobuf-java-util", version.ref = "protobuf" }
 truth = { module = "com.google.truth:truth", version.ref = "truth" }
 truth_proto = { module = "com.google.truth.extensions:truth-proto-extension", version.ref = "truth" }
