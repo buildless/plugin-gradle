@@ -49,6 +49,7 @@ jobs:
       matrix:
         platform: [Linux, Windows, macOS]
         gradleLabel: ["Gradle 8.5", "Gradle 8.4", "Gradle 8.3", "Gradle 8.2", "Gradle 8.1", "Gradle Latest"]
+        java: ["17", "21"]
         include:
           - platform: Linux
             runner: ubuntu-latest
@@ -57,108 +58,126 @@ jobs:
             tasks: koverXmlReport sonar
             main: true
             labs: false
+            java: 21
           - platform: Windows
             runner: windows-latest
             gradleLabel: "Gradle 8.5"
             gradle: "8.5"
             main: false
             labs: false
+            java: 21
           - platform: macOS
             runner: macos-latest
             gradleLabel: "Gradle 8.5"
             gradle: "8.5"
             main: false
             labs: false
+            java: 21
           - platform: Linux
             runner: ubuntu-latest
             gradleLabel: "Gradle 8.4"
             gradle: "8.4"
             main: false
             labs: false
+            java: 21
           - platform: Windows
             runner: windows-latest
             gradleLabel: "Gradle 8.4"
             gradle: "8.4"
             main: false
             labs: false
+            java: 21
           - platform: macOS
             runner: macos-latest
             gradleLabel: "Gradle 8.4"
             gradle: "8.4"
             main: false
             labs: false
+            java: 21
           - platform: Linux
             runner: ubuntu-latest
             gradleLabel: "Gradle 8.3"
             gradle: "8.3"
             main: false
             labs: false
+            java: 17
           - platform: Windows
             runner: windows-latest
             gradleLabel: "Gradle 8.3"
             gradle: "8.3"
             main: false
             labs: false
+            java: 17
           - platform: macOS
             runner: macos-latest
             gradleLabel: "Gradle 8.3"
             gradle: "8.3"
             main: false
             labs: false
+            java: 17
           - platform: Linux
             runner: ubuntu-latest
             gradle: "8.2"
             gradleLabel: "Gradle 8.2"
             main: false
             labs: false
+            java: 17
           - platform: Windows
             runner: windows-latest
             gradleLabel: "Gradle 8.2"
             gradle: "8.2"
             main: false
             labs: false
+            java: 17
           - platform: macOS
             runner: macos-latest
             gradleLabel: "Gradle 8.2"
             gradle: "8.2"
             main: false
             labs: false
+            java: 17
           - platform: Linux
             runner: ubuntu-latest
             gradleLabel: "Gradle 8.1"
             gradle: "8.1"
             main: false
             labs: false
+            java: 17
           - platform: Windows
             runner: windows-latest
             gradleLabel: "Gradle 8.1"
             gradle: "8.1"
             main: false
             labs: false
+            java: 17
           - platform: macOS
             runner: macos-latest
             gradleLabel: "Gradle 8.1"
             gradle: "8.1"
             main: false
             labs: false
+            java: 17
           - platform: Windows
             runner: windows-latest
             gradleLabel: "Gradle Latest"
             gradle: "release-candidate"
             main: false
             labs: true
+            java: 17
           - platform: macOS
             runner: macos-latest
             gradleLabel: "Gradle Latest"
             gradle: "release-candidate"
             main: false
             labs: true
+            java: 17
           - platform: Linux
             runner: ubuntu-latest
             gradleLabel: "Gradle Latest"
             gradle: "release-candidate"
             main: false
             labs: true
+            java: 17
     with:
       label: "Plugin"
       runner: "${{ matrix.runner }}"
@@ -172,6 +191,7 @@ jobs:
       provenance: "${{ fromJson(matrix.main) }}"
       coverage: "${{ fromJson(matrix.main) }}"
       artifacts: "${{ fromJson(matrix.main) }}"
+      java: ${{ matrix.java }}
 
   ## Checks: API Breakage
   check-api:
