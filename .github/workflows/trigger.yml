@@ -191,7 +191,7 @@ jobs:
       provenance: "${{ fromJson(matrix.main) }}"
       coverage: "${{ fromJson(matrix.main) }}"
       artifacts: "${{ fromJson(matrix.main) }}"
-      java: ${{ matrix.java }}
+      java-version: ${{ matrix.java }}
 
   ## Checks: API Breakage
   check-api:
