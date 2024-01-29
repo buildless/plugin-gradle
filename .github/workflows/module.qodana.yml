@@ -44,7 +44,7 @@ jobs:
           distribution: "adopt-hotspot"
           java-version: "19"
       - name: "Qodana Scan"
-        uses: JetBrains/qodana-action@d91c08613f8afc00854884e34bae99a4f1bb99d6 # main
+        uses: JetBrains/qodana-action@9a71424636be05dccc139d34e7248de96fd15d9c # main
         continue-on-error: true
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
