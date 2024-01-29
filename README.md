@@ -29,13 +29,13 @@ of extra luxurious features (see below).
 
 ### Current version
 
-**Latest:** `1.0.0-rc1`
+**Latest:** `1.0.0-rc2`
 
 **`settings.gradle.kts` (Kotlin DSL):**
 
 ```kotlin
 plugins {
-    id("build.less") version "1.0.0-rc1"
+    id("build.less") version "1.0.0-rc2"
 }
 ```
 
@@ -43,7 +43,7 @@ plugins {
 
 ```groovy
 plugins {
-    id 'build.less' version '1.0.0-rc1'
+    id 'build.less' version '1.0.0-rc2'
 }
 ```
 
@@ -52,7 +52,7 @@ plugins {
 ```toml
 [versions]
 # ...
-buildless = "1.0.0-rc1"
+buildless = "1.0.0-rc2"
 
 [plugins]
 # ...
@@ -109,7 +109,7 @@ exhaustively below, with their order of precedence.
 
 ```kotlin
 plugins {
-  id("build.less") version "1.0.0-rc1"
+  id("build.less") version "1.0.0-rc2"
 }
 
 buildless {
