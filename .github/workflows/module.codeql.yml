@@ -59,7 +59,7 @@ jobs:
           distribution: "adopt-hotspot"
           java-version: "19"
       - name: "Setup: Initialize CodeQL"
-        uses: github/codeql-action/init@05963f47d870e2cb19a537396c1f668a348c7d8f # v2
+        uses: github/codeql-action/init@1b1aada464948af03b950897e5eb522f92603cc2 # v2
         with:
           languages: java
       - name: "Build: Plugin"
@@ -78,7 +78,7 @@ jobs:
             -x test
             -x check
       - name: "Analsis: CodeQL"
-        uses: github/codeql-action/analyze@05963f47d870e2cb19a537396c1f668a348c7d8f # v2
+        uses: github/codeql-action/analyze@1b1aada464948af03b950897e5eb522f92603cc2 # v2
         continue-on-error: true
         with:
           category: "/language:java"
