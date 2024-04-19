@@ -112,7 +112,7 @@ jobs:
           egress-policy: audit
 
       - name: "Setup: Checkout"
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v3
+        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v3
       - name: "Setup: JDK 11"
         uses: buildjet/setup-java@89ddc594b1d96eada357fc2824610d5d6650f2da # v4
         with:
@@ -165,7 +165,7 @@ jobs:
           egress-policy: audit
 
       - name: "Setup: Checkout"
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v3
+        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v3
       - name: "Setup: JDK 11"
         uses: buildjet/setup-java@89ddc594b1d96eada357fc2824610d5d6650f2da # v4
         with:
@@ -219,7 +219,7 @@ jobs:
           egress-policy: audit
 
       - name: "Setup: Checkout"
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v3
+        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v3
       - name: "Setup: JDK 11"
         uses: buildjet/setup-java@89ddc594b1d96eada357fc2824610d5d6650f2da # v4
         with:
