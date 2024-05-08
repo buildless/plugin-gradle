@@ -62,7 +62,7 @@ jobs:
               ${{ github.workspace }}/detekt.sarif.json
           )" > ${{ github.workspace }}/detekt.sarif.json
       - name: "Report: SARIF Upload"
-        uses: github/codeql-action/upload-sarif@05963f47d870e2cb19a537396c1f668a348c7d8f # v2
+        uses: github/codeql-action/upload-sarif@ccf74c947955fd1cf117aef6a0e4e66191ef6f61 # v2
         continue-on-error: true
         with:
           sarif_file: ${{ github.workspace }}/detekt.sarif.json
