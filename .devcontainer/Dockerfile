@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 mcr.microsoft.com/vscode/devcontainers/base:ubuntu-22.04@sha256:fdb79b61fb4e955b4042ddb25bbae616316984bcd46c193196c6e1664a5d367f
+FROM --platform=linux/amd64 mcr.microsoft.com/vscode/devcontainers/base:ubuntu-24.04@sha256:c483e711bb47179497f8c630dafe07e6ce9cac8d6393f73a97af58dff67aa5d3
 
 ARG DEV_USER=dev
 ARG GRADLE_VERSION=8.1.1
